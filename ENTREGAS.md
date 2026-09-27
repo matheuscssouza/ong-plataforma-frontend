@@ -78,6 +78,11 @@ Entradas (Nome da pasta / Arquivos contidos) em [`docs/etapa-3-estrutura-pastas.
 
 - [ ] Entradas adicionadas na plataforma
 
+### Questão: "Código-fonte HTML consolidado"
+Campo único de até 10.000 caracteres: os 3 arquivos somam ~20 mil mesmo sem recuo. Colado o `cadastro.html` completo (sem recuo, validado no W3C) com nota sobre as outras páginas: `entregas/etapa-3/codigo/RESPOSTA-colar-na-plataforma.txt`.
+
+- [ ] Código colado na plataforma
+
 ## Etapa 4 — Síntese e reflexão
 
 _A definir._
