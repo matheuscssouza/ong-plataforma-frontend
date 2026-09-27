@@ -106,6 +106,8 @@ Texto em [`docs/etapa-4-reflexao.md`](docs/etapa-4-reflexao.md).
 
 # Experiência Prática II — Estilização e layouts
 
+Desafio: aplicar CSS3 avançado sobre a estrutura HTML da EP1 para criar uma interface dinâmica, responsiva e escalável, com arquitetura de estilos consistente.
+
 Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), layouts responsivos com Flexbox e CSS Grid, menus de navegação interativos, cartões e formulários dinâmicos, componentes visuais acessíveis.
 
 > Cópias dos arquivos a enviar ficam em `entregas/ep2-etapa-N/`; o fim de cada etapa é marcado com a tag `ep2-etapa-N`.
