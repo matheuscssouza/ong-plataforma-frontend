@@ -147,6 +147,11 @@ Entradas (Nome do componente / Propriedades Flexbox) em [`docs/ep2-etapa-2-flexb
 
 Objetivos: menu principal responsivo com dropdown e hambúrguer no mobile; cards modulares interativos e acessíveis; estilos de formulários e botões com validação visual e pseudo-classes; modais de informação e alertas contextuais.
 
+### Questão: "Desenvolvimento de navegação interativa e responsiva"
+Texto em [`docs/ep2-etapa-3-navegacao.md`](docs/ep2-etapa-3-navegacao.md).
+
+- [ ] Texto colado na plataforma
+
 ## EP2 · Etapa 4 — Síntese e reflexão
 
 _Revisão das implementações, autoavaliação e reflexão crítica._
