@@ -123,6 +123,11 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 
 Objetivos: variáveis customizadas; regras globais de cores, tipografia escalável e espaçamentos modulares; layout macro com Grid de 12 colunas e breakpoints estritos; Flexbox para alinhamentos e componentes internos.
 
+### Questão: "Criação de um sistema de design"
+Texto em [`docs/ep2-etapa-2-design-system.md`](docs/ep2-etapa-2-design-system.md).
+
+- [ ] Texto colado na plataforma
+
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
 _Navegação desktop e mobile, cartões, feedback visual de formulários, modais e componentes auxiliares._
