@@ -20,6 +20,11 @@ Resposta preenchida no formulário **"Adicionar tag semântica"** da plataforma 
 Texto das respostas: [`docs/etapa-2-estrutura-semantica.md`](docs/etapa-2-estrutura-semantica.md).
 
 - [x] 10 tags adicionadas no formulário (header, nav, main, section, article, aside, footer, h1–h4, figure/figcaption, address)
+
+### Questão: "Justificativa da hierarquia de títulos"
+Texto dissertativo em [`docs/etapa-2-estrutura-semantica.md`](docs/etapa-2-estrutura-semantica.md), seção "Justificativa".
+
+- [ ] Texto colado na plataforma
 - [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
 
 ## Etapa 3 — Formulários interativos e cadastro
