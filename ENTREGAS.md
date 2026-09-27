@@ -68,6 +68,11 @@ Texto em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md), seção "Va
 
 - [x] Texto colado na plataforma
 
+### Questão: "Organização e validação de conformidade — envio de assets"
+Imagens usadas nas páginas, em dois formatos (WebP + PNG), copiadas para `entregas/etapa-3/imagens/`.
+
+- [ ] Imagens anexadas na plataforma
+
 ## Etapa 4 — Síntese e reflexão
 
 _A definir._
