@@ -84,6 +84,11 @@ Site no ar (GitHub Pages): https://matheuscssouza.github.io/ong-plataforma-front
 
 - [ ] Link enviado na plataforma
 
+### Questão: "Resultado da validação no W3C"
+Texto em [`docs/etapa-3-validacao-w3c.md`](docs/etapa-3-validacao-w3c.md).
+
+- [ ] Texto colado na plataforma
+
 ## Etapa 4 — Síntese e reflexão
 
 _A definir._
