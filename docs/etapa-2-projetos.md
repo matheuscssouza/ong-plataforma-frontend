@@ -14,3 +14,13 @@ Enviados na plataforma (limite de 5): Cabeçalho e menu, Projetos em andamento, 
 | Campanhas de doação | <section id="doacoes"> com <h2>, <p> e três <article> em cartões, cada um com <h3>, <p> e link ou <time>. |
 | Resultados de 2025 | <aside> com <h2> e <p>: conteúdo complementar ao principal. |
 | Contato | <footer> com <h2> e <address> contendo endereço, links mailto: e tel:, mais <small> com direitos autorais. |
+
+## Organização textual e orientação para doação e voluntariado
+
+A organização textual foi pensada como um caminho: o usuário deve encontrar rapidamente o que fazer sem ler a página inteira.
+
+Na página inicial, o bloco "Como você pode ajudar" separa as duas intenções em cartões com títulos diretos, "Seja voluntário" e "Faça uma doação". Cada cartão leva direto à seção correspondente em projetos.html (#voluntariado e #doacoes). O botão "Quero ser voluntário", no topo, e o item "Cadastre-se", no menu, oferecem atalhos para quem já está decidido.
+
+Em projetos.html, voluntariado e doação ficam em `<section>` distintas, cada uma com seu `<h2>`, para que os assuntos não se misturem. Em "Seja voluntário", as áreas de atuação estão em lista não ordenada (`<ul>`), porque são opções equivalentes, e o passo a passo está em lista ordenada (`<ol>`), porque a sequência importa: escolher o projeto, preencher o cadastro e participar do acolhimento. Em "Campanhas de doação", cada campanha é um `<article>` com título próprio e informação concreta, como prazo em `<time>` ou local de entrega, o que facilita comparar e escolher.
+
+Os links têm texto descritivo ("Quero ser doador mensal", "Saiba como ser voluntário") em vez de "clique aqui", fazendo sentido mesmo fora do contexto (WCAG 2.4.4). A frase sobre a prestação de contas anual reforça a confiança de quem vai doar. Para quem usa leitor de tela, títulos claros e seções nomeadas por aria-labelledby permitem saltar direto para "Campanhas de doação" ou "Seja voluntário".

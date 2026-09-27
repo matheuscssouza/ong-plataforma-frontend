@@ -40,6 +40,10 @@ Texto em [`docs/etapa-2-pagina-inicial.md`](docs/etapa-2-pagina-inicial.md), se�
 Entradas do formulário "Adicionar tag semântica" em [`docs/etapa-2-projetos.md`](docs/etapa-2-projetos.md).
 
 - [x] 5 blocos enviados (limite da plataforma): Cabeçalho e menu, Projetos em andamento, Fichas dos projetos, Seja voluntário, Campanhas de doação
+### Questão: "Organização textual para contribuição e voluntariado"
+Texto em [`docs/etapa-2-projetos.md`](docs/etapa-2-projetos.md), seção "Organização textual".
+
+- [ ] Texto colado na plataforma
 - [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
 
 ## Etapa 3 — Formulários interativos e cadastro
