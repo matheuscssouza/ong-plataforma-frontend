@@ -150,4 +150,3 @@ Objetivos: menu principal responsivo com dropdown e hambúrguer no mobile; cards
 ## EP2 · Etapa 4 — Síntese e reflexão
 
 _Revisão das implementações, autoavaliação e reflexão crítica._
-
