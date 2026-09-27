@@ -1,5 +1,9 @@
 # 📤 Entregas — Plataforma da Faculdade
 
+# Experiência Prática I — Estrutura semântica e formulários ✅
+
+> Estado final da entrega preservado na tag `ep1-final`.
+
 Checklist do que deve ser **anexado na plataforma da Cruzeiro do Sul** em cada etapa da Experiência Prática I (Desenvolvimento Front-end).
 
 > Ao concluir cada etapa, uma cópia exata dos arquivos a enviar é gerada localmente em `entregas/etapa-N/` (pasta ignorada pelo Git).
@@ -97,3 +101,14 @@ Texto em [`docs/etapa-4-reflexao.md`](docs/etapa-4-reflexao.md).
 - [x] Texto colado na plataforma
 
 ✅ **Experiência Prática I concluída.**
+
+---
+
+# Experiência Prática II — Estilização e layouts
+
+Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), layouts responsivos com Flexbox e CSS Grid, menus de navegação interativos, cartões e formulários dinâmicos, componentes visuais acessíveis.
+
+> Cópias dos arquivos a enviar ficam em `entregas/ep2-etapa-N/`; o fim de cada etapa é marcado com a tag `ep2-etapa-N`.
+
+_Etapas a registrar conforme as questões chegarem._
+
