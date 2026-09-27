@@ -8,8 +8,8 @@ Checklist do que deve ser **anexado na plataforma da Cruzeiro do Sul** em cada e
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Estrutura semântica e páginas | ✅ Concluída | `entregas/etapa-2/` |
-| 3 | Formulários interativos e cadastro | 🔄 Em andamento | `entregas/etapa-3/` |
-| 4 | Síntese e reflexão | ⏳ Pendente | `entregas/etapa-4/` |
+| 3 | Formulários interativos e cadastro | ✅ Concluída | `entregas/etapa-3/` |
+| 4 | Síntese e reflexão | 🔄 Em andamento | `entregas/etapa-4/` |
 
 ---
 
@@ -82,12 +82,12 @@ Entradas (Nome da pasta / Arquivos contidos) em [`docs/etapa-3-estrutura-pastas.
 A plataforma aceita link ou código (campo único de até 10.000 caracteres; os 3 arquivos somam ~20 mil). Enviado o link do repositório público: https://github.com/matheuscssouza/ong-plataforma-frontend
 Site no ar (GitHub Pages): https://matheuscssouza.github.io/ong-plataforma-frontend/
 
-- [ ] Link enviado na plataforma
+- [x] Link enviado na plataforma
 
 ### Questão: "Resultado da validação no W3C"
 Texto em [`docs/etapa-3-validacao-w3c.md`](docs/etapa-3-validacao-w3c.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
 
 ## Etapa 4 — Síntese e reflexão
 
