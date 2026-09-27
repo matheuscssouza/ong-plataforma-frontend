@@ -63,6 +63,11 @@ Entradas (Nome do campo / Código da validação ou máscara) em [`docs/etapa-3-
 
 - [x] 10 entradas enviadas: CPF, Telefone celular, CEP, Máscaras (CPF, telefone, CEP), CPF (dígitos verificadores), Nome completo, E-mail, Data de nascimento, Valor da doação, Tipo de apoio e LGPD
 
+### Questão: "Validações nativas e integridade dos dados"
+Texto em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md), seção "Validações nativas e integridade".
+
+- [ ] Texto colado na plataforma
+
 ## Etapa 4 — Síntese e reflexão
 
 _A definir._
