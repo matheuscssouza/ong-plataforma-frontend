@@ -61,7 +61,7 @@ Entradas (Nome do campo / Atributo type e justificativa) em [`docs/etapa-3-formu
 ### Questão: "Validações nativas e máscaras"
 Entradas (Nome do campo / Código da validação ou máscara) em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md).
 
-- [ ] Entradas adicionadas na plataforma
+- [x] 10 entradas enviadas: CPF, Telefone celular, CEP, Máscaras (CPF, telefone, CEP), CPF (dígitos verificadores), Nome completo, E-mail, Data de nascimento, Valor da doação, Tipo de apoio e LGPD
 
 ## Etapa 4 — Síntese e reflexão
 
