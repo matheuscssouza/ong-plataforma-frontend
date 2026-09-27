@@ -48,7 +48,10 @@ Texto em [`docs/etapa-2-projetos.md`](docs/etapa-2-projetos.md), seção "Organi
 
 ## Etapa 3 — Formulários interativos e cadastro
 
-_A definir._
+### Questão: "Criação do formulário de cadastro"
+Texto em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md).
+
+- [ ] Texto colado na plataforma
 
 ## Etapa 4 — Síntese e reflexão
 
