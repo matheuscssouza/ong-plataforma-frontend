@@ -24,7 +24,12 @@ Texto das respostas: [`docs/etapa-2-estrutura-semantica.md`](docs/etapa-2-estrut
 ### Questão: "Justificativa da hierarquia de títulos"
 Texto dissertativo em [`docs/etapa-2-estrutura-semantica.md`](docs/etapa-2-estrutura-semantica.md), seção "Justificativa".
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+### Questão: "Desenvolvimento da página inicial"
+Trecho de código em [`docs/etapa-2-pagina-inicial.md`](docs/etapa-2-pagina-inicial.md).
+
+- [ ] Trecho colado na plataforma
 - [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
 
 ## Etapa 3 — Formulários interativos e cadastro
