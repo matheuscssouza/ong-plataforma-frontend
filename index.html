@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&amp;family=Lora:ital,wght@0,400..700;1,400&amp;display=swap">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/menu.js" defer></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
@@ -22,10 +24,22 @@
       </picture>
       <span>Raízes do Amanhã</span>
     </a>
-    <nav aria-label="Navegação principal">
-      <ul class="menu">
+    <nav class="navegacao" aria-label="Navegação principal">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-botao-icone" aria-hidden="true"></span>
+        Menu
+      </button>
+      <ul class="menu" id="menu-principal">
         <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li class="menu-item-submenu">
+          <a href="projetos.html">Projetos</a>
+          <button class="submenu-botao" type="button" aria-expanded="false" aria-controls="submenu-projetos" aria-label="Submenu de Projetos"></button>
+          <ul class="submenu" id="submenu-projetos">
+            <li><a href="projetos.html#titulo-andamento">Projetos em andamento</a></li>
+            <li><a href="projetos.html#voluntariado">Seja voluntário</a></li>
+            <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+          </ul>
+        </li>
         <li><a href="cadastro.html">Cadastre-se</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
