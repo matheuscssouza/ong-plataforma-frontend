@@ -7,8 +7,8 @@ Checklist do que deve ser **anexado na plataforma da Cruzeiro do Sul** em cada e
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Estrutura semântica e páginas | 🔄 Em andamento | `entregas/etapa-2/` |
-| 3 | Formulários interativos e cadastro | ⏳ Pendente | `entregas/etapa-3/` |
+| 2 | Estrutura semântica e páginas | ✅ Concluída | `entregas/etapa-2/` |
+| 3 | Formulários interativos e cadastro | 🔄 Em andamento | `entregas/etapa-3/` |
 | 4 | Síntese e reflexão | ⏳ Pendente | `entregas/etapa-4/` |
 
 ---
@@ -43,8 +43,8 @@ Entradas do formulário "Adicionar tag semântica" em [`docs/etapa-2-projetos.md
 ### Questão: "Organização textual para contribuição e voluntariado"
 Texto em [`docs/etapa-2-projetos.md`](docs/etapa-2-projetos.md), seção "Organização textual".
 
-- [ ] Texto colado na plataforma
-- [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
+- [x] Texto colado na plataforma
+- [x] Etapa finalizada na plataforma (nenhum anexo solicitado)
 
 ## Etapa 3 — Formulários interativos e cadastro
 
