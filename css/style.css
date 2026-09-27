@@ -301,15 +301,25 @@ main > h1 {
   gap: var(--espaco-3);
 }
 
+/* Cartão em coluna flexível: cartões lado a lado têm a mesma altura (Grid)
+   e a última linha (link, prazo ou local) fica alinhada na base de todos */
 .cartao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
   padding: var(--espaco-4);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   background: var(--cor-superficie);
 }
 
-.cartao h3 {
-  margin-top: 0;
+/* Em flex as margens não colapsam: o espaço entre os itens vem só do gap */
+.cartao > * {
+  margin: 0;
+}
+
+.cartao > :last-child:nth-child(n + 3) {
+  margin-top: auto;
 }
 
 .numeros {
