@@ -128,6 +128,11 @@ Texto em [`docs/ep2-etapa-2-design-system.md`](docs/ep2-etapa-2-design-system.md
 
 - [x] Texto colado na plataforma
 
+### Questão: "Implementação de layouts com Grid"
+Texto em [`docs/ep2-etapa-2-grid.md`](docs/ep2-etapa-2-grid.md).
+
+- [ ] Texto colado na plataforma
+
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
 _Navegação desktop e mobile, cartões, feedback visual de formulários, modais e componentes auxiliares._
