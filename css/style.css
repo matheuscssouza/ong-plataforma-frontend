@@ -10,6 +10,9 @@
   --borda: #d7e0da;
   --raio: 10px;
   --largura: 68rem;
+  --fonte-titulos: "Fraunces", Georgia, serif;
+  --fonte-texto: "Lora", Georgia, serif;
+  --fonte-interface: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 /* ===== Base ===== */
@@ -21,7 +24,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--fonte-texto);
   line-height: 1.6;
   color: var(--texto);
   background: var(--fundo);
@@ -46,8 +49,19 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: var(--fonte-titulos);
   line-height: 1.25;
   color: var(--verde-escuro);
+}
+
+/* Menu, botões e campos usam fonte sem serifa, mais legível em textos curtos de interface */
+.marca,
+.menu,
+.botao,
+.pular-conteudo,
+.formulario label,
+.formulario legend {
+  font-family: var(--fonte-interface);
 }
 
 /* Link "pular para o conteúdo": visível só ao receber foco pelo teclado */
@@ -330,6 +344,7 @@ main > aside {
   border: 1px solid #9aa8a0;
   border-radius: 6px;
   font: inherit;
+  font-family: var(--fonte-interface);
   background: #fff;
 }
 
@@ -368,6 +383,7 @@ main > aside {
 
 .formulario button {
   font: inherit;
+  font-family: var(--fonte-interface);
   cursor: pointer;
 }
 
