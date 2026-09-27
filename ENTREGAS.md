@@ -126,7 +126,7 @@ Objetivos: variáveis customizadas; regras globais de cores, tipografia escaláv
 ### Questão: "Criação de um sistema de design"
 Texto em [`docs/ep2-etapa-2-design-system.md`](docs/ep2-etapa-2-design-system.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
 
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
