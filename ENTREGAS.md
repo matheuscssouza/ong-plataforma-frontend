@@ -76,7 +76,7 @@ Imagens usadas nas páginas, em dois formatos (WebP + PNG), copiadas para `entre
 ### Questão: "Estrutura de pastas"
 Entradas (Nome da pasta / Arquivos contidos) em [`docs/etapa-3-estrutura-pastas.md`](docs/etapa-3-estrutura-pastas.md).
 
-- [ ] Entradas adicionadas na plataforma
+- [x] Entradas adicionadas na plataforma (etapa finalizada; quantidade enviada não informada)
 
 ### Questão: "Código-fonte HTML consolidado"
 A plataforma aceita link ou código (campo único de até 10.000 caracteres; os 3 arquivos somam ~20 mil). Enviado o link do repositório público: https://github.com/matheuscssouza/ong-plataforma-frontend
