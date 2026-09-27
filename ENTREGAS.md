@@ -34,7 +34,12 @@ Trecho de código em [`docs/etapa-2-pagina-inicial.md`](docs/etapa-2-pagina-inic
 ### Questão: "Integração da imagem e atributo alt"
 Texto em [`docs/etapa-2-pagina-inicial.md`](docs/etapa-2-pagina-inicial.md), seção "Integração da imagem".
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+### Questão: "Desenvolvimento de projetos sociais"
+Entradas do formulário "Adicionar tag semântica" em [`docs/etapa-2-projetos.md`](docs/etapa-2-projetos.md).
+
+- [ ] 8 blocos adicionados no formulário
 - [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
 
 ## Etapa 3 — Formulários interativos e cadastro
