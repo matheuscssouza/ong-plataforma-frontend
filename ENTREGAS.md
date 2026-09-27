@@ -136,7 +136,12 @@ Texto em [`docs/ep2-etapa-2-grid.md`](docs/ep2-etapa-2-grid.md).
 ### Questão: "Os cinco breakpoints e a estratégia"
 Texto em [`docs/ep2-etapa-2-breakpoints.md`](docs/ep2-etapa-2-breakpoints.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+### Questão: "Construção de componentes com Flexbox"
+Entradas (Nome do componente / Propriedades Flexbox) em [`docs/ep2-etapa-2-flexbox.md`](docs/ep2-etapa-2-flexbox.md).
+
+- [ ] Entradas adicionadas na plataforma
 
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
