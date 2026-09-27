@@ -51,7 +51,16 @@
   /* --- Formas e medidas --- */
   --raio: 10px;
   --raio-pequeno: 6px;
+
+  /* --- Grid --- */
+  --colunas: 12;
   --largura: 68rem;
+
+  /* Breakpoints (mobile first; variáveis não funcionam dentro de @media,
+     por isso os valores ficam documentados aqui e repetidos nas consultas):
+     36rem (576px) celulares grandes · 48rem (768px) tablets
+     62rem (992px) notebooks · 75rem (1200px) desktops
+     90rem (1440px) desktops panorâmicos */
 }
 
 /* ===== Base ===== */
@@ -111,6 +120,32 @@ h4 {
   font-size: var(--tamanho-h4);
 }
 
+/* ===== Sistema de grid de 12 colunas =====
+   O main e os blocos internos dividem a largura em 12 colunas iguais.
+   No celular (base) cada item ocupa as 12; os breakpoints redistribuem. */
+main,
+.grade,
+.numeros,
+.institucional,
+.projeto,
+.formulario fieldset {
+  display: grid;
+  grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+  column-gap: var(--espaco-4);
+}
+
+main > *,
+.grade > *,
+.institucional > *,
+.projeto > *,
+.formulario fieldset > * {
+  grid-column: span 12;
+}
+
+.numeros > * {
+  grid-column: span 6;
+}
+
 /* Menu, botões e campos usam fonte sem serifa, mais legível em textos curtos de interface */
 .marca,
 .menu,
@@ -140,9 +175,8 @@ h4 {
 /* ===== Cabeçalho e navegação ===== */
 .cabecalho {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--espaco-3);
   padding: var(--espaco-3) max(var(--espaco-3), calc((100% - var(--largura)) / 2));
   background: var(--cor-superficie);
@@ -197,6 +231,11 @@ main > aside {
   margin-top: var(--espaco-6);
 }
 
+/* Itens do grid não somam margens colapsadas: o título encosta no parágrafo seguinte */
+main > h1 {
+  margin-bottom: 0;
+}
+
 .destaque {
   padding: var(--espaco-6) var(--espaco-4);
   border-radius: var(--raio);
@@ -239,9 +278,7 @@ main > aside {
 }
 
 .institucional {
-  display: grid;
-  grid-template-columns: minmax(0, 24rem) 1fr;
-  gap: var(--espaco-4);
+  row-gap: var(--espaco-3);
   align-items: center;
   margin-bottom: var(--espaco-4);
 }
@@ -261,8 +298,6 @@ main > aside {
 }
 
 .grade {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: var(--espaco-3);
 }
 
@@ -278,8 +313,6 @@ main > aside {
 }
 
 .numeros {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: var(--espaco-3);
   padding: 0;
   list-style: none;
@@ -312,9 +345,7 @@ main > aside {
 
 /* ===== Projetos ===== */
 .projeto {
-  display: grid;
-  grid-template-columns: minmax(0, 20rem) 1fr;
-  gap: var(--espaco-4);
+  row-gap: var(--espaco-3);
   align-items: start;
   padding: var(--espaco-4) 0;
   border-bottom: 1px solid var(--cor-borda);
@@ -349,9 +380,7 @@ main > aside {
 
 /* ===== Formulário de cadastro ===== */
 .formulario fieldset {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: var(--espaco-3) var(--espaco-4);
+  row-gap: var(--espaco-3);
   margin: 0 0 var(--espaco-4);
   padding: var(--espaco-4);
   border: 1px solid var(--cor-borda);
@@ -371,10 +400,6 @@ main > aside {
   gap: var(--espaco-2);
 }
 
-.campo-largo,
-.formulario .grupo-opcoes {
-  grid-column: 1 / -1;
-}
 
 .formulario .grupo-opcoes {
   display: flex;
@@ -471,15 +496,135 @@ main > aside {
   outline-color: var(--cor-secundaria);
 }
 
-/* ===== Telas pequenas ===== */
-@media (max-width: 40rem) {
-  .cabecalho {
-    flex-direction: column;
-    align-items: flex-start;
+/* ===== Breakpoints (mobile first) ===== */
+
+/* 1) Celulares grandes: cartões e campos em duas colunas */
+@media (min-width: 36rem) {
+  .grade > *,
+  .formulario .campo {
+    grid-column: span 6;
   }
 
-  .projeto,
-  .institucional {
-    grid-template-columns: 1fr;
+  .formulario .campo-largo {
+    grid-column: span 12;
+  }
+
+  /* Com número ímpar de cartões, o último ocupa a linha inteira */
+  .grade > :last-child:nth-child(odd) {
+    grid-column: span 12;
+  }
+}
+
+/* 2) Tablets: cabeçalho em linha e imagem ao lado do texto */
+@media (min-width: 48rem) {
+  .cabecalho {
+    display: grid;
+    grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+    align-items: center;
+  }
+
+  .marca {
+    grid-column: span 5;
+  }
+
+  .cabecalho nav {
+    grid-column: span 7;
+    justify-self: end;
+  }
+
+  .institucional > figure,
+  .projeto > figure {
+    grid-column: span 5;
+  }
+
+  .institucional > p,
+  .projeto > div {
+    grid-column: span 7;
+  }
+}
+
+/* 3) Notebooks: três cartões por linha, quatro números e quatro campos */
+@media (min-width: 62rem) {
+  .grade > *,
+  .grade > :last-child:nth-child(odd) {
+    grid-column: span 4;
+  }
+
+  /* Grupos com só dois cartões ocupam metade cada */
+  .grade:has(> :nth-child(2):last-child) > * {
+    grid-column: span 6;
+  }
+
+  .numeros > * {
+    grid-column: span 3;
+  }
+
+  .formulario .campo {
+    grid-column: span 3;
+  }
+
+  .formulario .campo-largo {
+    grid-column: span 6;
+  }
+
+  .projeto > figure {
+    grid-column: span 4;
+  }
+
+  .projeto > div {
+    grid-column: span 8;
+  }
+
+  .rodape {
+    display: grid;
+    grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+    column-gap: var(--espaco-4);
+  }
+
+  .rodape > h2,
+  .rodape > address {
+    grid-column: 1 / span 6;
+  }
+
+  .rodape > p {
+    grid-column: 7 / span 6;
+    grid-row: 1 / span 2;
+    align-self: end;
+    text-align: right;
+  }
+}
+
+/* 4) Desktops: texto de destaque limitado a 8 colunas para linhas legíveis */
+@media (min-width: 75rem) {
+  main {
+    padding-top: var(--espaco-6);
+  }
+
+  .destaque {
+    display: grid;
+    grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+    gap: var(--espaco-3) var(--espaco-4);
+    padding: var(--espaco-6);
+  }
+
+  .destaque > * {
+    grid-column: span 8;
+    margin: 0;
+  }
+
+  .institucional > figure {
+    grid-column: span 4;
+  }
+
+  .institucional > p {
+    grid-column: span 8;
+  }
+}
+
+/* 5) Desktops panorâmicos: container mais largo e texto-base maior */
+@media (min-width: 90rem) {
+  :root {
+    --largura: 80rem;
+    --tamanho-corpo: 1.0625rem;
   }
 }
