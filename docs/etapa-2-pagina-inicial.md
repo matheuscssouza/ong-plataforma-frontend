@@ -36,3 +36,9 @@ Trecho principal de `index.html` com as seções institucionais de apresentaçã
     <p><small>&copy; <time datetime="2026">2026</time> Instituto Raízes do Amanhã. Organização fictícia criada para fins acadêmicos.</small></p>
   </footer>
 ```
+
+## Integração da imagem e estratégia do atributo `alt`
+
+Integrei a imagem na seção "Quem somos", dentro de um `<figure>` com `<figcaption>`, o que liga a ilustração à sua legenda. A tag `<img>` tem src apontando para a pasta img/ e os atributos width e height, que reservam o espaço e evitam que o layout "pule" durante o carregamento. No CSS, max-width: 100% e height: auto deixam a imagem responsiva, e em telas pequenas ela fica acima do texto.
+
+No alt, adotei duas estratégias. A imagem informativa recebeu uma descrição objetiva: "Ilustração de três voluntários lado a lado diante de uma horta comunitária". Evitei "imagem de", pois o leitor de tela já anuncia o elemento como imagem. Já a logo do cabeçalho tem `alt=""` porque o nome da ONG aparece em texto logo ao lado, e repeti-lo faria o leitor de tela falar duas vezes a mesma coisa. Assim, quem não enxerga a imagem recebe a mesma informação sem ruído, atendendo à WCAG 1.1.1 (conteúdo não textual).

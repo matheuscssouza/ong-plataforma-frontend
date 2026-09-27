@@ -29,7 +29,12 @@ Texto dissertativo em [`docs/etapa-2-estrutura-semantica.md`](docs/etapa-2-estru
 ### Questão: "Desenvolvimento da página inicial"
 Trecho de código em [`docs/etapa-2-pagina-inicial.md`](docs/etapa-2-pagina-inicial.md).
 
-- [ ] Trecho colado na plataforma
+- [x] Trecho colado na plataforma
+
+### Questão: "Integração da imagem e atributo alt"
+Texto em [`docs/etapa-2-pagina-inicial.md`](docs/etapa-2-pagina-inicial.md), seção "Integração da imagem".
+
+- [ ] Texto colado na plataforma
 - [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
 
 ## Etapa 3 — Formulários interativos e cadastro
