@@ -1,18 +1,57 @@
-/* ===== Variáveis de tema ===== */
+/* =========================================================
+   Design system — Instituto Raízes do Amanhã
+   Todas as cores, tamanhos de texto e espaçamentos do site
+   vêm destas variáveis; nenhum valor visual é repetido solto.
+   ========================================================= */
 :root {
-  --verde: #1f6f4a;
-  --verde-escuro: #154d33;
-  --verde-claro: #e8f5e1;
-  --amarelo: #f4b942;
-  --texto: #1d2521;
-  --texto-suave: #4a564f;
-  --fundo: #fdfdfb;
-  --borda: #d7e0da;
-  --raio: 10px;
-  --largura: 68rem;
+  /* --- Cores primárias (identidade: verde da natureza e do cuidado) --- */
+  --cor-primaria: #1f6f4a;
+  --cor-primaria-escura: #154d33;
+  --cor-primaria-clara: #e8f5e1;
+
+  /* --- Cores secundárias (destaque: amarelo do sol e da esperança) --- */
+  --cor-secundaria: #f4b942;
+  --cor-secundaria-clara: #fff8e6;
+
+  /* --- Cores neutras --- */
+  --cor-texto: #1d2521;
+  --cor-texto-suave: #4a564f;
+  --cor-borda: #d7e0da;
+  --cor-borda-campo: #7a8a81;
+  --cor-fundo: #fdfdfb;
+  --cor-superficie: #ffffff;
+
+  /* --- Cores de feedback --- */
+  --cor-erro: #b3261e;
+  --cor-erro-clara: #fdf1f0;
+
+  /* --- Tipografia: famílias --- */
   --fonte-titulos: "Fraunces", Georgia, serif;
   --fonte-texto: "Lora", Georgia, serif;
   --fonte-interface: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* --- Tipografia: escala modular de razão 1,25 (terça maior), base 16px --- */
+  --tamanho-legenda: 0.875rem;                             /* 14px */
+  --tamanho-corpo: 1rem;                                   /* 16px */
+  --tamanho-h4: 1.25rem;                                   /* 20px */
+  --tamanho-h3: 1.5625rem;                                 /* 25px */
+  --tamanho-h2: 1.953rem;                                  /* 31px */
+  --tamanho-h1: clamp(2rem, 1.5rem + 2.5vw, 2.441rem);     /* 32px a 39px */
+  --altura-linha-texto: 1.6;
+  --altura-linha-titulo: 1.25;
+
+  /* --- Espaçamentos: escala modular com base de 8px (e meio passo de 4px) --- */
+  --espaco-1: 0.25rem;   /* 4px */
+  --espaco-2: 0.5rem;    /* 8px */
+  --espaco-3: 1rem;      /* 16px */
+  --espaco-4: 1.5rem;    /* 24px */
+  --espaco-5: 2rem;      /* 32px */
+  --espaco-6: 3rem;      /* 48px */
+
+  /* --- Formas e medidas --- */
+  --raio: 10px;
+  --raio-pequeno: 6px;
+  --largura: 68rem;
 }
 
 /* ===== Base ===== */
@@ -25,9 +64,10 @@
 body {
   margin: 0;
   font-family: var(--fonte-texto);
-  line-height: 1.6;
-  color: var(--texto);
-  background: var(--fundo);
+  font-size: var(--tamanho-corpo);
+  line-height: var(--altura-linha-texto);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
 }
 
 img {
@@ -36,12 +76,13 @@ img {
 }
 
 a {
-  color: var(--verde);
+  color: var(--cor-primaria);
 }
 
+/* Foco escuro: contraste alto sobre fundos claros */
 a:focus-visible,
 .botao:focus-visible {
-  outline: 3px solid var(--amarelo);
+  outline: 3px solid var(--cor-primaria-escura);
   outline-offset: 2px;
 }
 
@@ -50,8 +91,24 @@ h2,
 h3,
 h4 {
   font-family: var(--fonte-titulos);
-  line-height: 1.25;
-  color: var(--verde-escuro);
+  line-height: var(--altura-linha-titulo);
+  color: var(--cor-primaria-escura);
+}
+
+h1 {
+  font-size: var(--tamanho-h1);
+}
+
+h2 {
+  font-size: var(--tamanho-h2);
+}
+
+h3 {
+  font-size: var(--tamanho-h3);
+}
+
+h4 {
+  font-size: var(--tamanho-h4);
 }
 
 /* Menu, botões e campos usam fonte sem serifa, mais legível em textos curtos de interface */
@@ -67,17 +124,17 @@ h4 {
 /* Link "pular para o conteúdo": visível só ao receber foco pelo teclado */
 .pular-conteudo {
   position: absolute;
-  left: 1rem;
-  top: -3rem;
-  padding: .5rem 1rem;
-  background: var(--verde-escuro);
-  color: #fff;
+  left: var(--espaco-3);
+  top: calc(-1 * var(--espaco-6));
+  padding: var(--espaco-2) var(--espaco-3);
+  background: var(--cor-primaria-escura);
+  color: var(--cor-superficie);
   border-radius: var(--raio);
   z-index: 10;
 }
 
 .pular-conteudo:focus {
-  top: 1rem;
+  top: var(--espaco-3);
 }
 
 /* ===== Cabeçalho e navegação ===== */
@@ -86,26 +143,26 @@ h4 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem max(1rem, calc((100% - var(--largura)) / 2));
-  background: #fff;
-  border-bottom: 1px solid var(--borda);
+  gap: var(--espaco-3);
+  padding: var(--espaco-3) max(var(--espaco-3), calc((100% - var(--largura)) / 2));
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
 }
 
 .marca {
   display: flex;
   align-items: center;
-  gap: .6rem;
+  gap: var(--espaco-2);
   font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--verde-escuro);
+  font-size: var(--tamanho-h4);
+  color: var(--cor-primaria-escura);
   text-decoration: none;
 }
 
 .menu {
   display: flex;
   flex-wrap: wrap;
-  gap: .25rem;
+  gap: var(--espaco-1);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -113,80 +170,80 @@ h4 {
 
 .menu a {
   display: block;
-  padding: .5rem .9rem;
+  padding: var(--espaco-2) var(--espaco-3);
   border-radius: var(--raio);
   text-decoration: none;
   font-weight: 600;
 }
 
 .menu a:hover {
-  background: var(--verde-claro);
+  background: var(--cor-primaria-clara);
 }
 
 .menu a[aria-current="page"] {
-  background: var(--verde);
-  color: #fff;
+  background: var(--cor-primaria);
+  color: var(--cor-superficie);
 }
 
 /* ===== Conteúdo principal ===== */
 main {
   max-width: var(--largura);
   margin: 0 auto;
-  padding: 2rem 1rem 3rem;
+  padding: var(--espaco-5) var(--espaco-3) var(--espaco-6);
 }
 
 main > section,
 main > aside {
-  margin-top: 2.5rem;
+  margin-top: var(--espaco-6);
 }
 
 .destaque {
-  padding: 2.5rem 1.5rem;
+  padding: var(--espaco-6) var(--espaco-4);
   border-radius: var(--raio);
-  background: var(--verde-claro);
+  background: var(--cor-primaria-clara);
 }
 
 .destaque h1 {
   margin-top: 0;
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
 }
 
 .acoes {
   display: flex;
   flex-wrap: wrap;
-  gap: .75rem;
+  gap: var(--espaco-3);
 }
 
 .botao {
   display: inline-block;
-  padding: .7rem 1.3rem;
+  padding: var(--espaco-3) var(--espaco-4);
   border-radius: var(--raio);
-  background: var(--verde);
-  color: #fff;
+  background: var(--cor-primaria);
+  color: var(--cor-superficie);
   font-weight: 600;
+  line-height: 1;
   text-decoration: none;
 }
 
 .botao:hover {
-  background: var(--verde-escuro);
+  background: var(--cor-primaria-escura);
 }
 
 .botao-secundario {
-  background: #fff;
-  color: var(--verde-escuro);
-  border: 2px solid var(--verde);
+  background: var(--cor-superficie);
+  color: var(--cor-primaria-escura);
+  border: 2px solid var(--cor-primaria);
 }
 
 .botao-secundario:hover {
-  background: var(--verde-claro);
+  background: var(--cor-primaria-clara);
 }
 
 .institucional {
   display: grid;
   grid-template-columns: minmax(0, 24rem) 1fr;
-  gap: 1.5rem;
+  gap: var(--espaco-4);
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--espaco-4);
 }
 
 .institucional figure {
@@ -199,21 +256,21 @@ main > aside {
 }
 
 .institucional figcaption {
-  font-size: .875rem;
-  color: var(--texto-suave);
+  font-size: var(--tamanho-legenda);
+  color: var(--cor-texto-suave);
 }
 
 .grade {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1rem;
+  gap: var(--espaco-3);
 }
 
 .cartao {
-  padding: 1.25rem;
-  border: 1px solid var(--borda);
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
-  background: #fff;
+  background: var(--cor-superficie);
 }
 
 .cartao h3 {
@@ -223,44 +280,44 @@ main > aside {
 .numeros {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  gap: 1rem;
+  gap: var(--espaco-3);
   padding: 0;
   list-style: none;
 }
 
 .numeros li {
-  padding: 1rem;
-  border-left: 4px solid var(--amarelo);
-  background: #fff;
-  color: var(--texto-suave);
+  padding: var(--espaco-3);
+  border-left: 4px solid var(--cor-secundaria);
+  background: var(--cor-superficie);
+  color: var(--cor-texto-suave);
 }
 
 .numeros strong {
   display: block;
-  font-size: 1.8rem;
-  color: var(--verde-escuro);
+  font-size: var(--tamanho-h2);
+  color: var(--cor-primaria-escura);
 }
 
 .aviso {
-  padding: 1.25rem 1.5rem;
-  border-left: 5px solid var(--amarelo);
+  padding: var(--espaco-4);
+  border-left: 5px solid var(--cor-secundaria);
   border-radius: var(--raio);
-  background: #fff8e6;
+  background: var(--cor-secundaria-clara);
 }
 
 .aviso h2 {
   margin-top: 0;
-  font-size: 1.25rem;
+  font-size: var(--tamanho-h4);
 }
 
 /* ===== Projetos ===== */
 .projeto {
   display: grid;
   grid-template-columns: minmax(0, 20rem) 1fr;
-  gap: 1.5rem;
+  gap: var(--espaco-4);
   align-items: start;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--borda);
+  padding: var(--espaco-4) 0;
+  border-bottom: 1px solid var(--cor-borda);
 }
 
 .projeto figure {
@@ -268,8 +325,8 @@ main > aside {
 }
 
 .projeto figcaption {
-  font-size: .875rem;
-  color: var(--texto-suave);
+  font-size: var(--tamanho-legenda);
+  color: var(--cor-texto-suave);
 }
 
 .projeto h3 {
@@ -279,7 +336,7 @@ main > aside {
 .ficha {
   display: grid;
   grid-template-columns: max-content 1fr;
-  gap: .25rem 1rem;
+  gap: var(--espaco-1) var(--espaco-3);
 }
 
 .ficha dt {
@@ -294,24 +351,24 @@ main > aside {
 .formulario fieldset {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem 1.25rem;
-  margin: 0 0 1.5rem;
-  padding: 1.25rem;
-  border: 1px solid var(--borda);
+  gap: var(--espaco-3) var(--espaco-4);
+  margin: 0 0 var(--espaco-4);
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
-  background: #fff;
+  background: var(--cor-superficie);
 }
 
 .formulario legend {
-  padding: 0 .4rem;
+  padding: 0 var(--espaco-2);
   font-weight: 700;
-  color: var(--verde-escuro);
+  color: var(--cor-primaria-escura);
 }
 
 .campo {
   display: flex;
   flex-direction: column;
-  gap: .3rem;
+  gap: var(--espaco-2);
 }
 
 .campo-largo,
@@ -322,7 +379,7 @@ main > aside {
 .formulario .grupo-opcoes {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem 1.5rem;
+  gap: var(--espaco-2) var(--espaco-4);
   margin: 0;
   border-style: dashed;
 }
@@ -340,45 +397,46 @@ main > aside {
 .formulario select,
 .formulario textarea {
   width: 100%;
-  padding: .6rem .75rem;
-  border: 1px solid #9aa8a0;
-  border-radius: 6px;
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-borda-campo);
+  border-radius: var(--raio-pequeno);
   font: inherit;
   font-family: var(--fonte-interface);
-  background: #fff;
+  background: var(--cor-superficie);
 }
 
 .formulario input:focus-visible,
 .formulario select:focus-visible,
 .formulario textarea:focus-visible {
-  outline: 3px solid var(--amarelo);
+  outline: 3px solid var(--cor-primaria-escura);
   outline-offset: 1px;
 }
 
 .formulario small {
-  color: var(--texto-suave);
+  font-size: var(--tamanho-legenda);
+  color: var(--cor-texto-suave);
 }
 
 .formulario abbr {
-  color: #b3261e;
+  color: var(--cor-erro);
   text-decoration: none;
 }
 
 /* Destaca o erro só depois que a pessoa interagiu com o campo */
 .formulario :user-invalid {
-  border-color: #b3261e;
-  background: #fdf1f0;
+  border-color: var(--cor-erro);
+  background: var(--cor-erro-clara);
 }
 
 .consentimento {
   display: flex;
-  gap: .6rem;
+  gap: var(--espaco-2);
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: var(--espaco-3);
 }
 
 .consentimento input {
-  margin-top: .35rem;
+  margin-top: var(--espaco-1);
 }
 
 .formulario button {
@@ -389,15 +447,15 @@ main > aside {
 
 /* ===== Rodapé ===== */
 .rodape {
-  padding: 2rem max(1rem, calc((100% - var(--largura)) / 2));
-  background: var(--verde-escuro);
-  color: #fff;
+  padding: var(--espaco-5) max(var(--espaco-3), calc((100% - var(--largura)) / 2));
+  background: var(--cor-primaria-escura);
+  color: var(--cor-superficie);
 }
 
 .rodape h2 {
   margin-top: 0;
-  font-size: 1.25rem;
-  color: #fff;
+  font-size: var(--tamanho-h4);
+  color: var(--cor-superficie);
 }
 
 .rodape address {
@@ -405,7 +463,12 @@ main > aside {
 }
 
 .rodape a {
-  color: #fff;
+  color: var(--cor-superficie);
+}
+
+/* No fundo escuro, o foco usa o amarelo secundário */
+.rodape a:focus-visible {
+  outline-color: var(--cor-secundaria);
 }
 
 /* ===== Telas pequenas ===== */
