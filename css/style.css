@@ -1,0 +1,282 @@
+/* ===== Variáveis de tema ===== */
+:root {
+  --verde: #1f6f4a;
+  --verde-escuro: #154d33;
+  --verde-claro: #e8f5e1;
+  --amarelo: #f4b942;
+  --texto: #1d2521;
+  --texto-suave: #4a564f;
+  --fundo: #fdfdfb;
+  --borda: #d7e0da;
+  --raio: 10px;
+  --largura: 68rem;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--verde);
+}
+
+a:focus-visible,
+.botao:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  color: var(--verde-escuro);
+}
+
+/* Link "pular para o conteúdo": visível só ao receber foco pelo teclado */
+.pular-conteudo {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: .5rem 1rem;
+  background: var(--verde-escuro);
+  color: #fff;
+  border-radius: var(--raio);
+  z-index: 10;
+}
+
+.pular-conteudo:focus {
+  top: 1rem;
+}
+
+/* ===== Cabeçalho e navegação ===== */
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem max(1rem, calc((100% - var(--largura)) / 2));
+  background: #fff;
+  border-bottom: 1px solid var(--borda);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--verde-escuro);
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: .5rem .9rem;
+  border-radius: var(--raio);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  background: var(--verde-claro);
+}
+
+.menu a[aria-current="page"] {
+  background: var(--verde);
+  color: #fff;
+}
+
+/* ===== Conteúdo principal ===== */
+main {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+main > section,
+main > aside {
+  margin-top: 2.5rem;
+}
+
+.destaque {
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--raio);
+  background: var(--verde-claro);
+}
+
+.destaque h1 {
+  margin-top: 0;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.botao {
+  display: inline-block;
+  padding: .7rem 1.3rem;
+  border-radius: var(--raio);
+  background: var(--verde);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.botao:hover {
+  background: var(--verde-escuro);
+}
+
+.botao-secundario {
+  background: #fff;
+  color: var(--verde-escuro);
+  border: 2px solid var(--verde);
+}
+
+.botao-secundario:hover {
+  background: var(--verde-claro);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.cartao {
+  padding: 1.25rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: #fff;
+}
+
+.cartao h3 {
+  margin-top: 0;
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.numeros li {
+  padding: 1rem;
+  border-left: 4px solid var(--amarelo);
+  background: #fff;
+  color: var(--texto-suave);
+}
+
+.numeros strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--verde-escuro);
+}
+
+.aviso {
+  padding: 1.25rem 1.5rem;
+  border-left: 5px solid var(--amarelo);
+  border-radius: var(--raio);
+  background: #fff8e6;
+}
+
+.aviso h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+/* ===== Projetos ===== */
+.projeto {
+  display: grid;
+  grid-template-columns: minmax(0, 20rem) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.projeto figure {
+  margin: 0;
+}
+
+.projeto figcaption {
+  font-size: .875rem;
+  color: var(--texto-suave);
+}
+
+.projeto h3 {
+  margin-top: 0;
+}
+
+.ficha {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: .25rem 1rem;
+}
+
+.ficha dt {
+  font-weight: 600;
+}
+
+.ficha dd {
+  margin: 0;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  padding: 2rem max(1rem, calc((100% - var(--largura)) / 2));
+  background: var(--verde-escuro);
+  color: #fff;
+}
+
+.rodape address {
+  font-style: normal;
+}
+
+.rodape a {
+  color: #fff;
+}
+
+/* ===== Telas pequenas ===== */
+@media (max-width: 40rem) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .projeto {
+    grid-template-columns: 1fr;
+  }
+}
