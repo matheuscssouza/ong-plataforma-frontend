@@ -9,7 +9,7 @@ Checklist do que deve ser **anexado na plataforma da Cruzeiro do Sul** em cada e
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Estrutura semântica e páginas | ✅ Concluída | `entregas/etapa-2/` |
 | 3 | Formulários interativos e cadastro | ✅ Concluída | `entregas/etapa-3/` |
-| 4 | Síntese e reflexão | 🔄 Em andamento | `entregas/etapa-4/` |
+| 4 | Síntese e reflexão | ✅ Concluída | `entregas/etapa-4/` |
 
 ---
 
@@ -94,4 +94,6 @@ Texto em [`docs/etapa-3-validacao-w3c.md`](docs/etapa-3-validacao-w3c.md).
 ### Questão: "Reflexão sobre a aprendizagem"
 Texto em [`docs/etapa-4-reflexao.md`](docs/etapa-4-reflexao.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+✅ **Experiência Prática I concluída.**
