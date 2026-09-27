@@ -14,6 +14,8 @@ Cada campo tem um `<label>` cujo atributo for aponta para o id do input. Assim, 
 
 ## Campos e justificativa do atributo `type`
 
+Enviadas na plataforma as 10 primeiras entradas (limite de 10); "Consentimento LGPD" ficou apenas neste registro.
+
 | Nome do campo | Atributo type e justificativa |
 |---|---|
 | E-mail | type="email": o navegador exige o formato nome@dominio e o celular mostra teclado com @ e ponto. |

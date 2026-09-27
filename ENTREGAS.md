@@ -56,7 +56,7 @@ Texto em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md).
 ### Questão: "Campos e atributos type"
 Entradas (Nome do campo / Atributo type e justificativa) em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md).
 
-- [ ] Entradas adicionadas na plataforma
+- [x] 10 entradas enviadas (limite da plataforma): E-mail, Data de nascimento, Telefone celular, CPF, Valor da doação, Nome completo, CEP, Logradouro/bairro/cidade, Tipo de apoio, Projetos de interesse — ficou de fora: Consentimento LGPD
 
 ## Etapa 4 — Síntese e reflexão
 
