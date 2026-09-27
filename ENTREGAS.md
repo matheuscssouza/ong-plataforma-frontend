@@ -15,9 +15,12 @@ Checklist do que deve ser **anexado na plataforma da Cruzeiro do Sul** em cada e
 
 ## Etapa 2 — Estrutura semântica e páginas
 
-_A definir conforme o enunciado da questão._
+### Questão: "Estrutura semântica e hierarquia"
+Resposta preenchida no formulário **"Adicionar tag semântica"** da plataforma (uma entrada por tag).
+Texto das respostas: [`docs/etapa-2-estrutura-semantica.md`](docs/etapa-2-estrutura-semantica.md).
 
-- [ ] …
+- [ ] 10 tags adicionadas no formulário (header, nav, main, section, article, aside, footer, h1–h4, figure/figcaption, address)
+- [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
 
 ## Etapa 3 — Formulários interativos e cadastro
 
