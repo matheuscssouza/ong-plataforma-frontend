@@ -71,7 +71,7 @@ Texto em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md), seção "Va
 ### Questão: "Organização e validação de conformidade — envio de assets"
 Imagens usadas nas páginas, em dois formatos (WebP + PNG), copiadas para `entregas/etapa-3/imagens/`.
 
-- [ ] Imagens anexadas na plataforma
+- [x] Imagens anexadas: os 5 PNG (logo, voluntarios, projeto-horta, projeto-reforco, projeto-digital); a plataforma aceitou PNG
 
 ## Etapa 4 — Síntese e reflexão
 
