@@ -2,13 +2,13 @@
 
 ## Blocos informativos de `projetos.html`
 
-| Tag | Propósito ou conteúdo abrigado |
+| Nome do bloco | Tags e estrutura utilizada |
 |---|---|
-| `header e nav` | Cabeçalho com a logo e o menu principal; aria-current marca Projetos como página atual e o link Contato leva ao rodapé. |
-| `main e h1` | Introdução: título "Projetos sociais" e parágrafo que apresenta as frentes de atuação da ONG. |
-| `section (projetos)` | Bloco "Projetos em andamento": agrupa sob um h2 os três projetos sociais da ONG. |
-| `article` | Cada projeto (Horta, Reforço Escolar, Inclusão Digital) com h3, figure/figcaption com alt e ficha dl de público e horários. |
-| `section (voluntariado)` | Bloco "Seja voluntário" (#voluntariado): h3 de áreas de atuação em ul e h3 com os passos para participar em ol. |
-| `section (doações)` | Bloco "Campanhas de doação" (#doacoes): três article em cartões, Doação mensal, Material Escolar e Doe um computador. |
-| `aside` | Conteúdo complementar "Resultados de 2025", com as horas de trabalho voluntário somadas pelos projetos. |
-| `footer e address` | Rodapé com título Contato e os dados da ONG em address: endereço, e-mail e telefone. |
+| Cabeçalho e menu | <header> com logo em <a> e <nav> com lista <ul>/<li> de links; aria-current marca a página atual. |
+| Introdução | Dentro do <main>: <h1> "Projetos sociais" seguido de <p> apresentando as frentes de atuação. |
+| Projetos em andamento | <section> com <h2>, agrupando três <article> (um por projeto). |
+| Fichas dos projetos | Cada <article> tem <h3>, <figure> com <img alt> e <figcaption>, <p>, <h4> e lista <dl>/<dt>/<dd> com <time>. |
+| Seja voluntário | <section id="voluntariado"> com <h2>, <p>, <h3> + <ul> (áreas) e <h3> + <ol> (passos com link ao cadastro). |
+| Campanhas de doação | <section id="doacoes"> com <h2>, <p> e três <article> em cartões, cada um com <h3>, <p> e link ou <time>. |
+| Resultados de 2025 | <aside> com <h2> e <p>: conteúdo complementar ao principal. |
+| Contato | <footer> com <h2> e <address> contendo endereço, links mailto: e tel:, mais <small> com direitos autorais. |
