@@ -1,0 +1,27 @@
+# --- Segredos / credenciais (nunca versionar) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials*.json
+
+# --- Pasta local de entregas da faculdade (cópias, fora do Git) ---
+entregas/
+
+# --- Sistema operacional ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editores / ferramentas ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Dependências / builds (caso sejam usados no futuro) ---
+node_modules/
+dist/
+*.log
