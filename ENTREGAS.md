@@ -58,6 +58,11 @@ Entradas (Nome do campo / Atributo type e justificativa) em [`docs/etapa-3-formu
 
 - [x] 10 entradas enviadas (limite da plataforma): E-mail, Data de nascimento, Telefone celular, CPF, Valor da doação, Nome completo, CEP, Logradouro/bairro/cidade, Tipo de apoio, Projetos de interesse — ficou de fora: Consentimento LGPD
 
+### Questão: "Validações nativas e máscaras"
+Entradas (Nome do campo / Código da validação ou máscara) em [`docs/etapa-3-formulario.md`](docs/etapa-3-formulario.md).
+
+- [ ] Entradas adicionadas na plataforma
+
 ## Etapa 4 — Síntese e reflexão
 
 _A definir._

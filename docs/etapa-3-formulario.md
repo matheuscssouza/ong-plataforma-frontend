@@ -31,3 +31,18 @@ Enviadas na plataforma as 10 primeiras entradas (limite de 10); "Consentimento L
 | Consentimento LGPD | type="checkbox": uma única caixa que registra a autorização explícita da pessoa. |
 
 Estado, disponibilidade e mensagem não usam `type`: são `<select>` (lista fechada de opções) e `<textarea>` (texto longo).
+
+## Validações nativas e máscaras
+
+| Nome do campo | Código da validação ou máscara aplicada |
+|---|---|
+| CPF | `pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required maxlength="14" title="Formato: 000.000.000-00"` |
+| Telefone celular | `pattern="\(\d{2}\) \d{5}-\d{4}" required maxlength="15" title="Formato: (00) 00000-0000"` |
+| CEP | `pattern="\d{5}-\d{3}" required maxlength="9" title="Formato: 00000-000"` |
+| Máscaras (CPF, telefone, CEP) | `JS no evento input: cpf.value = mascaraCpf(cpf.value), que insere pontos e hífen enquanto a pessoa digita` |
+| CPF (dígitos verificadores) | `cpf.setCustomValidity(cpfValido(cpf.value) ? '' : 'CPF inválido') bloqueia o envio de CPF com dígito errado` |
+| Nome completo | `required minlength="3" maxlength="100" pattern="[A-Za-zÀ-ÿ' ]+" title="Use apenas letras e espaços."` |
+| E-mail | `type="email" required maxlength="120"` |
+| Data de nascimento | `type="date" required min="1920-01-01" max="2010-12-31" (o JS ajusta o max para 16 anos atrás)` |
+| Valor da doação | `type="number" min="10" max="10000" step="5"` |
+| Tipo de apoio e LGPD | `required no radio (uma opção obrigatória) e required no checkbox de consentimento` |
