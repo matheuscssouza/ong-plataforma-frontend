@@ -115,13 +115,13 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Design system e estruturação responsiva | ⏳ Pendente | `entregas/ep2-etapa-2/` |
+| 2 | Design system e estruturação responsiva | 🔄 Em andamento | `entregas/ep2-etapa-2/` |
 | 3 | Componentes visuais e navegação | ⏳ Pendente | `entregas/ep2-etapa-3/` |
 | 4 | Síntese e reflexão | ⏳ Pendente | `entregas/ep2-etapa-4/` |
 
 ## EP2 · Etapa 2 — Design system e estruturação responsiva
 
-_Variáveis CSS, paleta de cores, tipografia, grandes blocos com CSS Grid e componentes internos com Flexbox._
+Objetivos: variáveis customizadas; regras globais de cores, tipografia escalável e espaçamentos modulares; layout macro com Grid de 12 colunas e breakpoints estritos; Flexbox para alinhamentos e componentes internos.
 
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
