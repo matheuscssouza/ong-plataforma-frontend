@@ -276,6 +276,86 @@ main > aside {
   margin: 0;
 }
 
+/* ===== Formulário de cadastro ===== */
+.formulario fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem 1.25rem;
+  margin: 0 0 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: #fff;
+}
+
+.formulario legend {
+  padding: 0 .4rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.campo-largo,
+.formulario .grupo-opcoes {
+  grid-column: 1 / -1;
+}
+
+.formulario .grupo-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  margin: 0;
+  border-style: dashed;
+}
+
+.formulario label {
+  font-weight: 600;
+}
+
+.grupo-opcoes label,
+.consentimento label {
+  font-weight: 400;
+}
+
+.formulario input:not([type="radio"], [type="checkbox"]),
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: .6rem .75rem;
+  border: 1px solid #9aa8a0;
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+}
+
+.formulario input:focus-visible,
+.formulario select:focus-visible,
+.formulario textarea:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 1px;
+}
+
+.consentimento {
+  display: flex;
+  gap: .6rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.consentimento input {
+  margin-top: .35rem;
+}
+
+.formulario button {
+  font: inherit;
+  cursor: pointer;
+}
+
 /* ===== Rodapé ===== */
 .rodape {
   padding: 2rem max(1rem, calc((100% - var(--largura)) / 2));
