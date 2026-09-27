@@ -115,8 +115,8 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Design system e estruturação responsiva | 🔄 Em andamento | `entregas/ep2-etapa-2/` |
-| 3 | Componentes visuais e navegação | ⏳ Pendente | `entregas/ep2-etapa-3/` |
+| 2 | Design system e estruturação responsiva | ✅ Concluída | `entregas/ep2-etapa-2/` |
+| 3 | Componentes visuais e navegação | 🔄 Em andamento | `entregas/ep2-etapa-3/` |
 | 4 | Síntese e reflexão | ⏳ Pendente | `entregas/ep2-etapa-4/` |
 
 ## EP2 · Etapa 2 — Design system e estruturação responsiva
@@ -145,7 +145,7 @@ Entradas (Nome do componente / Propriedades Flexbox) em [`docs/ep2-etapa-2-flexb
 
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
-_Navegação desktop e mobile, cartões, feedback visual de formulários, modais e componentes auxiliares._
+Objetivos: menu principal responsivo com dropdown e hambúrguer no mobile; cards modulares interativos e acessíveis; estilos de formulários e botões com validação visual e pseudo-classes; modais de informação e alertas contextuais.
 
 ## EP2 · Etapa 4 — Síntese e reflexão
 
