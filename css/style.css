@@ -340,6 +340,21 @@ main > aside {
   outline-offset: 1px;
 }
 
+.formulario small {
+  color: var(--texto-suave);
+}
+
+.formulario abbr {
+  color: #b3261e;
+  text-decoration: none;
+}
+
+/* Destaca o erro só depois que a pessoa interagiu com o campo */
+.formulario :user-invalid {
+  border-color: #b3261e;
+  background: #fdf1f0;
+}
+
 .consentimento {
   display: flex;
   gap: .6rem;
