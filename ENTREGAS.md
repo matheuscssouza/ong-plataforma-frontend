@@ -80,6 +80,7 @@ Entradas (Nome da pasta / Arquivos contidos) em [`docs/etapa-3-estrutura-pastas.
 
 ### Questão: "Código-fonte HTML consolidado"
 A plataforma aceita link ou código (campo único de até 10.000 caracteres; os 3 arquivos somam ~20 mil). Enviado o link do repositório público: https://github.com/matheuscssouza/ong-plataforma-frontend
+Site no ar (GitHub Pages): https://matheuscssouza.github.io/ong-plataforma-frontend/
 
 - [ ] Link enviado na plataforma
 
