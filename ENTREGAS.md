@@ -110,5 +110,22 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 
 > Cópias dos arquivos a enviar ficam em `entregas/ep2-etapa-N/`; o fim de cada etapa é marcado com a tag `ep2-etapa-N`.
 
-_Etapas a registrar conforme as questões chegarem._
+| Etapa | Nome | Status | Pasta local |
+|---|---|---|---|
+| 1 | Início da experiência prática | ✅ Concluída | — |
+| 2 | Design system e estruturação responsiva | ⏳ Pendente | `entregas/ep2-etapa-2/` |
+| 3 | Componentes visuais e navegação | ⏳ Pendente | `entregas/ep2-etapa-3/` |
+| 4 | Síntese e reflexão | ⏳ Pendente | `entregas/ep2-etapa-4/` |
+
+## EP2 · Etapa 2 — Design system e estruturação responsiva
+
+_Variáveis CSS, paleta de cores, tipografia, grandes blocos com CSS Grid e componentes internos com Flexbox._
+
+## EP2 · Etapa 3 — Componentes visuais e navegação
+
+_Navegação desktop e mobile, cartões, feedback visual de formulários, modais e componentes auxiliares._
+
+## EP2 · Etapa 4 — Síntese e reflexão
+
+_Revisão das implementações, autoavaliação e reflexão crítica._
 
