@@ -19,8 +19,8 @@ Validação: as três páginas foram aprovadas no W3C Markup Validation Service 
 
 ## Justificativa da hierarquia de títulos (`<h1>` a `<h6>`)
 
-Planejei os títulos como um sumário do conteúdo, antes de pensar na aparência. Cada página tem um único `<h1>`, que diz do que ela trata: "Instituto Raízes do Amanhã" no início, "Projetos sociais" e "Cadastre-se". Cada `<section>` e `<aside>` recebe um `<h2>` (Quem somos, Nosso impacto, Como ajudar, Transparência). Dentro deles, os `<article>` usam `<h3>`, como Missão, Visão e Valores ou cada projeto social, e os detalhes de cada projeto ficam em `<h4>` ("Informações").
+Planejei os títulos como um sumário do conteúdo, antes da aparência. Cada página tem um único `<h1>` com seu tema ("Instituto Raízes do Amanhã", "Projetos sociais", "Cadastre-se"). Cada `<section>` e `<aside>` recebe um `<h2>`; os `<article>` internos (Missão, Visão, Valores e cada projeto) usam `<h3>`, e os detalhes dos projetos, `<h4>`.
 
-Nenhum nível é pulado: um `<h3>` sempre está dentro de um `<h2>`. Não usei `<h5>` e `<h6>` porque o conteúdo não exige essa profundidade, e criar níveis só para preencher a escala tornaria a leitura confusa. O nível do título indica importância e relação entre os conteúdos, e não o tamanho da fonte, que é controlado pelo CSS.
+Nenhum nível é pulado, e não usei `<h5>` e `<h6>` porque o conteúdo não exige essa profundidade. O nível indica a relação entre os conteúdos, não o tamanho da fonte, que fica a cargo do CSS.
 
-Isso favorece a acessibilidade porque leitores de tela, como NVDA e VoiceOver, permitem listar e pular de título em título, e a pessoa entende a estrutura da página sem ler tudo. Cada seção também é ligada ao seu título por `aria-labelledby`, então as regiões são anunciadas pelo nome ("região Nosso impacto"). Somado ao link "Pular para o conteúdo", isso atende às diretrizes WCAG 1.3.1 (informação e relações) e 2.4.6 (cabeçalhos descritivos), além de ajudar os mecanismos de busca a entender o conteúdo (SEO).
+Isso favorece a acessibilidade: leitores de tela como NVDA e VoiceOver permitem navegar de título em título e entender a página sem lê-la inteira. Cada seção é ligada ao seu título por aria-labelledby e é anunciada pelo nome. Junto ao link "Pular para o conteúdo", isso atende às WCAG 1.3.1 e 2.4.6 e ainda melhora o SEO.
