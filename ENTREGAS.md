@@ -131,7 +131,7 @@ Texto em [`docs/ep2-etapa-2-design-system.md`](docs/ep2-etapa-2-design-system.md
 ### Questão: "Implementação de layouts com Grid"
 Texto em [`docs/ep2-etapa-2-grid.md`](docs/ep2-etapa-2-grid.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
 
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
