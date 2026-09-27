@@ -167,6 +167,28 @@ main > aside {
   background: var(--verde-claro);
 }
 
+.institucional {
+  display: grid;
+  grid-template-columns: minmax(0, 24rem) 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.institucional figure {
+  margin: 0;
+}
+
+.institucional img {
+  display: block;
+  border-radius: var(--raio);
+}
+
+.institucional figcaption {
+  font-size: .875rem;
+  color: var(--texto-suave);
+}
+
 .grade {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -261,6 +283,12 @@ main > aside {
   color: #fff;
 }
 
+.rodape h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
 .rodape address {
   font-style: normal;
 }
@@ -276,7 +304,8 @@ main > aside {
     align-items: flex-start;
   }
 
-  .projeto {
+  .projeto,
+  .institucional {
     grid-template-columns: 1fr;
   }
 }
