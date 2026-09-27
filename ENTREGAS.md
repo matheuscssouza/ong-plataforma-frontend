@@ -141,7 +141,7 @@ Texto em [`docs/ep2-etapa-2-breakpoints.md`](docs/ep2-etapa-2-breakpoints.md).
 ### Questão: "Construção de componentes com Flexbox"
 Entradas (Nome do componente / Propriedades Flexbox) em [`docs/ep2-etapa-2-flexbox.md`](docs/ep2-etapa-2-flexbox.md).
 
-- [ ] Entradas adicionadas na plataforma
+- [x] 8 entradas enviadas: Cartões, Cabeçalho, Marca, Menu, Grupo de botões, Campo do formulário, Grupos de opções e Consentimento LGPD
 
 ## EP2 · Etapa 3 — Componentes visuais e navegação
 
