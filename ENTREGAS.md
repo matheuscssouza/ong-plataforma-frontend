@@ -91,4 +91,7 @@ Texto em [`docs/etapa-3-validacao-w3c.md`](docs/etapa-3-validacao-w3c.md).
 
 ## Etapa 4 — Síntese e reflexão
 
-_A definir._
+### Questão: "Reflexão sobre a aprendizagem"
+Texto em [`docs/etapa-4-reflexao.md`](docs/etapa-4-reflexao.md).
+
+- [ ] Texto colado na plataforma
