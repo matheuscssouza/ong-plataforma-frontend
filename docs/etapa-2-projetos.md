@@ -2,6 +2,8 @@
 
 ## Blocos informativos de `projetos.html`
 
+Enviados na plataforma (limite de 5): Cabeçalho e menu, Projetos em andamento, Fichas dos projetos, Seja voluntário e Campanhas de doação. A tabela abaixo lista todos os blocos da página.
+
 | Nome do bloco | Tags e estrutura utilizada |
 |---|---|
 | Cabeçalho e menu | <header> com logo em <a> e <nav> com lista <ul>/<li> de links; aria-current marca a página atual. |

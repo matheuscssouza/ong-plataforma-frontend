@@ -39,7 +39,7 @@ Texto em [`docs/etapa-2-pagina-inicial.md`](docs/etapa-2-pagina-inicial.md), se�
 ### Questão: "Desenvolvimento de projetos sociais"
 Entradas do formulário "Adicionar tag semântica" em [`docs/etapa-2-projetos.md`](docs/etapa-2-projetos.md).
 
-- [ ] 8 blocos adicionados no formulário
+- [x] 5 blocos enviados (limite da plataforma): Cabeçalho e menu, Projetos em andamento, Fichas dos projetos, Seja voluntário, Campanhas de doação
 - [ ] Anexar, se a plataforma pedir arquivos: `entregas/etapa-2/ong-plataforma-frontend-etapa-2.zip`
 
 ## Etapa 3 — Formulários interativos e cadastro
