@@ -73,6 +73,11 @@ Imagens usadas nas páginas, em dois formatos (WebP + PNG), copiadas para `entre
 
 - [x] Imagens anexadas: os 5 PNG (logo, voluntarios, projeto-horta, projeto-reforco, projeto-digital); a plataforma aceitou PNG
 
+### Questão: "Estrutura de pastas"
+Entradas (Nome da pasta / Arquivos contidos) em [`docs/etapa-3-estrutura-pastas.md`](docs/etapa-3-estrutura-pastas.md).
+
+- [ ] Entradas adicionadas na plataforma
+
 ## Etapa 4 — Síntese e reflexão
 
 _A definir._

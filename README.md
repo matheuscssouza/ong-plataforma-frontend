@@ -9,9 +9,12 @@ Plataforma web para uma organização do terceiro setor, desenvolvida com **HTML
 ```
 ong-plataforma-frontend/
 ├── index.html        # Página inicial (apresentação da ONG)
-├── projetos.html     # Projetos sociais
+├── projetos.html     # Projetos sociais, voluntariado e doações
 ├── cadastro.html     # Formulário de voluntários/doadores
-├── css/              # Estilos
-├── img/              # Imagens
-└── js/               # Máscaras e validações
+├── css/
+│   └── style.css     # Estilos
+├── js/
+│   └── script.js     # Máscaras e validações do formulário
+├── img/              # Imagens em PNG e WebP (logo também em SVG)
+└── docs/             # Registro das respostas de cada etapa
 ```
