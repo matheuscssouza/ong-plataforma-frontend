@@ -155,7 +155,7 @@ Texto em [`docs/ep2-etapa-3-navegacao.md`](docs/ep2-etapa-3-navegacao.md).
 ### Questão: "Estados interativos de botões e validação visual"
 Texto em [`docs/ep2-etapa-3-estados-interativos.md`](docs/ep2-etapa-3-estados-interativos.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
 
 ## EP2 · Etapa 4 — Síntese e reflexão
 
