@@ -24,6 +24,8 @@
   /* --- Cores de feedback --- */
   --cor-erro: #b3261e;
   --cor-erro-clara: #fdf1f0;
+  --cor-sucesso: var(--cor-primaria);
+  --cor-desabilitado: #e3e8e5;
 
   /* --- Tipografia: famílias --- */
   --fonte-titulos: "Fraunces", Georgia, serif;
@@ -52,6 +54,7 @@
   --raio: 10px;
   --raio-pequeno: 6px;
   --sombra: 0 8px 24px rgb(21 77 51 / 0.14);
+  --sombra-botao: 0 4px 12px rgb(21 77 51 / 0.25);
   --transicao: 0.2s ease;
 
   /* --- Grid --- */
@@ -289,6 +292,16 @@ main > *,
   transform: translateY(-6px) rotate(-45deg);
 }
 
+.menu-botao:hover {
+  background: var(--cor-primaria-clara);
+  border-color: var(--cor-primaria);
+}
+
+.menu-botao:active,
+.submenu-botao:active {
+  transform: scale(0.96);
+}
+
 .menu-botao:focus-visible,
 .submenu-botao:focus-visible {
   outline: 3px solid var(--cor-primaria-escura);
@@ -417,29 +430,59 @@ main > h1 {
   gap: var(--espaco-3);
 }
 
+/* --- Botões e seus estados: padrão → hover → focus → active → disabled --- */
 .botao {
   display: inline-block;
   padding: var(--espaco-3) var(--espaco-4);
+  border: 2px solid transparent;
   border-radius: var(--raio);
   background: var(--cor-primaria);
   color: var(--cor-superficie);
   font-weight: 600;
   line-height: 1;
   text-decoration: none;
+  transition: background-color var(--transicao), border-color var(--transicao),
+    box-shadow var(--transicao), transform var(--transicao);
 }
 
+/* Hover: escurece, ganha sombra e "levanta" 1px, indicando que é clicável */
 .botao:hover {
   background: var(--cor-primaria-escura);
+  box-shadow: var(--sombra-botao);
+  transform: translateY(-1px);
+}
+
+/* Focus (teclado): contorno de 3px afastado 2px, além do estilo de hover */
+.botao:focus-visible {
+  box-shadow: var(--sombra-botao);
+}
+
+/* Active: volta ao lugar e perde a sombra, como se fosse pressionado */
+.botao:active {
+  box-shadow: none;
+  transform: translateY(0) scale(0.98);
 }
 
 .botao-secundario {
   background: var(--cor-superficie);
   color: var(--cor-primaria-escura);
-  border: 2px solid var(--cor-primaria);
+  border-color: var(--cor-primaria);
 }
 
 .botao-secundario:hover {
   background: var(--cor-primaria-clara);
+  border-color: var(--cor-primaria-escura);
+}
+
+/* Disabled: cinza, sem sombra nem movimento, e cursor de ação bloqueada */
+.botao:disabled,
+.botao[aria-disabled="true"] {
+  background: var(--cor-desabilitado);
+  border-color: var(--cor-desabilitado);
+  color: var(--cor-texto-suave);
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
 }
 
 .institucional {
@@ -602,14 +645,39 @@ main > h1 {
   border-radius: var(--raio-pequeno);
   font: inherit;
   font-family: var(--fonte-interface);
-  background: var(--cor-superficie);
+  background-color: var(--cor-superficie);
+  background-repeat: no-repeat;
+  background-position: right var(--espaco-3) center;
+  background-size: 1rem;
+  transition: border-color var(--transicao), box-shadow var(--transicao),
+    background-color var(--transicao);
+}
+
+.formulario input:hover,
+.formulario select:hover,
+.formulario textarea:hover {
+  border-color: var(--cor-texto-suave);
 }
 
 .formulario input:focus-visible,
 .formulario select:focus-visible,
 .formulario textarea:focus-visible {
+  border-color: var(--cor-primaria);
   outline: 3px solid var(--cor-primaria-escura);
   outline-offset: 1px;
+}
+
+.formulario input:disabled,
+.formulario select:disabled,
+.formulario textarea:disabled {
+  background-color: var(--cor-desabilitado);
+  cursor: not-allowed;
+}
+
+/* Rádios e caixas de seleção na cor da marca */
+.formulario input[type="radio"],
+.formulario input[type="checkbox"] {
+  accent-color: var(--cor-primaria);
 }
 
 .formulario small {
@@ -622,10 +690,49 @@ main > h1 {
   text-decoration: none;
 }
 
-/* Destaca o erro só depois que a pessoa interagiu com o campo */
-.formulario :user-invalid {
+/* --- Validação visual ---
+   :user-valid e :user-invalid só entram depois que a pessoa interage com o
+   campo (ou tenta enviar), para não mostrar erro num formulário ainda vazio.
+   A cor nunca é o único sinal: há ícone (✓ ou !) e mensagem em texto. */
+.formulario input:user-valid:not([type="radio"], [type="checkbox"]),
+.formulario select:user-valid,
+.formulario textarea:user-valid {
+  border-color: var(--cor-sucesso);
+  padding-right: var(--espaco-6);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%231f6f4a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.formulario input:user-invalid:not([type="radio"], [type="checkbox"]),
+.formulario select:user-invalid,
+.formulario textarea:user-invalid {
   border-color: var(--cor-erro);
-  background: var(--cor-erro-clara);
+  padding-right: var(--espaco-6);
+  background-color: var(--cor-erro-clara);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23b3261e'/%3E%3Cpath d='M8 4v5' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.formulario select:user-valid,
+.formulario select:user-invalid {
+  background-position: right var(--espaco-5) center;
+}
+
+/* Campo com erro: rótulo e texto de ajuda também ficam na cor de erro */
+.campo:has(:user-invalid) > label,
+.campo:has(:user-invalid) > small {
+  color: var(--cor-erro);
+}
+
+/* Mensagem de erro em texto, para não depender só da cor */
+.campo:has(:user-invalid)::after {
+  content: "Verifique este campo.";
+  font-family: var(--fonte-interface);
+  font-size: var(--tamanho-legenda);
+  font-weight: 600;
+  color: var(--cor-erro);
+}
+
+.grupo-opcoes:has(:user-invalid) {
+  border-color: var(--cor-erro);
 }
 
 .consentimento {
