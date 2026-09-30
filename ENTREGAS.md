@@ -150,6 +150,11 @@ Objetivos: menu principal responsivo com dropdown e hambúrguer no mobile; cards
 ### Questão: "Desenvolvimento de navegação interativa e responsiva"
 Texto em [`docs/ep2-etapa-3-navegacao.md`](docs/ep2-etapa-3-navegacao.md).
 
+- [x] Texto colado na plataforma
+
+### Questão: "Estados interativos de botões e validação visual"
+Texto em [`docs/ep2-etapa-3-estados-interativos.md`](docs/ep2-etapa-3-estados-interativos.md).
+
 - [ ] Texto colado na plataforma
 
 ## EP2 · Etapa 4 — Síntese e reflexão
