@@ -362,4 +362,4 @@ Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "
 ### Questão: "Impacto no tempo de carregamento"
 Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "Impacto". Tabela completa no PR #12.
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
