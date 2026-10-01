@@ -352,4 +352,9 @@ Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "
 ### Questão: "Otimização de imagens e performance"
 Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md). Implementação no PR #12.
 
+- [x] Texto colado na plataforma
+
+### Questão: "Resolução das imagens e viewport"
+Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "Resolução".
+
 - [ ] Texto colado na plataforma
