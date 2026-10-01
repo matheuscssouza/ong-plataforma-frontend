@@ -357,4 +357,9 @@ Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md). Implement
 ### Questão: "Resolução das imagens e viewport"
 Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "Resolução".
 
+- [x] Texto colado na plataforma
+
+### Questão: "Impacto no tempo de carregamento"
+Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "Impacto". Tabela completa no PR #12.
+
 - [ ] Texto colado na plataforma

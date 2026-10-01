@@ -15,3 +15,15 @@ Cada imagem foi exportada com o dobro do tamanho em que aparece na tela, para fi
 No HTML, width e height informam a proporção, e o navegador reserva o espaço antes de baixar a imagem, sem deslocar o layout. No CSS, max-width: 100% e height: auto deixam a imagem acompanhar a coluna do grid: no celular ela ocupa a largura da tela, e a partir de 768 px divide a linha com o texto (5 ou 4 das 12 colunas).
 Não criei várias larguras com srcset porque as imagens, já otimizadas, pesam de 2 a 10 KB: uma versão menor economizaria pouco e aumentaria o número de arquivos.
 ```
+
+## Impacto no tempo de carregamento
+
+```text
+Medi no Chrome simulando um celular em 4G lento (latência de 150 ms, 1,6 Mbps e CPU 4x mais lenta), com compressão gzip como no GitHub Pages, comparando a versão publicada com a build otimizada (mediana de 5 cargas):
+- Requisições: de 15-18 para 4-7 por página, porque os 13 módulos JS viram 1 arquivo.
+- Dados transferidos: cerca de 35% a menos (início: 42,4 para 27,5 KB).
+- DOMContentLoaded: cerca de 50% mais rápido (início: 926 para 466 ms).
+- Carregamento completo (load): de 6% a 10% mais rápido (início: 1204 para 1093 ms).
+- LCP: de 0 a 13% melhor (projetos: 1332 para 1164 ms).
+A medição também revelou um erro: o loading="lazy" na maior imagem visível atrasava o LCP do início (de 596 para 952 ms). Corrigi deixando essa imagem com carregamento imediato e fetchpriority="high".
+```
