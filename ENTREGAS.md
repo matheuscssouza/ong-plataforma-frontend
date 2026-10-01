@@ -220,3 +220,8 @@ Objetivos: mapear e gerenciar listeners de eventos em elementos críticos; verif
 Texto em [`docs/ep3-etapa-3-eventos.md`](docs/ep3-etapa-3-eventos.md).
 
 - [x] Texto colado na plataforma
+
+### Questão: "Verificação de consistência em formulários"
+Texto em [`docs/ep3-etapa-3-consistencia.md`](docs/ep3-etapa-3-consistencia.md).
+
+- [ ] Texto colado na plataforma
