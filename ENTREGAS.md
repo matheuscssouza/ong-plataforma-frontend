@@ -267,4 +267,10 @@ Texto em [`docs/ep3-reflexao.md`](docs/ep3-reflexao.md).
 
 Objetivos: controle de versões com Git e GitHub; repositório organizado com commits claros e histórico consistente; colaboração com branches, pull requests e revisão de código; conformidade com a WCAG 2.1; identificar e corrigir problemas de acessibilidade; preparar para produção (build, otimização e performance); deploy em ambiente de produção; documentação de instalação, uso e manutenção; compreensão do fluxo de desenvolvimento profissional.
 
-_Etapas a registrar conforme o enunciado chegar._
+| Etapa | Nome | Status | Pasta local |
+|---|---|---|---|
+| 1 | Início da experiência prática | ✅ Concluída | — |
+| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ⏳ Pendente | `entregas/ep4/ep4-etapa-2/` |
+| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ⏳ Pendente | `entregas/ep4/ep4-etapa-3/` |
+| 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | ⏳ Pendente | `entregas/ep4/ep4-etapa-4/` |
+| 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep4/ep4-etapa-5/` |
