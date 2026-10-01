@@ -372,4 +372,4 @@ Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md). Workflow no
 ### Questão: "Configuração do ambiente de produção e CI/CD"
 Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md), seção "Configuração".
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
