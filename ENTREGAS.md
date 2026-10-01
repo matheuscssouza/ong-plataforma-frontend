@@ -323,4 +323,4 @@ Registros (Componente / Ajuste) em [`docs/ep4-etapa-3-teclado.md`](docs/ep4-etap
 ### Questão: "Contraste visual e modos de tela"
 Texto em [`docs/ep4-etapa-3-temas.md`](docs/ep4-etapa-3-temas.md). Implementação no PR #10 (temas escuro e alto contraste). Capturas dos três temas em `entregas/ep4/ep4-etapa-3/capturas-temas/`.
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
