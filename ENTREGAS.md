@@ -290,3 +290,8 @@ Texto em [`docs/ep4-etapa-2-gitflow.md`](docs/ep4-etapa-2-gitflow.md).
 Registros (Mensagem ou tag / Descrição) em [`docs/ep4-etapa-2-releases.md`](docs/ep4-etapa-2-releases.md).
 
 - [ ] Registros adicionados na plataforma
+
+### Questão: "Issues, milestones e pull requests"
+Registros (Tipo / Descrição) em [`docs/ep4-etapa-2-issues-prs.md`](docs/ep4-etapa-2-issues-prs.md). No GitHub: milestones 1 a 3, issues #2 a #5 e pull requests #1 e #6.
+
+- [ ] Registros adicionados na plataforma
