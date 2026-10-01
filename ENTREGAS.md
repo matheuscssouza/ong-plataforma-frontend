@@ -333,3 +333,8 @@ Registros (Elemento / Cores e rácio / Ferramenta) em [`docs/ep4-etapa-3-contras
 ## EP4 · Etapa 4 — Otimização e deploy para produção
 
 Objetivos: preparar o projeto para produção; minificar CSS, JavaScript e HTML; otimizar imagens e recursos estáticos; publicar em produção com link funcional. Acompanhamento na issue #5.
+
+### Questão: "Preparação e minificação de ficheiros"
+Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md). Implementação no PR #11 (Vite).
+
+- [ ] Texto colado na plataforma
