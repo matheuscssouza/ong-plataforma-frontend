@@ -35,6 +35,15 @@
   --cor-terciaria-clara: #f3ecfa;
   --cor-neutra-clara: #eef1ef;
 
+  /* --- Foco: contorno sobre fundos claros e sobre o rodapé/toast escuros --- */
+  --cor-foco-inverso: var(--cor-secundaria);
+
+  /* --- Ícones de validação (SVG) --- */
+  --icone-valido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%231f6f4a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-invalido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23b3261e'/%3E%3Cpath d='M8 4v5' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%23fff'/%3E%3C/svg%3E");
+
+  color-scheme: light;
+
   /* --- Tipografia: famílias --- */
   --fonte-titulos: "Fraunces", Georgia, serif;
   --fonte-texto: "Lora", Georgia, serif;
@@ -74,6 +83,148 @@
      36rem (576px) celulares grandes · 48rem (768px) tablets
      62rem (992px) notebooks · 75rem (1200px) desktops
      90rem (1440px) desktops panorâmicos */
+}
+
+/* =========================================================
+   Temas: escuro e alto contraste
+   Só as variáveis mudam; o restante do CSS é o mesmo.
+   - Escolha manual: atributo data-tema no <html> (seletor de tema).
+   - Sem escolha: segue o sistema (prefers-color-scheme e prefers-contrast).
+   Todos os pares de texto/fundo têm contraste de pelo menos 4,5:1.
+   ========================================================= */
+:root[data-tema="escuro"] {
+  --cor-primaria: #5ccf94;
+  --cor-primaria-escura: #a6e9c4;
+  --cor-primaria-clara: #1d3a2b;
+  --cor-secundaria: #f4b942;
+  --cor-secundaria-clara: #3a2f12;
+  --cor-texto: #e8eee9;
+  --cor-texto-suave: #b7c4bc;
+  --cor-borda: #34443b;
+  --cor-borda-campo: #869a8e;
+  --cor-fundo: #111815;
+  --cor-superficie: #1a241f;
+  --cor-erro: #ff8f85;
+  --cor-erro-clara: #3d1c1a;
+  --cor-desabilitado: #2c3832;
+  --cor-info: #8ec8f2;
+  --cor-info-clara: #16293a;
+  --cor-aviso: #f6c768;
+  --cor-terciaria: #d3b8ff;
+  --cor-terciaria-clara: #2b2140;
+  --cor-neutra-clara: #26322b;
+  --cor-foco-inverso: #111815;
+  --sombra: 0 8px 24px rgb(0 0 0 / 0.5);
+  --sombra-botao: 0 4px 12px rgb(0 0 0 / 0.45);
+  --icone-valido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%235ccf94' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-invalido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23ff8f85'/%3E%3Cpath d='M8 4v5' stroke='%231a241f' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%231a241f'/%3E%3C/svg%3E");
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema]) {
+    --cor-primaria: #5ccf94;
+    --cor-primaria-escura: #a6e9c4;
+    --cor-primaria-clara: #1d3a2b;
+    --cor-secundaria: #f4b942;
+    --cor-secundaria-clara: #3a2f12;
+    --cor-texto: #e8eee9;
+    --cor-texto-suave: #b7c4bc;
+    --cor-borda: #34443b;
+    --cor-borda-campo: #869a8e;
+    --cor-fundo: #111815;
+    --cor-superficie: #1a241f;
+    --cor-erro: #ff8f85;
+    --cor-erro-clara: #3d1c1a;
+    --cor-desabilitado: #2c3832;
+    --cor-info: #8ec8f2;
+    --cor-info-clara: #16293a;
+    --cor-aviso: #f6c768;
+    --cor-terciaria: #d3b8ff;
+    --cor-terciaria-clara: #2b2140;
+    --cor-neutra-clara: #26322b;
+    --cor-foco-inverso: #111815;
+    --sombra: 0 8px 24px rgb(0 0 0 / 0.5);
+    --sombra-botao: 0 4px 12px rgb(0 0 0 / 0.45);
+    --icone-valido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%235ccf94' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --icone-invalido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23ff8f85'/%3E%3Cpath d='M8 4v5' stroke='%231a241f' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%231a241f'/%3E%3C/svg%3E");
+    color-scheme: dark;
+  }
+}
+
+/* Alto contraste: preto, branco e amarelo, sem sombras, com sublinhado e bordas reforçadas */
+:root[data-tema="alto-contraste"] {
+  --cor-primaria: #ffe14d;
+  --cor-primaria-escura: #ffe14d;
+  --cor-primaria-clara: #000000;
+  --cor-secundaria: #ffe14d;
+  --cor-secundaria-clara: #000000;
+  --cor-texto: #ffffff;
+  --cor-texto-suave: #ffffff;
+  --cor-borda: #ffffff;
+  --cor-borda-campo: #ffffff;
+  --cor-fundo: #000000;
+  --cor-superficie: #000000;
+  --cor-erro: #ff9e94;
+  --cor-erro-clara: #000000;
+  --cor-desabilitado: #3a3a3a;
+  --cor-info: #9fd8ff;
+  --cor-info-clara: #000000;
+  --cor-aviso: #ffe14d;
+  --cor-terciaria: #e3ccff;
+  --cor-terciaria-clara: #000000;
+  --cor-neutra-clara: #000000;
+  --cor-foco-inverso: #000000;
+  --sombra: none;
+  --sombra-botao: none;
+  --icone-valido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%23ffe14d' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-invalido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23ff9e94'/%3E%3Cpath d='M8 4v5' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%23000'/%3E%3C/svg%3E");
+  color-scheme: dark;
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-tema]) {
+    --cor-primaria: #ffe14d;
+    --cor-primaria-escura: #ffe14d;
+    --cor-primaria-clara: #000000;
+    --cor-secundaria: #ffe14d;
+    --cor-secundaria-clara: #000000;
+    --cor-texto: #ffffff;
+    --cor-texto-suave: #ffffff;
+    --cor-borda: #ffffff;
+    --cor-borda-campo: #ffffff;
+    --cor-fundo: #000000;
+    --cor-superficie: #000000;
+    --cor-erro: #ff9e94;
+    --cor-erro-clara: #000000;
+    --cor-desabilitado: #3a3a3a;
+    --cor-info: #9fd8ff;
+    --cor-info-clara: #000000;
+    --cor-aviso: #ffe14d;
+    --cor-terciaria: #e3ccff;
+    --cor-terciaria-clara: #000000;
+    --cor-neutra-clara: #000000;
+    --cor-foco-inverso: #000000;
+    --sombra: none;
+    --sombra-botao: none;
+    --icone-valido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%23ffe14d' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --icone-invalido: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23ff9e94'/%3E%3Cpath d='M8 4v5' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%23000'/%3E%3C/svg%3E");
+    color-scheme: dark;
+  }
+}
+
+:root[data-tema="alto-contraste"] a,
+:root[data-tema="alto-contraste"] .menu a {
+  text-decoration: underline;
+}
+
+:root[data-tema="alto-contraste"] .cartao,
+:root[data-tema="alto-contraste"] .formulario fieldset,
+:root[data-tema="alto-contraste"] .alerta,
+:root[data-tema="alto-contraste"] .destaque,
+:root[data-tema="alto-contraste"] .aviso,
+:root[data-tema="alto-contraste"] .numeros li {
+  border: 2px solid var(--cor-borda);
 }
 
 /* ===== Base ===== */
@@ -159,6 +310,21 @@ main > *,
   grid-column: span 6;
 }
 
+/* Texto só para leitores de tela: fora da tela, mas presente na árvore de acessibilidade */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* O <main> recebe foco por programa (pular conteúdo, SPA), sem contorno visual */
+main:focus {
+  outline: none;
+}
+
 /* Menu, botões e campos usam fonte sem serifa, mais legível em textos curtos de interface */
 .marca,
 .menu,
@@ -217,6 +383,7 @@ main > *,
 .menu {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: var(--espaco-1);
   margin: 0;
   padding: 0;
@@ -403,6 +570,32 @@ main > *,
 
 .js .submenu-botao[aria-expanded="true"] + .submenu {
   display: block;
+}
+
+/* --- Seletor de tema (último item do menu) --- */
+.menu-tema {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  padding: var(--espaco-2) var(--espaco-3);
+  font-family: var(--fonte-interface);
+  font-weight: 600;
+  color: var(--cor-primaria-escura);
+}
+
+.menu-tema select {
+  padding: var(--espaco-1) var(--espaco-2);
+  border: 1px solid var(--cor-borda-campo);
+  border-radius: var(--raio-pequeno);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  font: inherit;
+  font-weight: 400;
+}
+
+.menu-tema select:focus-visible {
+  outline: 3px solid var(--cor-primaria-escura);
+  outline-offset: 2px;
 }
 
 /* ===== Conteúdo principal ===== */
@@ -615,6 +808,8 @@ button.botao {
 
 /* ===== Formulário de cadastro ===== */
 .formulario fieldset {
+  /* fieldset tem largura mínima do conteúdo por padrão: sem isto, rola na horizontal em 320px */
+  min-width: 0;
   row-gap: var(--espaco-3);
   margin: 0 0 var(--espaco-4);
   padding: var(--espaco-4);
@@ -676,9 +871,12 @@ button.botao {
   border-color: var(--cor-texto-suave);
 }
 
-.formulario input:focus-visible,
-.formulario select:focus-visible,
-.formulario textarea:focus-visible {
+/* Campos usam :focus e :focus-within (e não só :focus-visible): no <input type="date">
+   o foco passa pelas partes internas (dia, mês, ano e botão do calendário) */
+.formulario input:focus,
+.formulario input:focus-within,
+.formulario select:focus,
+.formulario textarea:focus {
   border-color: var(--cor-primaria);
   outline: 3px solid var(--cor-primaria-escura);
   outline-offset: 1px;
@@ -716,7 +914,7 @@ button.botao {
 .formulario textarea[required]:user-valid {
   border-color: var(--cor-sucesso);
   padding-right: var(--espaco-6);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%231f6f4a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: var(--icone-valido);
 }
 
 .formulario input:user-invalid:not([type="radio"], [type="checkbox"]),
@@ -726,7 +924,7 @@ button.botao {
   border-color: var(--cor-erro);
   padding-right: var(--espaco-6);
   background-color: var(--cor-erro-clara);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23b3261e'/%3E%3Cpath d='M8 4v5' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%23fff'/%3E%3C/svg%3E");
+  background-image: var(--icone-invalido);
 }
 
 .formulario select[required]:user-valid,
@@ -974,7 +1172,7 @@ html:not(.js) .campo:has(:user-invalid)::after {
 }
 
 .toast-fechar:focus-visible {
-  outline: 3px solid var(--cor-secundaria);
+  outline: 3px solid var(--cor-foco-inverso);
   outline-offset: 1px;
 }
 
@@ -1140,7 +1338,7 @@ html:not(.js) .campo:has(:user-invalid)::after {
 
 /* No fundo escuro, o foco usa o amarelo secundário */
 .rodape a:focus-visible {
-  outline-color: var(--cor-secundaria);
+  outline-color: var(--cor-foco-inverso);
 }
 
 /* ===== Breakpoints (mobile first) ===== */
@@ -1242,6 +1440,15 @@ html:not(.js) .campo:has(:user-invalid)::after {
 
 /* 3) Notebooks: três cartões por linha, quatro números e quatro campos */
 @media (min-width: 62rem) {
+  /* Logo em 4 colunas e menu em 8: cabe o seletor de tema na mesma linha */
+  .marca {
+    grid-column: span 4;
+  }
+
+  .cabecalho nav {
+    grid-column: span 8;
+  }
+
   .grade > *,
   .grade > :last-child:nth-child(odd) {
     grid-column: span 4;
@@ -1333,5 +1540,22 @@ html:not(.js) .campo:has(:user-invalid)::after {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Modo de cores forçadas (alto contraste do Windows): o sistema troca as cores,
+   então reforçamos bordas que antes eram só cor de fundo */
+@media (forced-colors: active) {
+  .botao,
+  .badge,
+  .menu a[aria-current="page"],
+  .toast {
+    border: 2px solid CanvasText;
+  }
+
+  .menu-botao-icone,
+  .menu-botao-icone::before,
+  .menu-botao-icone::after {
+    background: CanvasText;
   }
 }

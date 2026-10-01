@@ -5,10 +5,12 @@
 import { PROJETOS, CAMPANHAS } from '../dados/conteudo.js';
 import { CHAVES, lerJSON } from '../servicos/armazenamento.js';
 
-// Caminhos calculados a partir deste arquivo (import.meta.url): funcionam
-// tanto nas páginas de html/ quanto na SPA carregada pelo index.html.
-const PASTA_IMAGENS = new URL('../../imagens/', import.meta.url);
-const PASTA_HTML = new URL('../../html/', import.meta.url);
+// Caminhos calculados a partir da raiz do site, informada por cada página em
+// <html data-raiz>: funcionam nas páginas de html/, na SPA e na build de produção
+// (onde o código é empacotado e muda de pasta).
+const RAIZ_SITE = new URL(document.documentElement.dataset.raiz ?? '', location.href);
+const PASTA_IMAGENS = new URL('imagens/', RAIZ_SITE);
+const PASTA_HTML = new URL('html/', RAIZ_SITE);
 
 function clonarTemplate(raiz, id) {
   const modelo = raiz.querySelector(`#${id}`) ?? document.getElementById(id);
@@ -36,7 +38,7 @@ function criarTempo(data, rotulo) {
   return tempo;
 }
 
-function criarProjeto(raiz, projeto) {
+function criarProjeto(raiz, projeto, indice) {
   const artigo = clonarTemplate(raiz, 'tpl-projeto');
   const idTitulo = `titulo-${projeto.id}`;
   artigo.setAttribute('aria-labelledby', idTitulo);
@@ -45,6 +47,12 @@ function criarProjeto(raiz, projeto) {
   const imagem = artigo.querySelector('img');
   imagem.src = new URL(`${projeto.imagem}.png`, PASTA_IMAGENS);
   imagem.alt = projeto.alt;
+  // A primeira imagem costuma ser a maior visível ao abrir a página (LCP):
+  // não pode esperar o carregamento sob demanda.
+  if (indice === 0) {
+    imagem.loading = 'eager';
+    imagem.fetchPriority = 'high';
+  }
   artigo.querySelector('figcaption').textContent = projeto.legenda;
 
   const titulo = artigo.querySelector('h3');
@@ -137,7 +145,7 @@ export function renderizarComponentes(raiz = document) {
     }
     const fragmento = document.createDocumentFragment();
     const itens = componente.dados();
-    itens.forEach((item) => fragmento.append(componente.criar(raiz, item)));
+    itens.forEach((item, indice) => fragmento.append(componente.criar(raiz, item, indice)));
     if (!itens.length && conteiner.dataset.vazio) {
       const aviso = document.createElement('p');
       aviso.textContent = conteiner.dataset.vazio;

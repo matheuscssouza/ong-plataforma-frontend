@@ -272,11 +272,104 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com co
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-2/` |
-| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ⏳ Pendente | `entregas/ep4/ep4-etapa-3/` |
-| 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | ⏳ Pendente | `entregas/ep4/ep4-etapa-4/` |
+| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ✅ Concluída (aguardando merge dos PRs #1, #7, #8 e #6) | `entregas/ep4/ep4-etapa-2/` |
+| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ✅ Concluída (aguardando merge dos PRs #9 e #10) | `entregas/ep4/ep4-etapa-3/` |
+| 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep4/ep4-etapa-5/` |
 
 ## EP4 · Etapa 2 — Controle de versões e documentação
 
 Objetivos: controle de versões com Git e GitHub; repositório organizado com a estratégia GitFlow; commits semânticos disciplinados; documentação técnica clara e completa no README.
+
+### Questão: "Estratégia de versionamento"
+Texto em [`docs/ep4-etapa-2-gitflow.md`](docs/ep4-etapa-2-gitflow.md).
+
+- [x] Texto colado na plataforma
+
+### Questão: "Commits semânticos e releases"
+Registros (Mensagem ou tag / Descrição) em [`docs/ep4-etapa-2-releases.md`](docs/ep4-etapa-2-releases.md).
+
+- [x] Registros adicionados na plataforma
+
+### Questão: "Issues, milestones e pull requests"
+Registros (Tipo / Descrição) em [`docs/ep4-etapa-2-issues-prs.md`](docs/ep4-etapa-2-issues-prs.md). No GitHub: milestones 1 a 3, issues #2 a #5 e pull requests #1 e #6.
+
+- [x] Registros adicionados na plataforma
+
+### Questão: "Documentação técnica e criação do README"
+Seções (Nome / Descrição e tecnologias) em [`docs/ep4-etapa-2-readme.md`](docs/ep4-etapa-2-readme.md). Mudanças no GitHub: PR #7 (testes, `npm test`) e PR #8 (README técnico).
+
+- [x] 10 seções enviadas na plataforma
+
+### Questão: "Instalação local e práticas de versionamento"
+Texto em [`docs/ep4-etapa-2-instalacao-versionamento.md`](docs/ep4-etapa-2-instalacao-versionamento.md).
+
+- [x] Texto colado na plataforma
+
+## EP4 · Etapa 3 — Implementação de acessibilidade
+
+Objetivos: estrutura em conformidade com a WCAG 2.1 nível AA; semântica sólida para tecnologias assistivas; contraste ajustado, com versão de alto contraste, e navegação por teclado fluida. Acompanhamento na issue #4.
+
+### Questão: "Diretrizes WCAG e estrutura semântica"
+Registros (Elemento / Justificação) em [`docs/ep4-etapa-3-semantica-aria.md`](docs/ep4-etapa-3-semantica-aria.md). Mudanças no PR #9 (auditoria axe-core: 0 violações; reflow em 320px, anúncio de página e asterisco corrigidos).
+
+- [x] 12 registros adicionados na plataforma
+
+### Questão: "Navegação por teclado e leitores de tela"
+Registros (Componente / Ajuste) em [`docs/ep4-etapa-3-teclado.md`](docs/ep4-etapa-3-teclado.md). Varredura com Tab nas 4 páginas (92 paradas, todas com foco visível após a correção do campo de data, PR #9).
+
+- [x] 10 registros adicionados na plataforma
+
+### Questão: "Contraste visual e modos de tela"
+Texto em [`docs/ep4-etapa-3-temas.md`](docs/ep4-etapa-3-temas.md). Implementação no PR #10 (temas escuro e alto contraste). Capturas dos três temas em `entregas/ep4/ep4-etapa-3/capturas-temas/`.
+
+- [x] Texto colado na plataforma
+
+### Questão: "Elementos visuais verificados (contraste)"
+Registros (Elemento / Cores e rácio / Ferramenta) em [`docs/ep4-etapa-3-contraste.md`](docs/ep4-etapa-3-contraste.md).
+
+- [x] 10 registros adicionados na plataforma
+
+## EP4 · Etapa 4 — Otimização e deploy para produção
+
+Objetivos: preparar o projeto para produção; minificar CSS, JavaScript e HTML; otimizar imagens e recursos estáticos; publicar em produção com link funcional. Acompanhamento na issue #5.
+
+### Questão: "Preparação e minificação de ficheiros"
+Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md). Implementação no PR #11 (Vite).
+
+- [x] Texto colado na plataforma
+
+### Questão: "Percentual de redução após a minificação"
+Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "Percentual de redução".
+
+- [x] Texto colado na plataforma
+
+### Questão: "Desafios para a minificação não afetar a lógica"
+Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "Desafios".
+
+- [x] Texto colado na plataforma
+
+### Questão: "Otimização de imagens e performance"
+Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md). Implementação no PR #12.
+
+- [x] Texto colado na plataforma
+
+### Questão: "Resolução das imagens e viewport"
+Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "Resolução".
+
+- [x] Texto colado na plataforma
+
+### Questão: "Impacto no tempo de carregamento"
+Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "Impacto". Tabela completa no PR #12.
+
+- [x] Texto colado na plataforma
+
+### Questão: "Publicação e deploy em ambiente de produção"
+Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md). Workflow no PR #13 (CI aprovado no GitHub: 20 de 20 testes no código-fonte e na build).
+
+- [x] Texto colado na plataforma
+
+### Questão: "Configuração do ambiente de produção e CI/CD"
+Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md), seção "Configuração".
+
+- [x] Texto colado na plataforma

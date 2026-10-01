@@ -1,0 +1,63 @@
+# Integração e entrega contínuas.
+# - Em todo pull request para develop ou main: instala, gera a build e roda os testes.
+# - Em todo push na main (versão liberada): faz o mesmo e publica a pasta dist/ no GitHub Pages.
+
+name: Build, testes e deploy
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar build de produção
+        run: npm run build
+
+      - name: Testes de ponta a ponta no código-fonte e na build
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: |
+          npm test
+          node tests/executar.mjs dist
+
+      - name: Enviar a build para o GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Publicar
+        id: deploy
+        uses: actions/deploy-pages@v4

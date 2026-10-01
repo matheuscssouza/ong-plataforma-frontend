@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-raiz="../">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&amp;family=Lora:ital,wght@0,400..700;1,400&amp;display=swap">
   <link rel="stylesheet" href="../css/style.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    // Aplica o tema salvo antes da página aparecer, evitando um "piscar" de cores.
+    try {
+      const tema = JSON.parse(localStorage.getItem("raizes:tema"));
+      if (tema === "claro" || tema === "escuro" || tema === "alto-contraste") {
+        document.documentElement.dataset.tema = tema;
+      }
+    } catch (erro) {}
+  </script>
   <script type="module" src="../js/main.js"></script>
 </head>
 <body>
@@ -42,11 +51,20 @@
         </li>
         <li><a href="cadastro.html">Cadastre-se</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li class="menu-tema">
+          <label for="tema">Tema</label>
+          <select id="tema" name="tema">
+            <option value="sistema">Do sistema</option>
+            <option value="claro">Claro</option>
+            <option value="escuro">Escuro</option>
+            <option value="alto-contraste">Alto contraste</option>
+          </select>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <main id="conteudo">
+  <main id="conteudo" tabindex="-1">
     <h1>Projetos sociais</h1>
     <p>Cada iniciativa nasce de uma necessidade real da comunidade e é conduzida por voluntários com o apoio de moradores e parceiros.</p>
 
@@ -60,7 +78,7 @@
           <figure>
             <picture>
               <source type="image/webp">
-              <img alt="" width="320" height="200">
+              <img alt="" width="320" height="200" loading="lazy" decoding="async">
             </picture>
             <figcaption></figcaption>
           </figure>
