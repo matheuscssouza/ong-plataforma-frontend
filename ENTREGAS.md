@@ -337,4 +337,9 @@ Objetivos: preparar o projeto para produção; minificar CSS, JavaScript e HTML;
 ### Questão: "Preparação e minificação de ficheiros"
 Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md). Implementação no PR #11 (Vite).
 
+- [x] Texto colado na plataforma
+
+### Questão: "Percentual de redução após a minificação"
+Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "Percentual de redução".
+
 - [ ] Texto colado na plataforma
