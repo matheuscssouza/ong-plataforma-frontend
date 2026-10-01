@@ -314,3 +314,8 @@ Objetivos: estrutura em conformidade com a WCAG 2.1 nível AA; semântica sólid
 Registros (Elemento / Justificação) em [`docs/ep4-etapa-3-semantica-aria.md`](docs/ep4-etapa-3-semantica-aria.md). Mudanças no PR #9 (auditoria axe-core: 0 violações; reflow em 320px, anúncio de página e asterisco corrigidos).
 
 - [x] 12 registros adicionados na plataforma
+
+### Questão: "Navegação por teclado e leitores de tela"
+Registros (Componente / Ajuste) em [`docs/ep4-etapa-3-teclado.md`](docs/ep4-etapa-3-teclado.md). Varredura com Tab nas 4 páginas (92 paradas, todas com foco visível após a correção do campo de data, PR #9).
+
+- [ ] Registros adicionados na plataforma
