@@ -313,4 +313,4 @@ Objetivos: estrutura em conformidade com a WCAG 2.1 nível AA; semântica sólid
 ### Questão: "Diretrizes WCAG e estrutura semântica"
 Registros (Elemento / Justificação) em [`docs/ep4-etapa-3-semantica-aria.md`](docs/ep4-etapa-3-semantica-aria.md). Mudanças no PR #9 (auditoria axe-core: 0 violações; reflow em 320px, anúncio de página e asterisco corrigidos).
 
-- [ ] Registros adicionados na plataforma
+- [x] 12 registros adicionados na plataforma
