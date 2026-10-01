@@ -225,3 +225,8 @@ Texto em [`docs/ep3-etapa-3-eventos.md`](docs/ep3-etapa-3-eventos.md).
 Texto em [`docs/ep3-etapa-3-consistencia.md`](docs/ep3-etapa-3-consistencia.md).
 
 - [x] Texto colado na plataforma
+
+### Questão: "Retenção de dados no navegador"
+Texto em [`docs/ep3-etapa-3-localstorage.md`](docs/ep3-etapa-3-localstorage.md).
+
+- [ ] Texto colado na plataforma
