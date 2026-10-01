@@ -261,8 +261,10 @@ Texto em [`docs/ep3-reflexao.md`](docs/ep3-reflexao.md).
 
 ---
 
-# Experiência Prática IV
+# Experiência Prática IV — Versionamento e acessibilidade
 
 > Cópias dos arquivos a enviar ficam em `entregas/ep4/`; o fim de cada etapa é marcado com a tag `ep4-etapa-N`.
 
-_Objetivos e etapas a registrar conforme o enunciado chegar._
+Objetivos: controle de versões com Git e GitHub; repositório organizado com commits claros e histórico consistente; colaboração com branches, pull requests e revisão de código; conformidade com a WCAG 2.1; identificar e corrigir problemas de acessibilidade; preparar para produção (build, otimização e performance); deploy em ambiente de produção; documentação de instalação, uso e manutenção; compreensão do fluxo de desenvolvimento profissional.
+
+_Etapas a registrar conforme o enunciado chegar._
