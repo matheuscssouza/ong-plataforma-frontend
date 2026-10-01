@@ -1069,6 +1069,54 @@ html:not(.js) .campo:has(:user-invalid)::after {
   font-size: var(--tamanho-legenda);
 }
 
+/* --- Gráfico (Chart.js) com tabela de dados acessível --- */
+.grafico {
+  margin: var(--espaco-4) 0 var(--espaco-2);
+}
+
+.grafico-area {
+  position: relative;
+  height: 12rem;
+  padding: var(--espaco-3);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+}
+
+.grafico figcaption {
+  margin-top: var(--espaco-2);
+  font-size: var(--tamanho-legenda);
+  color: var(--cor-texto-suave);
+}
+
+.grafico-dados summary {
+  font-family: var(--fonte-interface);
+  font-weight: 600;
+  color: var(--cor-primaria-escura);
+  cursor: pointer;
+}
+
+.grafico-dados table {
+  margin-top: var(--espaco-2);
+  border-collapse: collapse;
+}
+
+.grafico-dados caption {
+  text-align: left;
+  font-size: var(--tamanho-legenda);
+  color: var(--cor-texto-suave);
+}
+
+.grafico-dados th,
+.grafico-dados td {
+  padding: var(--espaco-1) var(--espaco-3);
+  border-bottom: 1px solid var(--cor-borda);
+  text-align: left;
+}
+
+.grafico-dados td {
+  text-align: right;
+}
+
 /* ===== Rodapé ===== */
 .rodape {
   padding: var(--espaco-5) max(var(--espaco-3), calc((100% - var(--largura)) / 2));

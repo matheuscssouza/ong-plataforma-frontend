@@ -14,6 +14,7 @@
   <script src="../js/menu.js" defer></script>
   <script src="../js/dados.js" defer></script>
   <script src="../js/templates.js" defer></script>
+  <script src="../js/grafico.js" defer></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
@@ -123,6 +124,40 @@
     <aside class="aviso" aria-labelledby="titulo-resultados">
       <h2 id="titulo-resultados">Resultados de 2025</h2>
       <p>Os três projetos somaram mais de 12 mil horas de trabalho voluntário no último ano.</p>
+
+      <figure class="grafico">
+        <div class="grafico-area">
+          <canvas data-grafico="tabela-horas" role="img" aria-label="Gráfico de barras com as horas de trabalho voluntário por projeto em 2025. Os valores estão na tabela logo abaixo."></canvas>
+        </div>
+        <figcaption>Horas de trabalho voluntário por projeto em 2025.</figcaption>
+      </figure>
+
+      <details class="grafico-dados">
+        <summary>Ver os dados em tabela</summary>
+        <table id="tabela-horas">
+          <caption>Horas de trabalho voluntário por projeto em 2025</caption>
+          <thead>
+            <tr>
+              <th scope="col">Projeto</th>
+              <th scope="col">Horas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-categoria="educacao">
+              <th scope="row">Reforço Escolar</th>
+              <td data-valor="5100">5.100</td>
+            </tr>
+            <tr data-categoria="ambiente">
+              <th scope="row">Horta Comunitária</th>
+              <td data-valor="4200">4.200</td>
+            </tr>
+            <tr data-categoria="tecnologia">
+              <th scope="row">Inclusão Digital</th>
+              <td data-valor="2900">2.900</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </aside>
   </main>
 

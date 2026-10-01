@@ -105,6 +105,7 @@ async function renderizar(rota, focarTitulo = true) {
 
   principal.replaceChildren(...pagina.conteudo.cloneNode(true).childNodes);
   renderizarComponentes(principal);
+  renderizarGraficos(principal);
   principal.removeAttribute('aria-busy');
   document.title = pagina.titulo;
   marcarMenu(caminho);
