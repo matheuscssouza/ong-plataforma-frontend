@@ -205,4 +205,4 @@ Texto em [`docs/ep3-etapa-2-estrutura-diretorios.md`](docs/ep3-etapa-2-estrutura
 ### Questão: "Navegação de página única"
 Texto em [`docs/ep3-etapa-2-spa.md`](docs/ep3-etapa-2-spa.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
