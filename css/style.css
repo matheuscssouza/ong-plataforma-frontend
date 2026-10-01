@@ -159,6 +159,21 @@ main > *,
   grid-column: span 6;
 }
 
+/* Texto só para leitores de tela: fora da tela, mas presente na árvore de acessibilidade */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* O <main> recebe foco por programa (pular conteúdo, SPA), sem contorno visual */
+main:focus {
+  outline: none;
+}
+
 /* Menu, botões e campos usam fonte sem serifa, mais legível em textos curtos de interface */
 .marca,
 .menu,
@@ -615,6 +630,8 @@ button.botao {
 
 /* ===== Formulário de cadastro ===== */
 .formulario fieldset {
+  /* fieldset tem largura mínima do conteúdo por padrão: sem isto, rola na horizontal em 320px */
+  min-width: 0;
   row-gap: var(--espaco-3);
   margin: 0 0 var(--espaco-4);
   padding: var(--espaco-4);
@@ -676,9 +693,12 @@ button.botao {
   border-color: var(--cor-texto-suave);
 }
 
-.formulario input:focus-visible,
-.formulario select:focus-visible,
-.formulario textarea:focus-visible {
+/* Campos usam :focus e :focus-within (e não só :focus-visible): no <input type="date">
+   o foco passa pelas partes internas (dia, mês, ano e botão do calendário) */
+.formulario input:focus,
+.formulario input:focus-within,
+.formulario select:focus,
+.formulario textarea:focus {
   border-color: var(--cor-primaria);
   outline: 3px solid var(--cor-primaria-escura);
   outline-offset: 1px;

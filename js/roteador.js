@@ -131,6 +131,11 @@ async function renderizar(rota, focarTitulo = true) {
   principal.replaceChildren(...pagina.conteudo.cloneNode(true).childNodes);
   principal.removeAttribute('aria-busy');
   document.title = pagina.titulo;
+  // Anuncia a nova página para leitores de tela (região aria-live do index.html).
+  const anuncio = document.getElementById('anuncio-rota');
+  if (anuncio) {
+    anuncio.textContent = `Página carregada: ${pagina.titulo.split(' | ')[0]}`;
+  }
   marcarMenu(caminho);
   aoRenderizar(principal); // o roteador não conhece as páginas: quem inicia é o main.js
 
