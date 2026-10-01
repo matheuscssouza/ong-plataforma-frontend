@@ -183,4 +183,10 @@ Foco: JavaScript para interatividade.
 
 Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúdo e estilo); controlar eventos (cliques, formulários); usar localStorage para guardar e recuperar dados; integrar funcionalidades básicas de um framework JavaScript; simular comportamentos de uma aplicação real; organizar o código de forma clara e reutilizável; testar e corrigir erros.
 
-_Etapas a registrar conforme o enunciado chegar._
+| Etapa | Nome | Status | Pasta local |
+|---|---|---|---|
+| 1 | Início da experiência prática | ✅ Concluída | — |
+| 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | ⏳ Pendente | `entregas/ep3-etapa-2/` |
+| 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | ⏳ Pendente | `entregas/ep3-etapa-3/` |
+| 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | ⏳ Pendente | `entregas/ep3-etapa-4/` |
+| 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep3-etapa-5/` |
