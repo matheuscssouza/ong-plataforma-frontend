@@ -239,3 +239,8 @@ Texto em [`docs/ep3-etapa-3-biblioteca.md`](docs/ep3-etapa-3-biblioteca.md).
 ## EP3 · Etapa 4 — Modularização e refinamento final
 
 Objetivos: quebrar o script em módulos independentes (responsabilidade única); código legível e reutilizável; testes críticos para encontrar e corrigir falhas de interatividade; triagem de todos os requisitos contra os entregáveis.
+
+### Questão: "Separação de código por funcionalidade"
+Texto em [`docs/ep3-etapa-4-modularizacao.md`](docs/ep3-etapa-4-modularizacao.md).
+
+- [ ] Texto colado na plataforma
