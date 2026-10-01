@@ -272,7 +272,11 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com co
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ⏳ Pendente | `entregas/ep4/ep4-etapa-2/` |
+| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-2/` |
 | 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ⏳ Pendente | `entregas/ep4/ep4-etapa-3/` |
 | 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | ⏳ Pendente | `entregas/ep4/ep4-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep4/ep4-etapa-5/` |
+
+## EP4 · Etapa 2 — Controle de versões e documentação
+
+Objetivos: controle de versões com Git e GitHub; repositório organizado com a estratégia GitFlow; commits semânticos disciplinados; documentação técnica clara e completa no README.
