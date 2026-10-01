@@ -24,13 +24,17 @@ function minificarHtml() {
   };
 }
 
-// Copia a pasta imagens/ inteira: os templates em JavaScript montam caminhos
-// para ela em tempo de execução, então o Vite não as encontra sozinho.
+// Copia as imagens dos projetos: os templates em JavaScript montam esses caminhos
+// em tempo de execução, então o Vite não as encontra sozinho. As imagens citadas
+// no HTML (logo, voluntários) já são processadas pelo Vite e não são duplicadas.
 function copiarImagens() {
   return {
     name: 'copiar-imagens',
     closeBundle() {
-      cpSync(resolve(raiz, 'imagens'), resolve(raiz, 'dist/imagens'), { recursive: true });
+      cpSync(resolve(raiz, 'imagens'), resolve(raiz, 'dist/imagens'), {
+        recursive: true,
+        filter: (origem) => !/[\\/]imagens[\\/]/.test(origem) || /projeto-/.test(origem),
+      });
     },
   };
 }
