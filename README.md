@@ -1,6 +1,6 @@
 # Instituto Raízes do Amanhã — Plataforma Web para ONG
 
-Plataforma web para uma organização do terceiro setor, construída com **HTML5 semântico**, **CSS3** e **JavaScript vanilla**. O projeto evolui em etapas: primeiro a estrutura acessível e o formulário com validação, depois um design system completo, layout responsivo em grid de 12 colunas, navegação interativa e componentes de feedback.
+Plataforma web para uma organização do terceiro setor, construída com **HTML5 semântico**, **CSS3** e **JavaScript vanilla**. O projeto evolui em etapas: primeiro a estrutura acessível e o formulário com validação, depois um design system completo com layout responsivo e componentes de feedback e, por fim, uma **Single Page Application** em JavaScript modular, com templates, persistência no navegador e gráficos.
 
 **🔗 Site publicado:** https://matheuscssouza.github.io/ong-plataforma-frontend/
 
@@ -21,8 +21,8 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 | Página | Conteúdo |
 |---|---|
 | [`index.html`](index.html) | Apresentação da ONG: missão, visão e valores, números de impacto, formas de ajudar e contato |
-| [`projetos.html`](html/projetos.html) | Três projetos sociais com badges e ficha de informações, voluntariado e campanhas de doação |
-| [`cadastro.html`](html/cadastro.html) | Cadastro de voluntários e doadores com validação, máscaras, alertas e confirmação em modal |
+| [`projetos.html`](html/projetos.html) | Projetos sociais e campanhas gerados por templates, voluntariado e gráfico de horas de voluntariado |
+| [`cadastro.html`](html/cadastro.html) | Cadastro com validação por campo, máscaras, rascunho automático e lista de cadastros salvos no navegador |
 | [`componentes.html`](html/componentes.html) | Guia de componentes: badges, alertas, toasts, modal e botões, com as classes para reutilização |
 
 ## Destaques técnicos
@@ -75,6 +75,41 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 
 ![Guia de componentes](docs/screenshots/componentes.png)
 
+### Experiência Prática III — JavaScript e interatividade
+
+**Single Page Application** ([`js/roteador.js`](js/roteador.js))
+- Roteamento por hash (`#/projetos`, `#/cadastro`), compatível com o GitHub Pages sem configuração de servidor.
+- O `index.html` é a casca: só o `<main>` é trocado, com atualização do título, do menu ativo e do foco (anunciado por leitores de tela).
+- Voltar/Avançar, entrada direta por link, rota inexistente, aviso sem conexão e proteção contra carregamentos fora de ordem.
+- Aprimoramento progressivo: os links apontam para os arquivos reais, que também funcionam sozinhos.
+
+**Templates dinâmicos** ([`js/componentes/templates.js`](js/componentes/templates.js))
+- Projetos, campanhas e cadastros salvos são gerados a partir de dados, clonando elementos `<template>` do HTML5.
+- Os dados entram sempre por `textContent`, nunca por `innerHTML`: conteúdo digitado ou adulterado não executa código.
+
+**Formulário e dados**
+- Verificação de consistência com mensagens específicas por campo, revalidação em tempo real e resumo com links no envio ([`js/formulario/validacao.js`](js/formulario/validacao.js)).
+- Regras além do HTML: nome e sobrenome, dígitos do CPF, domínio do e-mail, celular com 9 e valor obrigatório para doadores.
+- **localStorage**: rascunho salvo automaticamente e restaurado ao reabrir, e histórico de cadastros com opção de remover. Por privacidade, o **CPF nunca é gravado**.
+
+![Validação com resumo de erros](docs/screenshots/cadastro-validacao.png)
+
+![Cadastros salvos no navegador](docs/screenshots/cadastros-salvos.png)
+
+**Biblioteca externa**
+- **Chart.js** 4.5.1 via CDN, carregado só quando a página tem um gráfico, com versão fixa e verificação de integridade (SRI).
+- Os dados vêm de uma tabela acessível, que aparece no lugar do gráfico se o CDN falhar.
+
+![Gráfico de horas de voluntariado](docs/screenshots/grafico.png)
+
+**Código modular**
+- JavaScript em **ES Modules** (`import`/`export`), organizado por responsabilidade: `componentes/`, `formulario/`, `servicos/` e `dados/`.
+- Cada página carrega um único `js/main.js`; nenhum módulo executa nada ao ser importado.
+
+**Testes**
+- Roteiros automatizados no navegador cobriram navegação, validação, armazenamento, gráfico e cenários de estresse (dados malformados, conexão caindo, cliques rápidos, armazenamento cheio).
+- A rodada de estresse encontrou e corrigiu seis falhas, entre elas uma condição de corrida no roteador e o envio duplicado do formulário.
+
 ### Qualidade
 - **W3C Markup Validator:** 0 erros e 0 avisos nas quatro páginas.
 - **W3C CSS Validator:** 0 erros.
@@ -86,7 +121,7 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 
 - **HTML5** semântico
 - **CSS3**: variáveis, Grid, Flexbox, media queries, pseudo-classes de validação e animações
-- **JavaScript** (vanilla, sem dependências)
+- **JavaScript** (vanilla, ES Modules), **localStorage** e **Chart.js** (gráficos)
 - Fontes **Fraunces** e **Lora** (Google Fonts)
 - **Git** e **GitHub Pages**
 
@@ -144,7 +179,16 @@ Cada etapa concluída tem uma tag no Git, que preserva o projeto exatamente como
 | 3. Componentes visuais e navegação | Menu hambúrguer e dropdown, estados interativos, badges, alertas, toasts, modal e guia de componentes | [`ep2-etapa-3`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep2-etapa-3) |
 | 4. Síntese e reflexão | Revisão das implementações e autoavaliação | [`ep2-etapa-4`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep2-etapa-4) |
 
-**Experiência Prática III — JavaScript e interatividade:** em andamento.
+**Experiência Prática III — JavaScript e interatividade** (tag [`ep3-final`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep3-final))
+
+| Etapa | Entrega | Tag |
+|---|---|---|
+| 2. Fundamentos e organização inicial | Pastas `html/`, `css/`, `js/` e `imagens/`; SPA com roteamento por hash; templates dinâmicos | [`ep3-etapa-2`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep3-etapa-2) |
+| 3. Interatividade e controle de eventos | Eventos, verificação de consistência, localStorage e integração do Chart.js | [`ep3-etapa-3`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep3-etapa-3) |
+| 4. Modularização e refinamento final | ES Modules por responsabilidade, testes de estresse e correções | [`ep3-etapa-4`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep3-etapa-4) |
+| 5. Síntese e reflexão | Revisão e autoavaliação | [`ep3-etapa-5`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep3-etapa-5) |
+
+**Experiência Prática IV — Versionamento e acessibilidade:** em andamento.
 
 As respostas de cada etapa estão documentadas na pasta [`docs/`](docs).
 
@@ -155,6 +199,8 @@ As respostas de cada etapa estão documentadas na pasta [`docs/`](docs).
 - Um design system funciona como as constantes de um backend: centraliza decisões e evita retrabalho.
 - Grid organiza as áreas da página; Flexbox organiza o conteúdo dentro de cada componente.
 - Cor nunca deve ser o único sinal: ícones e texto tornam o feedback acessível a todas as pessoas.
+- Requisições assíncronas têm os mesmos riscos de concorrência do backend: a última resposta a chegar nem sempre é a mais recente.
+- Dados do navegador podem ser adulterados: renderizar sempre como texto e nunca guardar dados sensíveis no localStorage.
 
 ## Autor
 
