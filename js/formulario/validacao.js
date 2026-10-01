@@ -4,6 +4,8 @@
 // mensagem injetada no DOM) enquanto a pessoa preenche, e é resumido num
 // alerta no topo quando ela tenta enviar.
 
+import { cpfValido } from './mascaras.js';
+
 const ORDEM_VALIDITY = [
   'valueMissing', 'badInput', 'typeMismatch', 'patternMismatch',
   'tooShort', 'rangeUnderflow', 'rangeOverflow', 'stepMismatch',
@@ -152,7 +154,7 @@ function validarCampo(formulario, campo) {
 }
 
 // Valida todos os campos; em caso de erro, monta o resumo com links para cada campo.
-function validarFormulario(formulario) {
+export function validarFormulario(formulario) {
   const erros = camposValidaveis(formulario)
     .map((campo) => ({ campo, mensagem: validarCampo(formulario, campo) }))
     .filter(({ mensagem }) => mensagem);
@@ -196,7 +198,7 @@ function limparValidacao(formulario) {
   document.getElementById('alerta-erros').hidden = true;
 }
 
-function iniciarValidacao(formulario) {
+export function iniciarValidacao(formulario) {
   // Com JavaScript, as mensagens nativas dão lugar às mensagens da página.
   formulario.noValidate = true;
 

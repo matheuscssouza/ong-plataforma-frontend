@@ -3,12 +3,12 @@
 // Os erros são tratados aqui (navegação privada, cota cheia ou JSON
 // corrompido) para o resto da aplicação nunca quebrar por causa deles.
 
-const CHAVES = {
+export const CHAVES = {
   rascunho: 'raizes:rascunho-cadastro',
   cadastros: 'raizes:cadastros',
 };
 
-function lerJSON(chave, padrao) {
+export function lerJSON(chave, padrao) {
   try {
     const texto = localStorage.getItem(chave);
     return texto === null ? padrao : JSON.parse(texto);
@@ -17,7 +17,7 @@ function lerJSON(chave, padrao) {
   }
 }
 
-function salvarJSON(chave, valor) {
+export function salvarJSON(chave, valor) {
   try {
     localStorage.setItem(chave, JSON.stringify(valor));
     return true;
@@ -26,7 +26,7 @@ function salvarJSON(chave, valor) {
   }
 }
 
-function removerChave(chave) {
+export function removerChave(chave) {
   try {
     localStorage.removeItem(chave);
   } catch {

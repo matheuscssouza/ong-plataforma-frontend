@@ -1,48 +1,11 @@
-// Máscaras e validações complementares do formulário de cadastro.
-// As regras básicas (required, pattern, type, min/max) ficam no HTML;
-// aqui só entra o que o HTML5 não faz sozinho.
+// Formulário de cadastro: máscaras, rascunho, envio e lista de cadastros.
+// Orquestra os módulos de máscara, validação, armazenamento e feedback.
 
-const somenteDigitos = (valor) => valor.replace(/\D/g, '');
-
-function mascaraCpf(valor) {
-  return somenteDigitos(valor)
-    .slice(0, 11)
-    .replace(/(\d{3})(\d)/, '$1.$2')
-    .replace(/(\d{3})(\d)/, '$1.$2')
-    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-}
-
-function mascaraTelefone(valor) {
-  return somenteDigitos(valor)
-    .slice(0, 11)
-    .replace(/^(\d{2})(\d)/, '($1) $2')
-    .replace(/(\d{5})(\d{1,4})$/, '$1-$2');
-}
-
-function mascaraCep(valor) {
-  return somenteDigitos(valor)
-    .slice(0, 8)
-    .replace(/^(\d{5})(\d)/, '$1-$2');
-}
-
-// Confere os dois dígitos verificadores do CPF.
-function cpfValido(cpf) {
-  const d = somenteDigitos(cpf);
-  if (d.length !== 11 || /^(\d)\1{10}$/.test(d)) {
-    return false;
-  }
-  for (let posicao = 9; posicao <= 10; posicao++) {
-    let soma = 0;
-    for (let i = 0; i < posicao; i++) {
-      soma += Number(d[i]) * (posicao + 1 - i);
-    }
-    const digito = (soma * 10) % 11 % 10;
-    if (digito !== Number(d[posicao])) {
-      return false;
-    }
-  }
-  return true;
-}
+import { mascaraCpf, mascaraTelefone, mascaraCep } from './mascaras.js';
+import { iniciarValidacao, validarFormulario } from './validacao.js';
+import { CHAVES, lerJSON, salvarJSON, removerChave } from '../servicos/armazenamento.js';
+import { mostrarToast } from '../componentes/feedback.js';
+import { renderizarComponentes } from '../componentes/templates.js';
 
 function focarElementoSemRolar(elemento) {
   if (!elemento) {
@@ -52,10 +15,10 @@ function focarElementoSemRolar(elemento) {
   elemento.focus({ preventScroll: true });
 }
 
-// Liga máscaras, validações e envio ao formulário de cadastro.
+// Liga máscaras, validações, rascunho e envio ao formulário de cadastro.
 // Chamada ao carregar a página e, na SPA, sempre que o roteador
 // injeta o formulário no <main>.
-function iniciarCadastro() {
+export function iniciarCadastro() {
   const formulario = document.getElementById('form-cadastro');
   if (!formulario || formulario.dataset.iniciado) {
     return;
@@ -212,5 +175,3 @@ function iniciarCadastro() {
     resetAposEnvio = false;
   });
 }
-
-iniciarCadastro();

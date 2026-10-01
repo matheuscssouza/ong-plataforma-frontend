@@ -1,7 +1,7 @@
 // Dados exibidos pelos templates. Para incluir um projeto ou campanha,
-// basta acrescentar um objeto aqui; a marcação é gerada por js/templates.js.
+// basta acrescentar um objeto aqui; a marcação é gerada por js/componentes/templates.js.
 
-const PROJETOS = [
+export const PROJETOS = [
   {
     id: 'horta',
     titulo: 'Horta Comunitária',
@@ -49,7 +49,7 @@ const PROJETOS = [
   },
 ];
 
-const CAMPANHAS = [
+export const CAMPANHAS = [
   {
     id: 'doacao-mensal',
     titulo: 'Doação mensal',

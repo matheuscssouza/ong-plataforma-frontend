@@ -12,8 +12,9 @@ const ROTAS = {
 };
 
 const BASE = new URL('.', document.baseURI);
-const principal = document.getElementById('conteudo');
 const cache = new Map();
+let principal;
+let aoRenderizar = () => {};
 
 // Endereço absoluto de cada arquivo → rota (a raiz "/" também vale para "/").
 const ROTA_POR_ARQUIVO = new Map(
@@ -104,12 +105,10 @@ async function renderizar(rota, focarTitulo = true) {
   }
 
   principal.replaceChildren(...pagina.conteudo.cloneNode(true).childNodes);
-  renderizarComponentes(principal);
-  renderizarGraficos(principal);
   principal.removeAttribute('aria-busy');
   document.title = pagina.titulo;
   marcarMenu(caminho);
-  iniciarCadastro();
+  aoRenderizar(principal); // o roteador não conhece as páginas: quem inicia é o main.js
 
   const alvo = ancora ? document.getElementById(ancora) : null;
   if (alvo) {
@@ -129,49 +128,56 @@ function rotaAtual() {
   return hash === '' ? '/' : null;
 }
 
-document.addEventListener('click', (evento) => {
-  if (evento.defaultPrevented || evento.button !== 0
-    || evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.altKey) {
-    return;
-  }
-  const link = evento.target.closest('a[href]');
-  if (!link) {
-    return;
-  }
+// Liga o roteador. "callback" é chamado depois de cada troca de página,
+// com o <main> já preenchido, para os outros módulos iniciarem o conteúdo novo.
+export function iniciarRoteador(callback) {
+  principal = document.getElementById('conteudo');
+  aoRenderizar = callback;
 
-  // Âncora na própria página (ex.: Contato, Pular para o conteúdo):
-  // rola até o destino sem alterar a rota atual.
-  const href = link.getAttribute('href');
-  if (href.startsWith('#')) {
-    const destino = document.getElementById(href.slice(1));
-    if (destino) {
-      evento.preventDefault();
-      focarElemento(destino);
+  document.addEventListener('click', (evento) => {
+    if (evento.defaultPrevented || evento.button !== 0
+      || evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.altKey) {
+      return;
     }
-    return;
-  }
+    const link = evento.target.closest('a[href]');
+    if (!link) {
+      return;
+    }
 
-  const rota = rotaDoLink(link);
-  if (!rota) {
-    return;
-  }
-  evento.preventDefault();
-  if (location.hash === `#${rota}`) {
-    renderizar(rota);
-  } else {
-    location.hash = rota; // dispara o hashchange abaixo
-  }
-});
+    // Âncora na própria página (ex.: Contato, Pular para o conteúdo):
+    // rola até o destino sem alterar a rota atual.
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      const destino = document.getElementById(href.slice(1));
+      if (destino) {
+        evento.preventDefault();
+        focarElemento(destino);
+      }
+      return;
+    }
 
-// Voltar e Avançar do navegador também passam por aqui.
-window.addEventListener('hashchange', () => {
-  const rota = rotaAtual();
-  if (rota) {
-    renderizar(rota);
-  }
-});
+    const rota = rotaDoLink(link);
+    if (!rota) {
+      return;
+    }
+    evento.preventDefault();
+    if (location.hash === `#${rota}`) {
+      renderizar(rota);
+    } else {
+      location.hash = rota; // dispara o hashchange abaixo
+    }
+  });
 
-// Entrada direta por um endereço com rota (ex.: link compartilhado ou recarga).
-if (location.hash.startsWith('#/')) {
-  renderizar(rotaAtual(), false);
+  // Voltar e Avançar do navegador também passam por aqui.
+  window.addEventListener('hashchange', () => {
+    const rota = rotaAtual();
+    if (rota) {
+      renderizar(rota);
+    }
+  });
+
+  // Entrada direta por um endereço com rota (ex.: link compartilhado ou recarga).
+  if (location.hash.startsWith('#/')) {
+    renderizar(rotaAtual(), false);
+  }
 }

@@ -2,11 +2,13 @@
 // cópias com os dados de js/dados.js. O texto entra sempre por textContent
 // (nunca por innerHTML), então nenhum dado é interpretado como HTML.
 
-// Caminhos calculados a partir deste arquivo: funcionam tanto na página
-// html/projetos.html quanto na SPA carregada pelo index.html.
-const PASTA_JS = document.currentScript.src;
-const PASTA_IMAGENS = new URL('../imagens/', PASTA_JS);
-const PASTA_HTML = new URL('../html/', PASTA_JS);
+import { PROJETOS, CAMPANHAS } from '../dados/conteudo.js';
+import { CHAVES, lerJSON } from '../servicos/armazenamento.js';
+
+// Caminhos calculados a partir deste arquivo (import.meta.url): funcionam
+// tanto nas páginas de html/ quanto na SPA carregada pelo index.html.
+const PASTA_IMAGENS = new URL('../../imagens/', import.meta.url);
+const PASTA_HTML = new URL('../../html/', import.meta.url);
 
 function clonarTemplate(raiz, id) {
   const modelo = raiz.querySelector(`#${id}`) ?? document.getElementById(id);
@@ -124,7 +126,7 @@ const COMPONENTES = {
 // Procura contêineres marcados com data-componente dentro de "raiz" e
 // os preenche. Montamos tudo num DocumentFragment e inserimos de uma vez,
 // o que evita um redesenho da página a cada item.
-function renderizarComponentes(raiz = document) {
+export function renderizarComponentes(raiz = document) {
   raiz.querySelectorAll('[data-componente]').forEach((conteiner) => {
     const componente = COMPONENTES[conteiner.dataset.componente];
     if (!componente) {
@@ -141,5 +143,3 @@ function renderizarComponentes(raiz = document) {
     conteiner.replaceChildren(fragmento);
   });
 }
-
-renderizarComponentes();
