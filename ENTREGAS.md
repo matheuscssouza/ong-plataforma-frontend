@@ -319,3 +319,8 @@ Registros (Elemento / Justificação) em [`docs/ep4-etapa-3-semantica-aria.md`](
 Registros (Componente / Ajuste) em [`docs/ep4-etapa-3-teclado.md`](docs/ep4-etapa-3-teclado.md). Varredura com Tab nas 4 páginas (92 paradas, todas com foco visível após a correção do campo de data, PR #9).
 
 - [x] 10 registros adicionados na plataforma
+
+### Questão: "Contraste visual e modos de tela"
+Texto em [`docs/ep4-etapa-3-temas.md`](docs/ep4-etapa-3-temas.md). Implementação no PR #10 (temas escuro e alto contraste). Capturas dos três temas em `entregas/ep4/ep4-etapa-3/capturas-temas/`.
+
+- [ ] Texto colado na plataforma
