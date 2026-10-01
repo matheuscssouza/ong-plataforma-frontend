@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../css/style.css">
   <script>document.documentElement.classList.add("js");</script>
   <script src="../js/menu.js" defer></script>
+  <script src="../js/dados.js" defer></script>
+  <script src="../js/templates.js" defer></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
@@ -53,86 +55,37 @@
     <section aria-labelledby="titulo-andamento">
       <h2 id="titulo-andamento">Projetos em andamento</h2>
 
-      <article class="projeto" aria-labelledby="titulo-horta">
-        <figure>
-          <picture>
-            <source srcset="../imagens/projeto-horta.webp" type="image/webp">
-            <img src="../imagens/projeto-horta.png" alt="Ilustração de canteiros com mudas brotando sob o sol" width="320" height="200">
-          </picture>
-          <figcaption>Horta instalada em terreno cedido pela subprefeitura.</figcaption>
-        </figure>
-        <div>
-          <h3 id="titulo-horta">Horta Comunitária</h3>
-          <ul class="badges" aria-label="Categorias">
-            <li class="badge badge-ambiente">Meio ambiente</li>
-            <li class="badge badge-aberta">Vagas abertas</li>
-          </ul>
-          <p>Produção de hortaliças orgânicas distribuídas gratuitamente às famílias cadastradas, com oficinas de alimentação saudável.</p>
-          <h4>Informações</h4>
-          <dl class="ficha">
-            <dt>Público</dt>
-            <dd>Famílias do Jardim Esperança</dd>
-            <dt>Frequência</dt>
-            <dd>Mutirões aos sábados</dd>
-            <dt>Início</dt>
-            <dd><time datetime="2016-03">Março de 2016</time></dd>
-          </dl>
-        </div>
-      </article>
+      <div class="lista-projetos" data-componente="projetos"></div>
 
-      <article class="projeto" aria-labelledby="titulo-reforco">
-        <figure>
-          <picture>
-            <source srcset="../imagens/projeto-reforco.webp" type="image/webp">
-            <img src="../imagens/projeto-reforco.png" alt="Ilustração de uma lousa com anotações e uma pilha de livros" width="320" height="200">
-          </picture>
-          <figcaption>Aulas acontecem na sede do instituto.</figcaption>
-        </figure>
-        <div>
-          <h3 id="titulo-reforco">Reforço Escolar</h3>
-          <ul class="badges" aria-label="Categorias">
-            <li class="badge badge-educacao">Educação</li>
-            <li class="badge badge-aberta">Vagas abertas</li>
-          </ul>
-          <p>Apoio em português e matemática para estudantes do ensino fundamental, no contraturno escolar.</p>
-          <h4>Informações</h4>
-          <dl class="ficha">
-            <dt>Público</dt>
-            <dd>Crianças de 7 a 14 anos</dd>
-            <dt>Frequência</dt>
-            <dd>Segunda a quinta, das 14h às 17h</dd>
-            <dt>Início</dt>
-            <dd><time datetime="2015-08">Agosto de 2015</time></dd>
-          </dl>
-        </div>
-      </article>
+      <template id="tpl-projeto">
+        <article class="projeto">
+          <figure>
+            <picture>
+              <source type="image/webp">
+              <img alt="" width="320" height="200">
+            </picture>
+            <figcaption></figcaption>
+          </figure>
+          <div>
+            <h3></h3>
+            <ul class="badges" aria-label="Categorias"></ul>
+            <p data-campo="descricao"></p>
+            <h4>Informações</h4>
+            <dl class="ficha">
+              <dt>Público</dt>
+              <dd data-campo="publico"></dd>
+              <dt>Frequência</dt>
+              <dd data-campo="frequencia"></dd>
+              <dt>Início</dt>
+              <dd data-campo="inicio"></dd>
+            </dl>
+          </div>
+        </article>
+      </template>
 
-      <article class="projeto" aria-labelledby="titulo-digital">
-        <figure>
-          <picture>
-            <source srcset="../imagens/projeto-digital.webp" type="image/webp">
-            <img src="../imagens/projeto-digital.png" alt="Ilustração de um notebook com sinal de confirmação na tela" width="320" height="200">
-          </picture>
-          <figcaption>Laboratório montado com computadores doados.</figcaption>
-        </figure>
-        <div>
-          <h3 id="titulo-digital">Inclusão Digital</h3>
-          <ul class="badges" aria-label="Categorias">
-            <li class="badge badge-tecnologia">Tecnologia</li>
-            <li class="badge">Lista de espera</li>
-          </ul>
-          <p>Cursos de informática básica, uso seguro da internet e introdução à programação para jovens e adultos.</p>
-          <h4>Informações</h4>
-          <dl class="ficha">
-            <dt>Público</dt>
-            <dd>Jovens a partir de 15 anos e adultos</dd>
-            <dt>Frequência</dt>
-            <dd>Turmas noturnas e aos sábados</dd>
-            <dt>Início</dt>
-            <dd><time datetime="2019-02">Fevereiro de 2019</time></dd>
-          </dl>
-        </div>
-      </article>
+      <template id="tpl-badge">
+        <li class="badge"></li>
+      </template>
     </section>
 
     <section id="voluntariado" aria-labelledby="titulo-voluntariado">
@@ -155,32 +108,16 @@
     <section id="doacoes" aria-labelledby="titulo-doacoes">
       <h2 id="titulo-doacoes">Campanhas de doação</h2>
       <p>Todas as doações são registradas e aparecem na prestação de contas anual do instituto.</p>
-      <div class="grade">
-        <article class="cartao" aria-labelledby="titulo-doacao-mensal">
-          <h3 id="titulo-doacao-mensal">Doação mensal</h3>
-          <ul class="badges" aria-label="Situação">
-            <li class="badge">Contínua</li>
-          </ul>
-          <p>Uma contribuição fixa garante sementes, material escolar e a manutenção dos computadores ao longo do ano.</p>
-          <p><a href="cadastro.html">Quero ser doador mensal</a></p>
+      <div class="grade" data-componente="campanhas"></div>
+
+      <template id="tpl-campanha">
+        <article class="cartao">
+          <h3></h3>
+          <ul class="badges" aria-label="Situação"></ul>
+          <p data-campo="descricao"></p>
+          <p data-campo="rodape"></p>
         </article>
-        <article class="cartao" aria-labelledby="titulo-material-escolar">
-          <h3 id="titulo-material-escolar">Campanha Material Escolar</h3>
-          <ul class="badges" aria-label="Situação">
-            <li class="badge badge-prazo">Prazo: fev/2027</li>
-          </ul>
-          <p>Arrecadação de cadernos, lápis e mochilas para os alunos do Reforço Escolar.</p>
-          <p>Até <time datetime="2027-02-28">28 de fevereiro de 2027</time>.</p>
-        </article>
-        <article class="cartao" aria-labelledby="titulo-computadores">
-          <h3 id="titulo-computadores">Doe um computador</h3>
-          <ul class="badges" aria-label="Situação">
-            <li class="badge badge-aberta">Aberta</li>
-          </ul>
-          <p>Computadores e notebooks usados são revisados pelos voluntários e ampliam as turmas de Inclusão Digital.</p>
-          <p>Entregas na sede, de segunda a sexta.</p>
-        </article>
-      </div>
+      </template>
     </section>
 
     <aside class="aviso" aria-labelledby="titulo-resultados">
