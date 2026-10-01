@@ -112,10 +112,28 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 - Roteiros automatizados no navegador cobriram navegação, validação, armazenamento, gráfico e cenários de estresse (dados malformados, conexão caindo, cliques rápidos, armazenamento cheio).
 - A rodada de estresse encontrou e corrigiu seis falhas, entre elas uma condição de corrida no roteador e o envio duplicado do formulário.
 
+### Experiência Prática IV — Versionamento, acessibilidade e produção
+
+**Versionamento**
+- **GitFlow** (`main`, `develop`, `feature/`, `release/`), integração por pull request, **Conventional Commits** e versões semânticas (`v1.0.0`, `v1.1.0`, `v2.0.0`, `v2.1.0`), documentados no [`CONTRIBUTING.md`](CONTRIBUTING.md).
+- Issues e milestones para planejar cada etapa.
+
+**Acessibilidade (WCAG 2.1 AA)**
+- Auditoria com **axe-core**: 0 violações nas quatro páginas e nos três temas.
+- Varredura completa com teclado (foco visível em todas as paradas), região `aria-live` que anuncia a troca de página na SPA e layout sem rolagem horizontal em 320px.
+- **Temas escuro e alto contraste**, com seletor no menu, preferência salva e respeito a `prefers-color-scheme`, `prefers-contrast` e `forced-colors`. Todos os pares de texto e fundo têm contraste de pelo menos 4,5:1.
+
+**Produção**
+- Build com **Vite**: JavaScript em 1 arquivo, CSS e HTML minificados (120 KB → 81 KB).
+- Imagens recomprimidas com **sharp** (95 KB → 39,6 KB) e carregamento sob demanda.
+- **GitHub Actions**: cada pull request roda build e testes; cada versão na `main` publica a pasta `dist/` no GitHub Pages.
+
 ### Qualidade
 - **W3C Markup Validator:** 0 erros e 0 avisos nas quatro páginas.
 - **W3C CSS Validator:** 0 erros.
-- Testes visuais em larguras de 375px a 1500px, sem rolagem horizontal.
+- **axe-core (WCAG 2.1 AA):** 0 violações.
+- **20 testes de ponta a ponta** passando no código-fonte e na build de produção, a cada pull request.
+- Testes visuais em larguras de 320px a 1500px, sem rolagem horizontal.
 
 ![Página de projetos](docs/screenshots/projetos.png)
 
@@ -126,6 +144,8 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 - **JavaScript** (vanilla, ES Modules), **localStorage** e **Chart.js** (gráficos)
 - Fontes **Fraunces** e **Lora** (Google Fonts)
 - **Git** (GitFlow, Conventional Commits, versionamento semântico) e **GitHub Pages**
+- **Vite** (build e minificação) e **sharp** (otimização de imagens)
+- **GitHub Actions** (integração e entrega contínuas)
 - **Node.js** + **Chrome DevTools Protocol** para os testes automatizados
 
 ## Estrutura de pastas
@@ -148,8 +168,11 @@ ong-plataforma-frontend/
 │   └── dados/              # conteúdo de projetos e campanhas
 ├── imagens/                # Imagens em PNG e WebP (logo também em SVG)
 ├── tests/                  # Testes de ponta a ponta (npm test)
+├── scripts/                # Otimização de imagens (npm run otimizar-imagens)
+├── .github/workflows/      # CI/CD: build, testes e deploy
 ├── docs/                   # Respostas de cada etapa e capturas de tela
-├── package.json            # Scripts npm start e npm test
+├── vite.config.js          # Configuração da build de produção
+├── package.json            # Scripts e dependências de desenvolvimento
 └── CONTRIBUTING.md         # GitFlow, padrão de commits e checklist de revisão
 ```
 
@@ -159,20 +182,30 @@ ong-plataforma-frontend/
 |---|---|---|
 | Navegador moderno (Chrome, Edge, Firefox ou Safari) | Usar o site | Com suporte a ES Modules e `<dialog>` |
 | Git | Clonar o repositório | Qualquer versão recente |
-| Python 3 **ou** Node.js | Servidor local para desenvolvimento | Python 3.8+ ou Node 22+ |
-| Node.js + Google Chrome | Executar os testes automatizados | Node 22+ |
+| Node.js e npm | Servidor de desenvolvimento, build e testes | Node 22+ |
+| Google Chrome | Executar os testes automatizados | Versão recente |
 
-O projeto **não tem dependências de terceiros para instalar**: não há `node_modules`. A única biblioteca externa, o Chart.js, é carregada pelo navegador via CDN.
+As dependências de desenvolvimento (Vite, html-minifier-terser e sharp) são instaladas com `npm install`. O site publicado não depende de nenhuma delas; a única biblioteca usada no navegador, o Chart.js, é carregada via CDN.
 
 ## Instalação e execução
 
 ```bash
 git clone https://github.com/matheuscssouza/ong-plataforma-frontend.git
 cd ong-plataforma-frontend
-npm start
+npm install
+npm run dev
 ```
 
-Acesse http://localhost:8000. O `npm start` roda `python3 -m http.server 8000`; sem npm, use esse comando diretamente.
+Acesse http://localhost:8000. Sem Node, também é possível servir os arquivos-fonte com `python3 -m http.server 8000` (ou `npm start`).
+
+| Comando | O que faz |
+|---|---|
+| `npm run dev` | Servidor de desenvolvimento do Vite |
+| `npm run build` | Gera a versão de produção em `dist/` |
+| `npm run preview` | Serve a pasta `dist/` em http://localhost:8080 |
+| `npm test` | Testes no código-fonte |
+| `npm run test:build` | Gera a build e roda os testes nela |
+| `npm run otimizar-imagens` | Recomprime as imagens de `imagens/` |
 
 > Abrir o `index.html` direto do disco (`file://`) **não funciona**: navegadores só carregam ES Modules por HTTP.
 
@@ -200,8 +233,8 @@ Além dos testes automatizados, cada mudança é validada no [W3C Markup Validat
 
 ## Build e deploy
 
-- **Build:** hoje não há etapa de build; o site publica os arquivos-fonte. A minificação de CSS e JavaScript e a compressão de imagens estão planejadas para a etapa de otimização ([issue #5](https://github.com/matheuscssouza/ong-plataforma-frontend/issues/5)).
-- **Deploy:** automático pelo **GitHub Pages** a partir da branch `main`. Cada versão fechada que entra na `main` fica no ar em cerca de um minuto em https://matheuscssouza.github.io/ong-plataforma-frontend/.
+- **Build:** `npm run build` usa o **Vite** ([`vite.config.js`](vite.config.js)) para empacotar os módulos, minificar CSS, JavaScript e HTML e gerar a pasta `dist/`.
+- **CI/CD:** o workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) roda `npm ci`, a build e os testes em todo pull request; em todo push na `main`, publica a pasta `dist/` no **GitHub Pages**, em https://matheuscssouza.github.io/ong-plataforma-frontend/.
 
 ## Manutenção
 
@@ -251,7 +284,13 @@ Cada etapa concluída tem uma tag no Git, que preserva o projeto exatamente como
 | 4. Modularização e refinamento final | ES Modules por responsabilidade, testes de estresse e correções | [`ep3-etapa-4`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep3-etapa-4) |
 | 5. Síntese e reflexão | Revisão e autoavaliação | [`ep3-etapa-5`](https://github.com/matheuscssouza/ong-plataforma-frontend/tree/ep3-etapa-5) |
 
-**Experiência Prática IV — Versionamento e acessibilidade:** em andamento.
+**Experiência Prática IV — Versionamento e acessibilidade** (versão [`v2.1.0`](https://github.com/matheuscssouza/ong-plataforma-frontend/releases/tag/v2.1.0))
+
+| Etapa | Entrega | Pull requests |
+|---|---|---|
+| 2. Controle de versões e documentação | GitFlow, CONTRIBUTING.md, versões semânticas, testes automatizados e README técnico | #1, #6, #7, #8 |
+| 3. Implementação de acessibilidade | Auditoria axe-core, teclado, leitor de tela, reflow e temas escuro e alto contraste | #9, #10 |
+| 4. Otimização e deploy | Build com Vite, imagens otimizadas e CI/CD com GitHub Actions | #11, #12, #13 |
 
 As respostas de cada etapa estão documentadas na pasta [`docs/`](docs).
 

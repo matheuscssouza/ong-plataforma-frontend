@@ -1,6 +1,6 @@
 {
   "name": "ong-plataforma-frontend",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Plataforma web para ONG do terceiro setor: HTML5 semântico, CSS3 e JavaScript em ES Modules.",
   "private": true,
   "type": "module",
