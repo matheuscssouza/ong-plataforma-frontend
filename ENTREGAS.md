@@ -324,3 +324,8 @@ Registros (Componente / Ajuste) em [`docs/ep4-etapa-3-teclado.md`](docs/ep4-etap
 Texto em [`docs/ep4-etapa-3-temas.md`](docs/ep4-etapa-3-temas.md). Implementação no PR #10 (temas escuro e alto contraste). Capturas dos três temas em `entregas/ep4/ep4-etapa-3/capturas-temas/`.
 
 - [x] Texto colado na plataforma
+
+### Questão: "Elementos visuais verificados (contraste)"
+Registros (Elemento / Cores e rácio / Ferramenta) em [`docs/ep4-etapa-3-contraste.md`](docs/ep4-etapa-3-contraste.md).
+
+- [ ] Registros adicionados na plataforma
