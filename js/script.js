@@ -44,9 +44,16 @@ function cpfValido(cpf) {
   return true;
 }
 
-const formulario = document.getElementById('form-cadastro');
+// Liga máscaras, validações e envio ao formulário de cadastro.
+// Chamada ao carregar a página e, na SPA, sempre que o roteador
+// injeta o formulário no <main>.
+function iniciarCadastro() {
+  const formulario = document.getElementById('form-cadastro');
+  if (!formulario || formulario.dataset.iniciado) {
+    return;
+  }
+  formulario.dataset.iniciado = 'true';
 
-if (formulario) {
   const cpf = document.getElementById('cpf');
   const telefone = document.getElementById('telefone');
   const cep = document.getElementById('cep');
@@ -127,3 +134,5 @@ if (formulario) {
     resetAposEnvio = false;
   });
 }
+
+iniciarCadastro();

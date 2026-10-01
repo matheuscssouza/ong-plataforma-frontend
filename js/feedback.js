@@ -28,26 +28,31 @@ function mostrarToast(mensagem, tipo = 'sucesso', duracao = 5000) {
   setTimeout(() => toast.remove(), duracao);
 }
 
-document.querySelectorAll('[data-toast]').forEach((botao) => {
-  botao.addEventListener('click', () => {
-    mostrarToast(botao.dataset.toast, botao.dataset.toastTipo);
-  });
-});
+// Delegação de eventos: um único ouvinte no documento atende também
+// aos botões e modais que a SPA injetar depois do carregamento.
+document.addEventListener('click', (evento) => {
+  const alvo = evento.target;
 
-document.querySelectorAll('[data-abrir-modal]').forEach((botao) => {
-  botao.addEventListener('click', () => {
-    document.getElementById(botao.dataset.abrirModal)?.showModal();
-  });
-});
-
-document.querySelectorAll('dialog.modal').forEach((modal) => {
   // Clique no fundo escurecido (fora da caixa) fecha o modal; Esc já é nativo.
-  modal.addEventListener('click', (evento) => {
-    if (evento.target === modal) {
-      modal.close();
-    }
-  });
-  modal.querySelectorAll('[data-fechar-modal]').forEach((botao) => {
-    botao.addEventListener('click', () => modal.close());
-  });
+  if (alvo instanceof HTMLDialogElement && alvo.classList.contains('modal')) {
+    alvo.close();
+    return;
+  }
+
+  const botaoToast = alvo.closest('[data-toast]');
+  if (botaoToast) {
+    mostrarToast(botaoToast.dataset.toast, botaoToast.dataset.toastTipo);
+    return;
+  }
+
+  const botaoAbrir = alvo.closest('[data-abrir-modal]');
+  if (botaoAbrir) {
+    document.getElementById(botaoAbrir.dataset.abrirModal)?.showModal();
+    return;
+  }
+
+  const botaoFechar = alvo.closest('[data-fechar-modal]');
+  if (botaoFechar) {
+    botaoFechar.closest('dialog')?.close();
+  }
 });
