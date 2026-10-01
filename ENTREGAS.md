@@ -215,3 +215,8 @@ Texto em [`docs/ep3-etapa-2-templates.md`](docs/ep3-etapa-2-templates.md).
 ## EP3 · Etapa 3 — Interatividade e controle de eventos
 
 Objetivos: mapear e gerenciar listeners de eventos em elementos críticos; verificação de consistência em formulários; persistência com localStorage; analisar e acoplar bibliotecas externas.
+
+### Questão: "Interatividade com eventos"
+Texto em [`docs/ep3-etapa-3-eventos.md`](docs/ep3-etapa-3-eventos.md).
+
+- [ ] Texto colado na plataforma
