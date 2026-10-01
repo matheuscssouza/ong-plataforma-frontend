@@ -196,3 +196,8 @@ Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúd
 ## EP3 · Etapa 2 — Fundamentos e organização inicial
 
 Objetivos: estruturar o diretório com separação lógica e técnica; implementar a base da navegação SPA; gerar templates dinâmicos que reaproveitem componentes visuais.
+
+### Questão: "Organização da estrutura de diretórios"
+Texto em [`docs/ep3-etapa-2-estrutura-diretorios.md`](docs/ep3-etapa-2-estrutura-diretorios.md).
+
+- [ ] Texto colado na plataforma
