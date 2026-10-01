@@ -702,9 +702,9 @@ main > h1 {
    :user-valid e :user-invalid só entram depois que a pessoa interage com o
    campo (ou tenta enviar), para não mostrar erro num formulário ainda vazio.
    A cor nunca é o único sinal: há ícone (✓ ou !) e mensagem em texto. */
-.formulario input:user-valid:not([type="radio"], [type="checkbox"]),
-.formulario select:user-valid,
-.formulario textarea:user-valid {
+.formulario input[required]:user-valid:not([type="radio"], [type="checkbox"]),
+.formulario select[required]:user-valid,
+.formulario textarea[required]:user-valid {
   border-color: var(--cor-sucesso);
   padding-right: var(--espaco-6);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%231f6f4a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -712,26 +712,30 @@ main > h1 {
 
 .formulario input:user-invalid:not([type="radio"], [type="checkbox"]),
 .formulario select:user-invalid,
-.formulario textarea:user-invalid {
+.formulario textarea:user-invalid,
+.formulario [aria-invalid="true"]:not([type="radio"], [type="checkbox"]) {
   border-color: var(--cor-erro);
   padding-right: var(--espaco-6);
   background-color: var(--cor-erro-clara);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23b3261e'/%3E%3Cpath d='M8 4v5' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='12' r='1.1' fill='%23fff'/%3E%3C/svg%3E");
 }
 
-.formulario select:user-valid,
-.formulario select:user-invalid {
+.formulario select[required]:user-valid,
+.formulario select:user-invalid,
+.formulario select[aria-invalid="true"] {
   background-position: right var(--espaco-5) center;
 }
 
 /* Campo com erro: rótulo e texto de ajuda também ficam na cor de erro */
 .campo:has(:user-invalid) > label,
-.campo:has(:user-invalid) > small {
+.campo:has(:user-invalid) > small,
+.tem-erro > label,
+.tem-erro > small {
   color: var(--cor-erro);
 }
 
 /* Mensagem de erro em texto, para não depender só da cor */
-.campo:has(:user-invalid)::after {
+html:not(.js) .campo:has(:user-invalid)::after {
   content: "Verifique este campo.";
   font-family: var(--fonte-interface);
   font-size: var(--tamanho-legenda);
@@ -739,15 +743,32 @@ main > h1 {
   color: var(--cor-erro);
 }
 
+/* Mensagem específica injetada pelo JavaScript (js/validacao.js) */
+.mensagem-erro {
+  flex-basis: 100%;
+  margin: 0;
+  font-family: var(--fonte-interface);
+  font-size: var(--tamanho-legenda);
+  font-weight: 600;
+  color: var(--cor-erro);
+}
+
+.grupo-opcoes.tem-erro,
 .grupo-opcoes:has(:user-invalid) {
   border-color: var(--cor-erro);
 }
 
 .consentimento {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--espaco-2);
   align-items: flex-start;
   margin-bottom: var(--espaco-3);
+}
+
+.consentimento label {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .consentimento input {
@@ -879,6 +900,11 @@ main > h1 {
 .alerta-erro {
   color: var(--cor-erro);
   background: var(--cor-erro-clara);
+}
+
+.alerta-erro a {
+  color: var(--cor-erro);
+  font-weight: 600;
 }
 
 /* --- Toasts: notificações rápidas, que somem sozinhas --- */

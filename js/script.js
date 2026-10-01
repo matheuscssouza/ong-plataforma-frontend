@@ -62,8 +62,6 @@ function iniciarCadastro() {
   // O evento "input" dispara a cada tecla digitada ou texto colado.
   cpf.addEventListener('input', () => {
     cpf.value = mascaraCpf(cpf.value);
-    const completo = cpf.value.length === 14;
-    cpf.setCustomValidity(completo && !cpfValido(cpf.value) ? 'CPF inválido: confira os números digitados.' : '');
   });
 
   telefone.addEventListener('input', () => {
@@ -79,36 +77,20 @@ function iniciarCadastro() {
   limite.setFullYear(limite.getFullYear() - 16);
   nascimento.max = limite.toISOString().slice(0, 10);
 
+  // Verificação de consistência (js/validacao.js): mensagens por campo e resumo no envio.
+  iniciarValidacao(formulario);
+
   // --- Feedback do envio ---
-  const alertaErros = document.getElementById('alerta-erros');
-  const textoErros = document.getElementById('alerta-erros-texto');
   const botaoEnviar = formulario.querySelector('button[type="submit"]');
   const modal = document.getElementById('modal-confirmacao');
   let resetAposEnvio = false;
 
-  // O navegador dispara "invalid" em cada campo com erro ao tentar enviar;
-  // agrupamos a contagem num único alerta no topo do formulário.
-  // Contamos pelo name: os três rádios de "Tipo de apoio" valem um campo só.
-  const camposInvalidos = new Set();
-  formulario.addEventListener('invalid', (evento) => {
-    camposInvalidos.add(evento.target.name);
-    queueMicrotask(() => {
-      if (camposInvalidos.size === 0) {
-        return;
-      }
-      const total = camposInvalidos.size;
-      textoErros.textContent = total === 1
-        ? 'Há 1 campo para corrigir. Ele está destacado em vermelho.'
-        : `Há ${total} campos para corrigir. Eles estão destacados em vermelho.`;
-      alertaErros.hidden = false;
-      camposInvalidos.clear();
-    });
-  }, true);
-
   formulario.addEventListener('submit', (evento) => {
-    // Sem servidor neste projeto: o envio é simulado após a validação nativa.
+    // Sem servidor neste projeto: o envio é simulado depois da verificação.
     evento.preventDefault();
-    alertaErros.hidden = true;
+    if (!validarFormulario(formulario)) {
+      return;
+    }
     botaoEnviar.disabled = true;
     botaoEnviar.textContent = 'Enviando…';
 
@@ -126,8 +108,6 @@ function iniciarCadastro() {
   });
 
   formulario.addEventListener('reset', () => {
-    cpf.setCustomValidity('');
-    alertaErros.hidden = true;
     if (!resetAposEnvio) {
       mostrarToast('Formulário limpo.');
     }

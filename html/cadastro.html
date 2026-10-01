@@ -13,6 +13,7 @@
   <script>document.documentElement.classList.add("js");</script>
   <script src="../js/menu.js" defer></script>
   <script src="../js/feedback.js" defer></script>
+  <script src="../js/validacao.js" defer></script>
   <script src="../js/script.js" defer></script>
 </head>
 <body>
@@ -68,7 +69,8 @@
         <svg class="alerta-icone" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M10 5v6" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.5" r="1.2" fill="#fff"/></svg>
         <div class="alerta-conteudo">
           <p class="alerta-titulo">Não foi possível enviar o cadastro</p>
-          <p id="alerta-erros-texto">Há campos para corrigir.</p>
+          <p id="alerta-erros-texto">Há campos para corrigir:</p>
+          <ul id="alerta-erros-lista"></ul>
         </div>
       </div>
 
@@ -185,9 +187,9 @@
 
           <fieldset class="grupo-opcoes">
             <legend>Tipo de apoio <abbr title="obrigatório">*</abbr></legend>
-            <label><input type="radio" name="tipo" value="voluntario" required> Voluntário</label>
-            <label><input type="radio" name="tipo" value="doador"> Doador</label>
-            <label><input type="radio" name="tipo" value="ambos"> Voluntário e doador</label>
+            <label><input type="radio" id="tipo-voluntario" name="tipo" value="voluntario" required> Voluntário</label>
+            <label><input type="radio" id="tipo-doador" name="tipo" value="doador"> Doador</label>
+            <label><input type="radio" id="tipo-ambos" name="tipo" value="ambos"> Voluntário e doador</label>
           </fieldset>
 
           <fieldset class="grupo-opcoes">
