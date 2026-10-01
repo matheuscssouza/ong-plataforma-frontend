@@ -248,4 +248,11 @@ Texto em [`docs/ep3-etapa-4-modularizacao.md`](docs/ep3-etapa-4-modularizacao.md
 ### Questão: "Testes e correção de falhas"
 Entradas (Problema / Técnica de diagnóstico / Solução) em [`docs/ep3-etapa-4-testes.md`](docs/ep3-etapa-4-testes.md).
 
-- [ ] Entradas adicionadas na plataforma
+- [x] 8 entradas enviadas: corrida de navegação, sem conexão, maxlength x máscara, envio duplicado, localStorage cheio, script duplicado, tabindex no roteador e menu aberto ao Voltar
+
+## EP3 · Síntese e reflexão
+
+### Questão: "Reflexão sobre a aprendizagem"
+Texto em [`docs/ep3-reflexao.md`](docs/ep3-reflexao.md).
+
+- [ ] Texto colado na plataforma

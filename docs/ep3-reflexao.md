@@ -1,0 +1,9 @@
+# EP3 — Reflexão sobre a aprendizagem
+
+Nesta terceira experiência, a plataforma deixou de ser um conjunto de páginas estáticas e virou uma aplicação. Foi a etapa mais próxima da minha formação em backend, porque o foco passou a ser lógica, estado e dados.
+
+Pontos fortes: implementei uma SPA com roteamento por hash, um sistema de templates com o elemento <template> e textContent (seguro contra injeção de código), validação de consistência com mensagens por campo, persistência no localStorage e a integração do Chart.js carregado sob demanda e com verificação de integridade. No fim, reorganizei o código em ES Modules por responsabilidade, com um único ponto de entrada. Também mantive o cuidado com acessibilidade e privacidade: o CPF nunca é salvo no navegador.
+
+Oportunidades de melhoria: os testes de estresse revelaram seis falhas que eu não tinha previsto, como a condição de corrida entre dois carregamentos, o envio duplicado e o maxlength cortando textos colados. Isso mostra que preciso pensar nos casos de borda desde o início, e não só no fim. Meus testes foram roteiros executados no navegador; o próximo passo é transformá-los em testes automatizados no repositório, com ferramentas como Playwright. Também deixei a modularização para o final, quando ela deveria ter guiado o projeto desde o começo, e a lista de projetos passou a depender de JavaScript para aparecer.
+
+Contribuição profissional: vários problemas do front-end têm a mesma natureza dos do backend. A corrida entre requisições é um problema de concorrência, o localStorage funciona como uma camada de persistência e a validação no navegador complementa, mas não substitui, a do servidor. Aprendi a programar de forma defensiva, prevendo falhas de rede e dados corrompidos, e a usar as ferramentas do navegador para diagnosticar problemas. Saio preparado para trabalhar no limite entre front-end e back-end, entendendo o contrato entre as duas camadas.
