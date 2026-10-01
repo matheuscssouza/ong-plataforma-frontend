@@ -104,7 +104,9 @@ Texto em [`docs/etapa-4-reflexao.md`](docs/etapa-4-reflexao.md).
 
 ---
 
-# Experiência Prática II — Estilização e layouts
+# Experiência Prática II — Estilização e layouts ✅
+
+> Estado final da entrega preservado na tag `ep2-final`.
 
 Desafio: aplicar CSS3 avançado sobre a estrutura HTML da EP1 para criar uma interface dinâmica, responsiva e escalável, com arquitetura de estilos consistente.
 
@@ -117,7 +119,7 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Design system e estruturação responsiva | ✅ Concluída | `entregas/ep2-etapa-2/` |
 | 3 | Componentes visuais e navegação | ✅ Concluída | `entregas/ep2-etapa-3/` |
-| 4 | Síntese e reflexão | 🔄 Em andamento | `entregas/ep2-etapa-4/` |
+| 4 | Síntese e reflexão | ✅ Concluída | `entregas/ep2-etapa-4/` |
 
 ## EP2 · Etapa 2 — Design system e estruturação responsiva
 
@@ -169,4 +171,12 @@ Objetivos: verificação sistemática das entregas por checklist de requisitos; 
 ### Questão: "Reflexão sobre a aprendizagem"
 Texto em [`docs/ep2-etapa-4-reflexao.md`](docs/ep2-etapa-4-reflexao.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+---
+
+# Experiência Prática III
+
+> Cópias dos arquivos a enviar ficam em `entregas/ep3-etapa-N/`; o fim de cada etapa é marcado com a tag `ep3-etapa-N`.
+
+_Objetivos e etapas a registrar conforme o enunciado chegar._
