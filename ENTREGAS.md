@@ -363,3 +363,8 @@ Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "
 Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "Impacto". Tabela completa no PR #12.
 
 - [x] Texto colado na plataforma
+
+### Questão: "Publicação e deploy em ambiente de produção"
+Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md). Workflow no PR #13 (CI aprovado no GitHub: 20 de 20 testes no código-fonte e na build).
+
+- [ ] Texto colado na plataforma
