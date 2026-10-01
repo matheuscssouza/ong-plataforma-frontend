@@ -273,8 +273,8 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com co
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ✅ Concluída (aguardando merge dos PRs #1, #7, #8 e #6) | `entregas/ep4/ep4-etapa-2/` |
-| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-3/` |
-| 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | ⏳ Pendente | `entregas/ep4/ep4-etapa-4/` |
+| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ✅ Concluída (aguardando merge dos PRs #9 e #10) | `entregas/ep4/ep4-etapa-3/` |
+| 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep4/ep4-etapa-5/` |
 
 ## EP4 · Etapa 2 — Controle de versões e documentação
@@ -328,4 +328,8 @@ Texto em [`docs/ep4-etapa-3-temas.md`](docs/ep4-etapa-3-temas.md). Implementaç�
 ### Questão: "Elementos visuais verificados (contraste)"
 Registros (Elemento / Cores e rácio / Ferramenta) em [`docs/ep4-etapa-3-contraste.md`](docs/ep4-etapa-3-contraste.md).
 
-- [ ] Registros adicionados na plataforma
+- [x] 10 registros adicionados na plataforma
+
+## EP4 · Etapa 4 — Otimização e deploy para produção
+
+Objetivos: preparar o projeto para produção; minificar CSS, JavaScript e HTML; otimizar imagens e recursos estáticos; publicar em produção com link funcional. Acompanhamento na issue #5.
