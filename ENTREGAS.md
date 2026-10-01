@@ -165,3 +165,8 @@ Capturas em `entregas/ep2-etapa-3/capturas/` (10 imagens PNG: badges, alertas, b
 ## EP2 · Etapa 4 — Síntese e reflexão
 
 Objetivos: verificação sistemática das entregas por checklist de requisitos; autoavaliação em escala do domínio de CSS3; síntese de dificuldades, acertos, evolução e próximos passos.
+
+### Questão: "Reflexão sobre a aprendizagem"
+Texto em [`docs/ep2-etapa-4-reflexao.md`](docs/ep2-etapa-4-reflexao.md).
+
+- [ ] Texto colado na plataforma
