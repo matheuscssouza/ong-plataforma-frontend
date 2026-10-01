@@ -26,6 +26,14 @@
   --cor-erro-clara: #fdf1f0;
   --cor-sucesso: var(--cor-primaria);
   --cor-desabilitado: #e3e8e5;
+  --cor-info: #1f4f6f;
+  --cor-info-clara: #e6f0fa;
+  --cor-aviso: #7a4e00;
+
+  /* --- Cores de categoria (badges) --- */
+  --cor-terciaria: #3d2b5c;
+  --cor-terciaria-clara: #f3ecfa;
+  --cor-neutra-clara: #eef1ef;
 
   /* --- Tipografia: famílias --- */
   --fonte-titulos: "Fraunces", Georgia, serif;
@@ -752,6 +760,280 @@ main > h1 {
   cursor: pointer;
 }
 
+/* =========================================================
+   Componentes de feedback — badges, alertas, toasts e modal
+   Classes genéricas e reutilizáveis: o back-end só precisa gerar
+   o HTML com a classe base + a variante (ex.: "alerta alerta-erro").
+   ========================================================= */
+
+/* --- Badges: etiquetas de categoria e status --- */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  margin: 0 0 var(--espaco-3);
+  padding: 0;
+  list-style: none;
+}
+
+.cartao > .badges {
+  margin: 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-1);
+  padding: var(--espaco-1) var(--espaco-3);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--fonte-interface);
+  font-size: var(--tamanho-legenda);
+  font-weight: 600;
+  line-height: var(--altura-linha-titulo);
+  color: var(--cor-texto-suave);
+  background: var(--cor-neutra-clara);
+}
+
+.badge-ambiente {
+  color: var(--cor-primaria-escura);
+  background: var(--cor-primaria-clara);
+}
+
+.badge-educacao {
+  color: var(--cor-info);
+  background: var(--cor-info-clara);
+}
+
+.badge-tecnologia {
+  color: var(--cor-terciaria);
+  background: var(--cor-terciaria-clara);
+}
+
+.badge-aberta {
+  color: var(--cor-superficie);
+  background: var(--cor-sucesso);
+  border-color: var(--cor-sucesso);
+}
+
+.badge-prazo {
+  color: var(--cor-aviso);
+  background: var(--cor-secundaria-clara);
+}
+
+/* --- Alertas: mensagens fixas na página --- */
+.alerta {
+  display: flex;
+  gap: var(--espaco-3);
+  align-items: flex-start;
+  margin: 0 0 var(--espaco-4);
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 1px solid currentColor;
+  border-left-width: 5px;
+  border-radius: var(--raio);
+  color: var(--cor-info);
+  background: var(--cor-info-clara);
+}
+
+.alerta[hidden] {
+  display: none;
+}
+
+.alerta-icone {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+}
+
+.alerta-conteudo > * {
+  margin: 0;
+}
+
+.alerta-titulo {
+  font-family: var(--fonte-interface);
+  font-weight: 700;
+}
+
+.alerta-conteudo p + p,
+.alerta-conteudo p + ul {
+  margin-top: var(--espaco-1);
+}
+
+.alerta-conteudo p:not(.alerta-titulo),
+.alerta-conteudo ul {
+  color: var(--cor-texto);
+}
+
+.alerta-sucesso {
+  color: var(--cor-primaria-escura);
+  background: var(--cor-primaria-clara);
+}
+
+.alerta-aviso {
+  color: var(--cor-aviso);
+  background: var(--cor-secundaria-clara);
+  border-color: var(--cor-secundaria);
+}
+
+.alerta-erro {
+  color: var(--cor-erro);
+  background: var(--cor-erro-clara);
+}
+
+/* --- Toasts: notificações rápidas, que somem sozinhas --- */
+.toasts {
+  position: fixed;
+  right: var(--espaco-3);
+  bottom: var(--espaco-3);
+  left: var(--espaco-3);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-2);
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  width: min(100%, 24rem);
+  padding: var(--espaco-3) var(--espaco-4);
+  border-left: 5px solid var(--cor-secundaria);
+  border-radius: var(--raio);
+  background: var(--cor-primaria-escura);
+  color: var(--cor-superficie);
+  font-family: var(--fonte-interface);
+  box-shadow: var(--sombra);
+  pointer-events: auto;
+  animation: toast-entrada var(--transicao);
+}
+
+.toast-erro {
+  border-left-color: var(--cor-erro-clara);
+  background: var(--cor-erro);
+}
+
+.toast p {
+  flex: 1;
+  margin: 0;
+}
+
+.toast-fechar {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: var(--raio-pequeno);
+  background: transparent;
+  color: inherit;
+  font-size: var(--tamanho-h4);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.toast-fechar:hover {
+  background: rgb(255 255 255 / 0.15);
+}
+
+.toast-fechar:focus-visible {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 1px;
+}
+
+@keyframes toast-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(var(--espaco-3));
+  }
+}
+
+/* --- Modal (elemento nativo <dialog>) --- */
+.modal {
+  width: 32rem;
+  max-width: calc(100% - var(--espaco-5));
+  padding: 0;
+  border: 0;
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  box-shadow: var(--sombra);
+}
+
+.modal[open] {
+  animation: modal-entrada var(--transicao);
+}
+
+.modal::backdrop {
+  background: rgb(29 37 33 / 0.55);
+}
+
+.modal-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  padding: var(--espaco-4) var(--espaco-4) 0;
+}
+
+.modal-cabecalho h2 {
+  flex: 1;
+  margin: 0;
+  font-size: var(--tamanho-h3);
+}
+
+.modal-corpo {
+  padding: var(--espaco-3) var(--espaco-4);
+}
+
+.modal-corpo > :first-child {
+  margin-top: 0;
+}
+
+.modal-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--espaco-2);
+  padding: 0 var(--espaco-4) var(--espaco-4);
+}
+
+.modal .botao {
+  font: inherit;
+  font-family: var(--fonte-interface);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@keyframes modal-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(var(--espaco-3)) scale(0.98);
+  }
+}
+
+/* --- Guia de componentes --- */
+.guia-exemplos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-3);
+  align-items: center;
+}
+
+.guia-exemplos .botao {
+  font: inherit;
+  font-family: var(--fonte-interface);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.guia-exemplos code,
+.guia code {
+  font-size: var(--tamanho-legenda);
+}
+
 /* ===== Rodapé ===== */
 .rodape {
   padding: var(--espaco-5) max(var(--espaco-3), calc((100% - var(--largura)) / 2));
@@ -966,6 +1248,7 @@ main > h1 {
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
 }
