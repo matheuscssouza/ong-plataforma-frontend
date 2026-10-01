@@ -284,7 +284,7 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com a 
 ### Questão: "Estratégia de versionamento"
 Texto em [`docs/ep4-etapa-2-gitflow.md`](docs/ep4-etapa-2-gitflow.md).
 
-- [ ] Texto colado na plataforma
+- [ ] Seções adicionadas na plataforma
 
 ### Questão: "Commits semânticos e releases"
 Registros (Mensagem ou tag / Descrição) em [`docs/ep4-etapa-2-releases.md`](docs/ep4-etapa-2-releases.md).
@@ -297,6 +297,6 @@ Registros (Tipo / Descrição) em [`docs/ep4-etapa-2-issues-prs.md`](docs/ep4-et
 - [ ] Registros adicionados na plataforma
 
 ### Questão: "Documentação técnica e criação do README"
-Texto em [`docs/ep4-etapa-2-readme.md`](docs/ep4-etapa-2-readme.md). Mudanças no GitHub: PR #7 (testes, `npm test`) e PR #8 (README técnico).
+Seções (Nome / Descrição e tecnologias) em [`docs/ep4-etapa-2-readme.md`](docs/ep4-etapa-2-readme.md). Mudanças no GitHub: PR #7 (testes, `npm test`) e PR #8 (README técnico).
 
-- [ ] Texto colado na plataforma
+- [ ] Seções adicionadas na plataforma
