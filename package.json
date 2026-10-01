@@ -5,12 +5,20 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "start": "python3 -m http.server 8000",
-    "test": "node tests/executar.mjs"
+    "test": "node tests/executar.mjs",
+    "test:build": "npm run build && node tests/executar.mjs dist"
   },
   "engines": {
     "node": ">=22"
   },
   "author": "Matheus Souza",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "vite": "^8.3.2"
+  }
 }

@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { iniciarServidor, abrirNavegador, esperar } from './navegador.mjs';
 
-const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
+// Sem argumento, testa o código-fonte; com "dist", testa a build de produção.
+const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..', process.argv[2] ?? '');
 const testes = [];
 const teste = (grupo, nome, executar) => testes.push({ grupo, nome, executar });
 
@@ -242,6 +243,7 @@ teste('Chart.js', 'sem acesso ao CDN, a tabela aparece no lugar do gráfico', as
 
 // ------------------------------------------------------------- Execução
 const { servidor, base } = await iniciarServidor(RAIZ);
+console.log(`Testando: ${process.argv[2] ? `build de produção (${process.argv[2]}/)` : 'código-fonte'}`);
 const pagina = await abrirNavegador();
 let falhas = 0;
 let grupoAtual = '';
