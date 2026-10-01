@@ -295,3 +295,8 @@ Registros (Mensagem ou tag / Descrição) em [`docs/ep4-etapa-2-releases.md`](do
 Registros (Tipo / Descrição) em [`docs/ep4-etapa-2-issues-prs.md`](docs/ep4-etapa-2-issues-prs.md). No GitHub: milestones 1 a 3, issues #2 a #5 e pull requests #1 e #6.
 
 - [ ] Registros adicionados na plataforma
+
+### Questão: "Documentação técnica e criação do README"
+Texto em [`docs/ep4-etapa-2-readme.md`](docs/ep4-etapa-2-readme.md). Mudanças no GitHub: PR #7 (testes, `npm test`) e PR #8 (README técnico).
+
+- [ ] Texto colado na plataforma
