@@ -157,6 +157,11 @@ Texto em [`docs/ep2-etapa-3-estados-interativos.md`](docs/ep2-etapa-3-estados-in
 
 - [x] Texto colado na plataforma
 
+### Questão: "Criação de componentes de feedback" (upload de capturas)
+Capturas em `entregas/ep2-etapa-3/capturas/` (10 imagens PNG: badges, alertas, botão desabilitado, modal e toasts, no desktop e no celular).
+
+- [ ] Capturas enviadas na plataforma
+
 ## EP2 · Etapa 4 — Síntese e reflexão
 
 _Revisão das implementações, autoavaliação e reflexão crítica._
