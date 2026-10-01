@@ -8,6 +8,8 @@ Plataforma web para uma organização do terceiro setor, construída com **HTML5
 
 ---
 
+**Sumário:** [Contexto](#contexto) · [Páginas](#páginas) · [Destaques técnicos](#destaques-técnicos) · [Tecnologias](#tecnologias) · [Estrutura de pastas](#estrutura-de-pastas) · [Pré-requisitos](#pré-requisitos) · [Instalação e execução](#instalação-e-execução) · [Testes](#testes) · [Build e deploy](#build-e-deploy) · [Manutenção](#manutenção) · [Etapas do desenvolvimento](#etapas-do-desenvolvimento)
+
 ## Contexto
 
 Projeto desenvolvido na disciplina **Desenvolvimento Front-end** do curso de Engenharia de Software da Universidade Cruzeiro do Sul, ao longo de três Experiências Práticas.
@@ -123,7 +125,8 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 - **CSS3**: variáveis, Grid, Flexbox, media queries, pseudo-classes de validação e animações
 - **JavaScript** (vanilla, ES Modules), **localStorage** e **Chart.js** (gráficos)
 - Fontes **Fraunces** e **Lora** (Google Fonts)
-- **Git** e **GitHub Pages**
+- **Git** (GitFlow, Conventional Commits, versionamento semântico) e **GitHub Pages**
+- **Node.js** + **Chrome DevTools Protocol** para os testes automatizados
 
 ## Estrutura de pastas
 
@@ -144,20 +147,74 @@ ong-plataforma-frontend/
 │   ├── servicos/           # localStorage e carregamento do Chart.js
 │   └── dados/              # conteúdo de projetos e campanhas
 ├── imagens/                # Imagens em PNG e WebP (logo também em SVG)
-└── docs/                   # Respostas de cada etapa e capturas de tela
+├── tests/                  # Testes de ponta a ponta (npm test)
+├── docs/                   # Respostas de cada etapa e capturas de tela
+├── package.json            # Scripts npm start e npm test
+└── CONTRIBUTING.md         # GitFlow, padrão de commits e checklist de revisão
 ```
 
-## Como rodar localmente
+## Pré-requisitos
 
-O projeto não precisa de instalação nem de build, mas usa **ES Modules**, que os navegadores só carregam por HTTP. Por isso, sirva a pasta com um servidor local em vez de abrir o arquivo direto:
+| Ferramenta | Para quê | Versão |
+|---|---|---|
+| Navegador moderno (Chrome, Edge, Firefox ou Safari) | Usar o site | Com suporte a ES Modules e `<dialog>` |
+| Git | Clonar o repositório | Qualquer versão recente |
+| Python 3 **ou** Node.js | Servidor local para desenvolvimento | Python 3.8+ ou Node 22+ |
+| Node.js + Google Chrome | Executar os testes automatizados | Node 22+ |
+
+O projeto **não tem dependências de terceiros para instalar**: não há `node_modules`. A única biblioteca externa, o Chart.js, é carregada pelo navegador via CDN.
+
+## Instalação e execução
 
 ```bash
 git clone https://github.com/matheuscssouza/ong-plataforma-frontend.git
 cd ong-plataforma-frontend
-python3 -m http.server 8000
+npm start
 ```
 
-e acesse http://localhost:8000.
+Acesse http://localhost:8000. O `npm start` roda `python3 -m http.server 8000`; sem npm, use esse comando diretamente.
+
+> Abrir o `index.html` direto do disco (`file://`) **não funciona**: navegadores só carregam ES Modules por HTTP.
+
+## Testes
+
+```bash
+npm test
+```
+
+Executa **20 testes de ponta a ponta** ([`tests/executar.mjs`](tests/executar.mjs)) num Chrome headless controlado pelo Chrome DevTools Protocol, sem dependências externas. Os testes sobem um servidor local sozinhos e cobrem:
+
+- **SPA:** navegação sem recarregar, foco e título, âncoras, Voltar/Avançar, rota inexistente, cliques rápidos com rede lenta e aviso sem conexão.
+- **Componentes:** toast, modal e geração de projetos e campanhas pelos templates.
+- **Formulário:** máscaras com texto colado, resumo de erros, regras de consistência e envio sem duplicidade.
+- **localStorage:** rascunho sem CPF, lista persistente, remoção e dados adulterados ou corrompidos.
+- **Chart.js:** carregamento sob demanda e tabela no lugar do gráfico quando o CDN falha.
+
+A saída lista cada teste com ✓ ou ✗ e termina com código 1 se algum falhar. Se o Chrome não estiver no caminho padrão, informe-o:
+
+```bash
+CHROME_PATH="/caminho/do/chrome" npm test
+```
+
+Além dos testes automatizados, cada mudança é validada no [W3C Markup Validator](https://validator.w3.org/) e no [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
+## Build e deploy
+
+- **Build:** hoje não há etapa de build; o site publica os arquivos-fonte. A minificação de CSS e JavaScript e a compressão de imagens estão planejadas para a etapa de otimização ([issue #5](https://github.com/matheuscssouza/ong-plataforma-frontend/issues/5)).
+- **Deploy:** automático pelo **GitHub Pages** a partir da branch `main`. Cada versão fechada que entra na `main` fica no ar em cerca de um minuto em https://matheuscssouza.github.io/ong-plataforma-frontend/.
+
+## Manutenção
+
+| Para... | Edite |
+|---|---|
+| Cores, fontes, espaçamentos e breakpoints | Variáveis no `:root` de [`css/style.css`](css/style.css) |
+| Incluir ou alterar projetos e campanhas | [`js/dados/conteudo.js`](js/dados/conteudo.js) (a marcação é gerada pelos templates) |
+| Mensagens e regras de validação do cadastro | [`js/formulario/validacao.js`](js/formulario/validacao.js) |
+| Rotas da SPA | Objeto `ROTAS` em [`js/roteador.js`](js/roteador.js) |
+| Versão do Chart.js | URL e hash SRI em [`js/servicos/chartjs.js`](js/servicos/chartjs.js) |
+| Novas páginas | Crie o HTML em `html/`, inclua `<script type="module" src="../js/main.js">` e registre a rota em `ROTAS` |
+
+O fluxo de branches, o padrão de commits e o checklist de revisão estão em [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Versionamento e contribuição
 
