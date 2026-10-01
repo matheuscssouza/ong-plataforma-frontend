@@ -348,3 +348,8 @@ Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "
 Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "Desafios".
 
 - [x] Texto colado na plataforma
+
+### Questão: "Otimização de imagens e performance"
+Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md). Implementação no PR #12.
+
+- [ ] Texto colado na plataforma
