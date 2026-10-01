@@ -107,7 +107,10 @@ function criarCadastro(raiz, cadastro) {
 
   cartao.querySelector('[data-campo="email"]').textContent = cadastro.email;
   cartao.querySelector('[data-campo="local"]').textContent = `${cadastro.cidade} – ${cadastro.estado}`;
-  const quando = new Date(cadastro.enviadoEm).toLocaleString('pt-BR', { dateStyle: 'long', timeStyle: 'short' });
+  const data = new Date(cadastro.enviadoEm);
+  const quando = Number.isNaN(data.getTime())
+    ? 'data não registrada'
+    : data.toLocaleString('pt-BR', { dateStyle: 'long', timeStyle: 'short' });
   cartao.querySelector('[data-campo="data"]').append(criarTempo(cadastro.enviadoEm, quando));
 
   const remover = cartao.querySelector('[data-remover-cadastro]');
