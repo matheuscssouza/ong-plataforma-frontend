@@ -13,6 +13,7 @@ const ROTAS = {
 
 const BASE = new URL('.', document.baseURI);
 const cache = new Map();
+let ultimaNavegacao = 0;
 let principal;
 let aoRenderizar = () => {};
 
@@ -82,6 +83,15 @@ function marcarMenu(caminho) {
   });
 }
 
+function paginaSemConexao(rota) {
+  const conteudo = document.createElement('main');
+  conteudo.innerHTML = `
+    <h1>Sem conexão com a internet</h1>
+    <p>Não foi possível carregar esta página agora. Verifique a conexão e
+    <a href="#${rota}" data-tentar-novamente>tente novamente</a>.</p>`;
+  return { conteudo, titulo: 'Sem conexão | Instituto Raízes do Amanhã' };
+}
+
 function paginaNaoEncontrada() {
   const conteudo = document.createElement('main');
   conteudo.innerHTML = `
@@ -94,13 +104,27 @@ async function renderizar(rota, focarTitulo = true) {
   const [caminho, ancora] = rota.split('#');
   const arquivo = ROTAS[caminho];
 
+  // Cada navegação recebe um número; se outra começar antes desta terminar,
+  // o resultado desta é descartado (evita mostrar a página errada).
+  const navegacao = ++ultimaNavegacao;
+
   principal.setAttribute('aria-busy', 'true');
   let pagina;
   try {
     pagina = arquivo ? await carregarPagina(arquivo) : paginaNaoEncontrada();
   } catch {
-    // Sem acesso por fetch (ex.: arquivo aberto direto do disco): navegação comum.
-    location.href = new URL(arquivo, BASE).href;
+    if (navegacao !== ultimaNavegacao) {
+      return;
+    }
+    if (!navigator.onLine) {
+      pagina = paginaSemConexao(rota);
+    } else {
+      // Outra falha de fetch: tenta a navegação comum para a página.
+      location.href = new URL(arquivo, BASE).href;
+      return;
+    }
+  }
+  if (navegacao !== ultimaNavegacao) {
     return;
   }
 
@@ -147,6 +171,11 @@ export function iniciarRoteador(callback) {
     // Âncora na própria página (ex.: Contato, Pular para o conteúdo):
     // rola até o destino sem alterar a rota atual.
     const href = link.getAttribute('href');
+    if (link.hasAttribute('data-tentar-novamente')) {
+      evento.preventDefault();
+      renderizar(rotaAtual());
+      return;
+    }
     if (href.startsWith('#')) {
       const destino = document.getElementById(href.slice(1));
       if (destino) {
