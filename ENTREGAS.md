@@ -272,8 +272,8 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com co
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-2/` |
-| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ⏳ Pendente | `entregas/ep4/ep4-etapa-3/` |
+| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ✅ Concluída (aguardando merge dos PRs #1, #7, #8 e #6) | `entregas/ep4/ep4-etapa-2/` |
+| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-3/` |
 | 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | ⏳ Pendente | `entregas/ep4/ep4-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep4/ep4-etapa-5/` |
 
@@ -284,17 +284,17 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com a 
 ### Questão: "Estratégia de versionamento"
 Texto em [`docs/ep4-etapa-2-gitflow.md`](docs/ep4-etapa-2-gitflow.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
 
 ### Questão: "Commits semânticos e releases"
 Registros (Mensagem ou tag / Descrição) em [`docs/ep4-etapa-2-releases.md`](docs/ep4-etapa-2-releases.md).
 
-- [ ] Registros adicionados na plataforma
+- [x] Registros adicionados na plataforma
 
 ### Questão: "Issues, milestones e pull requests"
 Registros (Tipo / Descrição) em [`docs/ep4-etapa-2-issues-prs.md`](docs/ep4-etapa-2-issues-prs.md). No GitHub: milestones 1 a 3, issues #2 a #5 e pull requests #1 e #6.
 
-- [ ] Registros adicionados na plataforma
+- [x] Registros adicionados na plataforma
 
 ### Questão: "Documentação técnica e criação do README"
 Seções (Nome / Descrição e tecnologias) em [`docs/ep4-etapa-2-readme.md`](docs/ep4-etapa-2-readme.md). Mudanças no GitHub: PR #7 (testes, `npm test`) e PR #8 (README técnico).
@@ -304,4 +304,8 @@ Seções (Nome / Descrição e tecnologias) em [`docs/ep4-etapa-2-readme.md`](do
 ### Questão: "Instalação local e práticas de versionamento"
 Texto em [`docs/ep4-etapa-2-instalacao-versionamento.md`](docs/ep4-etapa-2-instalacao-versionamento.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+## EP4 · Etapa 3 — Implementação de acessibilidade
+
+Objetivos: estrutura em conformidade com a WCAG 2.1 nível AA; semântica sólida para tecnologias assistivas; contraste ajustado, com versão de alto contraste, e navegação por teclado fluida. Acompanhamento na issue #4.
