@@ -34,7 +34,8 @@ function rotaDoLink(link) {
 }
 
 function focarElemento(elemento) {
-  if (!elemento.hasAttribute('tabindex')) {
+  // Só elementos que não recebem foco por natureza (títulos, seções) ganham tabindex.
+  if (elemento.tabIndex < 0 && !elemento.hasAttribute('tabindex')) {
     elemento.setAttribute('tabindex', '-1');
   }
   elemento.focus({ preventScroll: true });
