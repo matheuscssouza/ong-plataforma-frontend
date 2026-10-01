@@ -188,7 +188,11 @@ Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúd
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | ⏳ Pendente | `entregas/ep3-etapa-2/` |
+| 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | 🔄 Em andamento | `entregas/ep3-etapa-2/` |
 | 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | ⏳ Pendente | `entregas/ep3-etapa-3/` |
 | 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | ⏳ Pendente | `entregas/ep3-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep3-etapa-5/` |
+
+## EP3 · Etapa 2 — Fundamentos e organização inicial
+
+Objetivos: estruturar o diretório com separação lógica e técnica; implementar a base da navegação SPA; gerar templates dinâmicos que reaproveitem componentes visuais.
