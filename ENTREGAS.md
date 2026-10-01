@@ -243,4 +243,4 @@ Objetivos: quebrar o script em módulos independentes (responsabilidade única);
 ### Questão: "Separação de código por funcionalidade"
 Texto em [`docs/ep3-etapa-4-modularizacao.md`](docs/ep3-etapa-4-modularizacao.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
