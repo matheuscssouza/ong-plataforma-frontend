@@ -38,7 +38,7 @@ function criarTempo(data, rotulo) {
   return tempo;
 }
 
-function criarProjeto(raiz, projeto) {
+function criarProjeto(raiz, projeto, indice) {
   const artigo = clonarTemplate(raiz, 'tpl-projeto');
   const idTitulo = `titulo-${projeto.id}`;
   artigo.setAttribute('aria-labelledby', idTitulo);
@@ -47,6 +47,12 @@ function criarProjeto(raiz, projeto) {
   const imagem = artigo.querySelector('img');
   imagem.src = new URL(`${projeto.imagem}.png`, PASTA_IMAGENS);
   imagem.alt = projeto.alt;
+  // A primeira imagem costuma ser a maior visível ao abrir a página (LCP):
+  // não pode esperar o carregamento sob demanda.
+  if (indice === 0) {
+    imagem.loading = 'eager';
+    imagem.fetchPriority = 'high';
+  }
   artigo.querySelector('figcaption').textContent = projeto.legenda;
 
   const titulo = artigo.querySelector('h3');
@@ -139,7 +145,7 @@ export function renderizarComponentes(raiz = document) {
     }
     const fragmento = document.createDocumentFragment();
     const itens = componente.dados();
-    itens.forEach((item) => fragmento.append(componente.criar(raiz, item)));
+    itens.forEach((item, indice) => fragmento.append(componente.criar(raiz, item, indice)));
     if (!itens.length && conteiner.dataset.vazio) {
       const aviso = document.createElement('p');
       aviso.textContent = conteiner.dataset.vazio;
