@@ -201,3 +201,8 @@ Objetivos: estruturar o diretório com separação lógica e técnica; implement
 Texto em [`docs/ep3-etapa-2-estrutura-diretorios.md`](docs/ep3-etapa-2-estrutura-diretorios.md).
 
 - [x] Texto colado na plataforma
+
+### Questão: "Navegação de página única"
+Texto em [`docs/ep3-etapa-2-spa.md`](docs/ep3-etapa-2-spa.md).
+
+- [ ] Texto colado na plataforma
