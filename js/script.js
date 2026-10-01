@@ -44,6 +44,14 @@ function cpfValido(cpf) {
   return true;
 }
 
+function focarElementoSemRolar(elemento) {
+  if (!elemento) {
+    return;
+  }
+  elemento.setAttribute('tabindex', '-1');
+  elemento.focus({ preventScroll: true });
+}
+
 // Liga máscaras, validações e envio ao formulário de cadastro.
 // Chamada ao carregar a página e, na SPA, sempre que o roteador
 // injeta o formulário no <main>.
@@ -77,8 +85,92 @@ function iniciarCadastro() {
   limite.setFullYear(limite.getFullYear() - 16);
   nascimento.max = limite.toISOString().slice(0, 10);
 
+  // --- Rascunho no localStorage ---
+  // O CPF e o consentimento ficam de fora: dado sensível não é guardado no navegador.
+  const NAO_GUARDAR = ['cpf', 'lgpd'];
+  let temporizadorRascunho;
+
+  function lerFormulario() {
+    const dadosFormulario = new FormData(formulario);
+    const dados = Object.fromEntries(dadosFormulario);
+    dados.projetos = dadosFormulario.getAll('projetos');
+    NAO_GUARDAR.forEach((nome) => delete dados[nome]);
+    return dados;
+  }
+
+  function preencherFormulario(dados) {
+    Object.entries(dados).forEach(([nome, valor]) => {
+      if (nome === 'projetos') {
+        formulario.querySelectorAll('[name="projetos"]').forEach((caixa) => {
+          caixa.checked = valor.includes(caixa.value);
+        });
+        return;
+      }
+      const campo = formulario.elements.namedItem(nome);
+      if (campo) {
+        campo.value = valor; // em grupos de rádio, marca a opção com esse valor
+      }
+    });
+  }
+
+  function salvarRascunho() {
+    const dados = lerFormulario();
+    const preenchido = Object.values(dados).some((valor) => (Array.isArray(valor) ? valor.length : valor));
+    if (preenchido) {
+      salvarJSON(CHAVES.rascunho, dados);
+    } else {
+      removerChave(CHAVES.rascunho);
+    }
+  }
+
+  // Grava 400 ms depois da última alteração, em vez de a cada tecla.
+  function agendarRascunho() {
+    clearTimeout(temporizadorRascunho);
+    temporizadorRascunho = setTimeout(salvarRascunho, 400);
+  }
+
+  const rascunho = lerJSON(CHAVES.rascunho, null);
+  if (rascunho) {
+    preencherFormulario(rascunho);
+    mostrarToast('Recuperamos o rascunho do seu cadastro. Use "Limpar" para recomeçar.');
+  }
+  formulario.addEventListener('input', agendarRascunho);
+  formulario.addEventListener('change', agendarRascunho);
+
   // Verificação de consistência (js/validacao.js): mensagens por campo e resumo no envio.
   iniciarValidacao(formulario);
+
+  // --- Cadastros enviados, guardados como array no localStorage ---
+  const secaoCadastros = document.getElementById('meus-cadastros');
+
+  function guardarCadastro(dados) {
+    const cadastros = lerJSON(CHAVES.cadastros, []);
+    cadastros.push({
+      id: Date.now().toString(36),
+      nome: dados.nome,
+      email: dados.email,
+      cidade: dados.cidade,
+      estado: dados.estado,
+      tipo: dados.tipo,
+      projetos: dados.projetos,
+      enviadoEm: new Date().toISOString(),
+    });
+    salvarJSON(CHAVES.cadastros, cadastros);
+    renderizarComponentes(secaoCadastros);
+  }
+
+  secaoCadastros?.addEventListener('click', (evento) => {
+    const botao = evento.target.closest('[data-remover-cadastro]');
+    if (!botao) {
+      return;
+    }
+    const restantes = lerJSON(CHAVES.cadastros, [])
+      .filter((cadastro) => cadastro.id !== botao.dataset.removerCadastro);
+    salvarJSON(CHAVES.cadastros, restantes);
+    renderizarComponentes(secaoCadastros);
+    focarElementoSemRolar(secaoCadastros.querySelector('h2'));
+    mostrarToast('Cadastro removido deste navegador.');
+  });
 
   // --- Feedback do envio ---
   const botaoEnviar = formulario.querySelector('button[type="submit"]');
@@ -94,9 +186,13 @@ function iniciarCadastro() {
     botaoEnviar.disabled = true;
     botaoEnviar.textContent = 'Enviando…';
 
-    const primeiroNome = formulario.nome.value.trim().split(' ')[0];
+    const dados = lerFormulario();
+    const primeiroNome = dados.nome.trim().split(' ')[0];
 
     setTimeout(() => {
+      guardarCadastro(dados);
+      clearTimeout(temporizadorRascunho);
+      removerChave(CHAVES.rascunho);
       resetAposEnvio = true;
       formulario.reset();
       botaoEnviar.disabled = false;
@@ -108,6 +204,8 @@ function iniciarCadastro() {
   });
 
   formulario.addEventListener('reset', () => {
+    clearTimeout(temporizadorRascunho);
+    removerChave(CHAVES.rascunho);
     if (!resetAposEnvio) {
       mostrarToast('Formulário limpo.');
     }

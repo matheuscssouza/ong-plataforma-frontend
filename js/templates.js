@@ -14,8 +14,11 @@ function clonarTemplate(raiz, id) {
 }
 
 function criarBadges(raiz, lista, badges) {
+  const temModelo = raiz.querySelector('#tpl-badge') ?? document.getElementById('tpl-badge');
   badges.forEach(({ texto, tipo }) => {
-    const badge = clonarTemplate(raiz, 'tpl-badge');
+    const badge = temModelo
+      ? clonarTemplate(raiz, 'tpl-badge')
+      : Object.assign(document.createElement('li'), { className: 'badge' });
     badge.textContent = texto;
     if (tipo) {
       badge.classList.add(`badge-${tipo}`);
@@ -81,9 +84,41 @@ function criarCampanha(raiz, campanha) {
   return cartao;
 }
 
+const ROTULOS_TIPO = { voluntario: 'Voluntário', doador: 'Doador', ambos: 'Voluntário e doador' };
+const BADGES_PROJETO = {
+  horta: { texto: 'Horta Comunitária', tipo: 'ambiente' },
+  reforco: { texto: 'Reforço Escolar', tipo: 'educacao' },
+  digital: { texto: 'Inclusão Digital', tipo: 'tecnologia' },
+};
+
+function criarCadastro(raiz, cadastro) {
+  const cartao = clonarTemplate(raiz, 'tpl-cadastro');
+  cartao.querySelector('h3').textContent = cadastro.nome;
+
+  const badges = [{ texto: ROTULOS_TIPO[cadastro.tipo] ?? cadastro.tipo, tipo: 'aberta' }];
+  (cadastro.projetos ?? []).forEach((projeto) => {
+    if (BADGES_PROJETO[projeto]) {
+      badges.push(BADGES_PROJETO[projeto]);
+    }
+  });
+  criarBadges(raiz, cartao.querySelector('.badges'), badges);
+
+  cartao.querySelector('[data-campo="email"]').textContent = cadastro.email;
+  cartao.querySelector('[data-campo="local"]').textContent = `${cadastro.cidade} – ${cadastro.estado}`;
+  const quando = new Date(cadastro.enviadoEm).toLocaleString('pt-BR', { dateStyle: 'long', timeStyle: 'short' });
+  cartao.querySelector('[data-campo="data"]').append(criarTempo(cadastro.enviadoEm, quando));
+
+  const remover = cartao.querySelector('[data-remover-cadastro]');
+  remover.dataset.removerCadastro = cadastro.id;
+  remover.setAttribute('aria-label', `Remover o cadastro de ${cadastro.nome}`);
+  return cartao;
+}
+
 const COMPONENTES = {
   projetos: { dados: () => PROJETOS, criar: criarProjeto },
   campanhas: { dados: () => CAMPANHAS, criar: criarCampanha },
+  // Lidos do localStorage a cada renderização; os mais recentes primeiro.
+  cadastros: { dados: () => lerJSON(CHAVES.cadastros, []).reverse(), criar: criarCadastro },
 };
 
 // Procura contêineres marcados com data-componente dentro de "raiz" e
@@ -96,7 +131,13 @@ function renderizarComponentes(raiz = document) {
       return;
     }
     const fragmento = document.createDocumentFragment();
-    componente.dados().forEach((item) => fragmento.append(componente.criar(raiz, item)));
+    const itens = componente.dados();
+    itens.forEach((item) => fragmento.append(componente.criar(raiz, item)));
+    if (!itens.length && conteiner.dataset.vazio) {
+      const aviso = document.createElement('p');
+      aviso.textContent = conteiner.dataset.vazio;
+      fragmento.append(aviso);
+    }
     conteiner.replaceChildren(fragmento);
   });
 }

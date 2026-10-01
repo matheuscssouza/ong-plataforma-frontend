@@ -254,4 +254,7 @@ function iniciarValidacao(formulario) {
       sincronizarDoacao();
     });
   });
+
+  // Um rascunho restaurado pode já vir com "Doador" marcado.
+  sincronizarDoacao();
 }

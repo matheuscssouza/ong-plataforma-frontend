@@ -482,6 +482,15 @@ main > h1 {
   border-color: var(--cor-primaria-escura);
 }
 
+/* <button> não herda a fonte da página por padrão */
+button.botao {
+  font: inherit;
+  font-family: var(--fonte-interface);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
 /* Disabled: cinza, sem sombra nem movimento, e cursor de ação bloqueada */
 .botao:disabled,
 .botao[aria-disabled="true"] {
