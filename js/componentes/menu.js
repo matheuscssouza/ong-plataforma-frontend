@@ -6,6 +6,11 @@ function alternar(botao, aberto = botao.getAttribute('aria-expanded') !== 'true'
   botao.setAttribute('aria-expanded', String(aberto));
 }
 
+// Fecha menu e submenus (usado também pelo main.js a cada troca de página).
+export function fecharMenu() {
+  document.querySelectorAll('.menu-botao, .submenu-botao').forEach((botao) => alternar(botao, false));
+}
+
 export function iniciarMenu() {
   const botaoMenu = document.querySelector('.menu-botao');
   const botoesSubmenu = document.querySelectorAll('.submenu-botao');
