@@ -159,6 +159,12 @@ python3 -m http.server 8000
 
 e acesse http://localhost:8000.
 
+## Versionamento e contribuição
+
+O repositório segue o **GitFlow**: `main` guarda o que está em produção (publicado no GitHub Pages), `develop` integra o que vai para a próxima versão e cada mudança nasce numa branch `feature/`, `release/` ou `hotfix/`, entrando por pull request. Os commits seguem o padrão **Conventional Commits** (`feat:`, `fix:`, `docs:`...).
+
+O passo a passo completo, com o padrão de commits e o checklist de revisão, está em [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 ## Etapas do desenvolvimento
 
 Cada etapa concluída tem uma tag no Git, que preserva o projeto exatamente como foi entregue.
