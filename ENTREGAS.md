@@ -116,7 +116,7 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Design system e estruturação responsiva | ✅ Concluída | `entregas/ep2-etapa-2/` |
-| 3 | Componentes visuais e navegação | 🔄 Em andamento | `entregas/ep2-etapa-3/` |
+| 3 | Componentes visuais e navegação | ✅ Concluída | `entregas/ep2-etapa-3/` |
 | 4 | Síntese e reflexão | ⏳ Pendente | `entregas/ep2-etapa-4/` |
 
 ## EP2 · Etapa 2 — Design system e estruturação responsiva
@@ -160,7 +160,7 @@ Texto em [`docs/ep2-etapa-3-estados-interativos.md`](docs/ep2-etapa-3-estados-in
 ### Questão: "Criação de componentes de feedback" (upload de capturas)
 Capturas em `entregas/ep2-etapa-3/capturas/` (10 imagens PNG: badges, alertas, botão desabilitado, modal e toasts, no desktop e no celular).
 
-- [ ] Capturas enviadas na plataforma
+- [x] 10 capturas enviadas na plataforma
 
 ## EP2 · Etapa 4 — Síntese e reflexão
 
