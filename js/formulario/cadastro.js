@@ -118,7 +118,9 @@ export function iniciarCadastro() {
       projetos: dados.projetos,
       enviadoEm: new Date().toISOString(),
     });
-    salvarJSON(CHAVES.cadastros, cadastros);
+    if (!salvarJSON(CHAVES.cadastros, cadastros)) {
+      mostrarToast('Não foi possível salvar o cadastro neste navegador (armazenamento cheio ou bloqueado).', 'erro', 8000);
+    }
     renderizarComponentes(secaoCadastros);
   }
 
@@ -140,12 +142,16 @@ export function iniciarCadastro() {
   const modal = document.getElementById('modal-confirmacao');
   let resetAposEnvio = false;
 
+  let enviando = false;
+
   formulario.addEventListener('submit', (evento) => {
     // Sem servidor neste projeto: o envio é simulado depois da verificação.
     evento.preventDefault();
-    if (!validarFormulario(formulario)) {
+    // Um envio por vez: ignora cliques duplos, Enter repetido e requestSubmit().
+    if (enviando || !validarFormulario(formulario)) {
       return;
     }
+    enviando = true;
     botaoEnviar.disabled = true;
     botaoEnviar.textContent = 'Enviando…';
 
@@ -159,6 +165,7 @@ export function iniciarCadastro() {
       resetAposEnvio = true;
       formulario.reset();
       botaoEnviar.disabled = false;
+      enviando = false;
       botaoEnviar.textContent = 'Enviar cadastro';
       document.getElementById('modal-confirmacao-texto').textContent =
         `Obrigado, ${primeiroNome}! Seu cadastro foi recebido e nossa equipe entrará em contato em até 3 dias úteis.`;
