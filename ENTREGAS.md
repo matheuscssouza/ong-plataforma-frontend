@@ -367,4 +367,9 @@ Texto em [`docs/ep4-etapa-4-imagens.md`](docs/ep4-etapa-4-imagens.md), seção "
 ### Questão: "Publicação e deploy em ambiente de produção"
 Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md). Workflow no PR #13 (CI aprovado no GitHub: 20 de 20 testes no código-fonte e na build).
 
+- [x] Texto colado na plataforma
+
+### Questão: "Configuração do ambiente de produção e CI/CD"
+Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md), seção "Configuração".
+
 - [ ] Texto colado na plataforma
