@@ -6,6 +6,7 @@ import { iniciarFeedback } from './componentes/feedback.js';
 import { renderizarComponentes } from './componentes/templates.js';
 import { renderizarGraficos } from './componentes/grafico.js';
 import { iniciarCadastro } from './formulario/cadastro.js';
+import { iniciarTema } from './componentes/tema.js';
 import { iniciarRoteador } from './roteador.js';
 
 // Prepara o conteúdo de uma página: no carregamento e, na SPA, a cada troca.
@@ -17,6 +18,7 @@ function iniciarConteudo(raiz) {
 }
 
 iniciarMenu();
+iniciarTema();
 iniciarFeedback();
 iniciarConteudo(document);
 

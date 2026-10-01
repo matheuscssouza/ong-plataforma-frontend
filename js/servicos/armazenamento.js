@@ -6,6 +6,7 @@
 export const CHAVES = {
   rascunho: 'raizes:rascunho-cadastro',
   cadastros: 'raizes:cadastros',
+  tema: 'raizes:tema',
 };
 
 export function lerJSON(chave, padrao) {
