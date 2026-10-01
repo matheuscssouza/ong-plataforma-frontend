@@ -244,3 +244,8 @@ Objetivos: quebrar o script em módulos independentes (responsabilidade única);
 Texto em [`docs/ep3-etapa-4-modularizacao.md`](docs/ep3-etapa-4-modularizacao.md).
 
 - [x] Texto colado na plataforma
+
+### Questão: "Testes e correção de falhas"
+Entradas (Problema / Técnica de diagnóstico / Solução) em [`docs/ep3-etapa-4-testes.md`](docs/ep3-etapa-4-testes.md).
+
+- [ ] Entradas adicionadas na plataforma
