@@ -11,9 +11,9 @@ Checklist do que deve ser **anexado na plataforma da Cruzeiro do Sul** em cada e
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Estrutura semântica e páginas | ✅ Concluída | `entregas/etapa-2/` |
-| 3 | Formulários interativos e cadastro | ✅ Concluída | `entregas/etapa-3/` |
-| 4 | Síntese e reflexão | ✅ Concluída | `entregas/etapa-4/` |
+| 2 | Estrutura semântica e páginas | ✅ Concluída | `entregas/ep1/etapa-2/` |
+| 3 | Formulários interativos e cadastro | ✅ Concluída | `entregas/ep1/etapa-3/` |
+| 4 | Síntese e reflexão | ✅ Concluída | `entregas/ep1/etapa-4/` |
 
 ---
 
@@ -117,9 +117,9 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Design system e estruturação responsiva | ✅ Concluída | `entregas/ep2-etapa-2/` |
-| 3 | Componentes visuais e navegação | ✅ Concluída | `entregas/ep2-etapa-3/` |
-| 4 | Síntese e reflexão | ✅ Concluída | `entregas/ep2-etapa-4/` |
+| 2 | Design system e estruturação responsiva | ✅ Concluída | `entregas/ep2/ep2-etapa-2/` |
+| 3 | Componentes visuais e navegação | ✅ Concluída | `entregas/ep2/ep2-etapa-3/` |
+| 4 | Síntese e reflexão | ✅ Concluída | `entregas/ep2/ep2-etapa-4/` |
 
 ## EP2 · Etapa 2 — Design system e estruturação responsiva
 
@@ -190,9 +190,9 @@ Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúd
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | ✅ Concluída | `entregas/ep3-etapa-2/` |
-| 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | ✅ Concluída | `entregas/ep3-etapa-3/` |
-| 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | ✅ Concluída | `entregas/ep3-etapa-4/` |
+| 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | ✅ Concluída | `entregas/ep3/ep3-etapa-2/` |
+| 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | ✅ Concluída | `entregas/ep3/ep3-etapa-3/` |
+| 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | ✅ Concluída | `entregas/ep3/ep3-etapa-4/` |
 | 5 | Síntese e reflexão | ✅ Concluída | `entregas/ep3/ep3-etapa-5/` |
 
 ## EP3 · Etapa 2 — Fundamentos e organização inicial
