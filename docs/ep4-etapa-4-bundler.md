@@ -14,3 +14,13 @@ Os comandos são npm run dev (servidor de desenvolvimento), npm run build (gera 
 ```text
 Cerca de 32% no total: os arquivos base caíram de 120,1 KB para 81,4 KB após a build com o Vite. Por tipo: JavaScript de 43,6 para 21,7 KB (cerca de 50%, e de 13 arquivos para 1), CSS de 36,9 para 26,3 KB (cerca de 29%) e HTML de 39,5 para 33,4 KB (cerca de 15%). Com a compressão gzip aplicada pelo servidor, o total transferido vai de 38,3 para 25,1 KB (cerca de 34% menor).
 ```
+
+## Desafios para a minificação não afetar a lógica
+
+```text
+1) Caminhos de imagens: os templates calculavam o caminho de imagens/ a partir do próprio arquivo JS (import.meta.url). Na build, o Vite junta os módulos em dist/assets/, e o caminho passaria a apontar para o lugar errado. Troquei pela raiz do site, informada por cada página em <html data-raiz>.
+2) Arquivos que o bundler não enxerga: as imagens montadas em JavaScript não aparecem no HTML, então o Vite não as copiava. Criei um plugin que copia a pasta imagens/ para dist/.
+3) Páginas carregadas pela SPA: o roteador busca os HTML por fetch e ajusta os caminhos relativos; conferi que isso continua funcionando com os nomes com hash da build.
+4) Minificação de HTML: removi espaços com conservativeCollapse, para não colar palavras em textos com tags no meio, e conferi o script do tema no <head>, que também é minificado.
+Para garantir, rodei os 20 testes automatizados contra a pasta dist/ (npm run test:build), e todos passaram.
+```

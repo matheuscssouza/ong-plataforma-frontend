@@ -342,4 +342,9 @@ Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md). Implement
 ### Questão: "Percentual de redução após a minificação"
 Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "Percentual de redução".
 
+- [x] Texto colado na plataforma
+
+### Questão: "Desafios para a minificação não afetar a lógica"
+Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "Desafios".
+
 - [ ] Texto colado na plataforma
