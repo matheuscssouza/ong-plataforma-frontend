@@ -284,7 +284,7 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com a 
 ### Questão: "Estratégia de versionamento"
 Texto em [`docs/ep4-etapa-2-gitflow.md`](docs/ep4-etapa-2-gitflow.md).
 
-- [ ] Seções adicionadas na plataforma
+- [ ] Texto colado na plataforma
 
 ### Questão: "Commits semânticos e releases"
 Registros (Mensagem ou tag / Descrição) em [`docs/ep4-etapa-2-releases.md`](docs/ep4-etapa-2-releases.md).
