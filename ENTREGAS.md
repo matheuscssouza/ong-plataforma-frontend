@@ -189,8 +189,8 @@ Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúd
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | ✅ Concluída | `entregas/ep3-etapa-2/` |
-| 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | 🔄 Em andamento | `entregas/ep3-etapa-3/` |
-| 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | ⏳ Pendente | `entregas/ep3-etapa-4/` |
+| 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | ✅ Concluída | `entregas/ep3-etapa-3/` |
+| 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | 🔄 Em andamento | `entregas/ep3-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep3-etapa-5/` |
 
 ## EP3 · Etapa 2 — Fundamentos e organização inicial
@@ -234,4 +234,8 @@ Texto em [`docs/ep3-etapa-3-localstorage.md`](docs/ep3-etapa-3-localstorage.md).
 ### Questão: "Integração com bibliotecas externas"
 Texto em [`docs/ep3-etapa-3-biblioteca.md`](docs/ep3-etapa-3-biblioteca.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+## EP3 · Etapa 4 — Modularização e refinamento final
+
+Objetivos: quebrar o script em módulos independentes (responsabilidade única); código legível e reutilizável; testes críticos para encontrar e corrigir falhas de interatividade; triagem de todos os requisitos contra os entregáveis.
