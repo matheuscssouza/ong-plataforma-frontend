@@ -200,4 +200,4 @@ Objetivos: estruturar o diretório com separação lógica e técnica; implement
 ### Questão: "Organização da estrutura de diretórios"
 Texto em [`docs/ep3-etapa-2-estrutura-diretorios.md`](docs/ep3-etapa-2-estrutura-diretorios.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
