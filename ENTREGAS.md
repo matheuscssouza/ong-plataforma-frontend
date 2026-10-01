@@ -230,3 +230,8 @@ Texto em [`docs/ep3-etapa-3-consistencia.md`](docs/ep3-etapa-3-consistencia.md).
 Texto em [`docs/ep3-etapa-3-localstorage.md`](docs/ep3-etapa-3-localstorage.md).
 
 - [x] Texto colado na plataforma
+
+### Questão: "Integração com bibliotecas externas"
+Texto em [`docs/ep3-etapa-3-biblioteca.md`](docs/ep3-etapa-3-biblioteca.md).
+
+- [ ] Texto colado na plataforma
