@@ -94,33 +94,31 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 
 ```
 ong-plataforma-frontend/
-├── index.html           # Ponto de entrada (página inicial)
-├── html/                # Demais páginas
-│   ├── projetos.html    # Projetos sociais, voluntariado e doações
-│   ├── cadastro.html    # Formulário de voluntários/doadores
-│   └── componentes.html # Guia de componentes
+├── index.html              # Casca da SPA e página inicial
+├── html/                   # Demais páginas (também funcionam sozinhas)
+│   ├── projetos.html
+│   ├── cadastro.html
+│   └── componentes.html
 ├── css/
-│   └── style.css        # Design system, layout e componentes
-├── js/
-│   ├── menu.js          # Menu hambúrguer e dropdown
-│   ├── feedback.js      # Toasts e modais reutilizáveis
-│   └── script.js        # Máscaras, validações e envio do cadastro
-├── imagens/             # Imagens em PNG e WebP (logo também em SVG)
-└── docs/                # Respostas de cada etapa e capturas de tela
+│   └── style.css           # Design system, layout e componentes
+├── js/                     # ES Modules (import/export)
+│   ├── main.js             # Ponto de entrada: liga os módulos
+│   ├── roteador.js         # Navegação SPA por hash
+│   ├── componentes/        # menu, feedback (toast/modal), templates, gráfico
+│   ├── formulario/         # máscaras, validação e cadastro
+│   ├── servicos/           # localStorage e carregamento do Chart.js
+│   └── dados/              # conteúdo de projetos e campanhas
+├── imagens/                # Imagens em PNG e WebP (logo também em SVG)
+└── docs/                   # Respostas de cada etapa e capturas de tela
 ```
 
 ## Como rodar localmente
 
-O projeto não precisa de instalação nem de build.
+O projeto não precisa de instalação nem de build, mas usa **ES Modules**, que os navegadores só carregam por HTTP. Por isso, sirva a pasta com um servidor local em vez de abrir o arquivo direto:
 
 ```bash
 git clone https://github.com/matheuscssouza/ong-plataforma-frontend.git
 cd ong-plataforma-frontend
-```
-
-Abra o `index.html` no navegador ou, se preferir, sirva a pasta com um servidor local:
-
-```bash
 python3 -m http.server 8000
 ```
 
