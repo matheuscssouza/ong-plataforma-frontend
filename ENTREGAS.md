@@ -175,7 +175,9 @@ Texto em [`docs/ep2-etapa-4-reflexao.md`](docs/ep2-etapa-4-reflexao.md).
 
 ---
 
-# Experiência Prática III — JavaScript e interatividade
+# Experiência Prática III — JavaScript e interatividade ✅
+
+> Estado final da entrega preservado na tag `ep3-final`.
 
 > Cópias dos arquivos a enviar ficam em `entregas/ep3-etapa-N/`; o fim de cada etapa é marcado com a tag `ep3-etapa-N`.
 
@@ -190,8 +192,8 @@ Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúd
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | ✅ Concluída | `entregas/ep3-etapa-2/` |
 | 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | ✅ Concluída | `entregas/ep3-etapa-3/` |
-| 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | 🔄 Em andamento | `entregas/ep3-etapa-4/` |
-| 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep3-etapa-5/` |
+| 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | ✅ Concluída | `entregas/ep3-etapa-4/` |
+| 5 | Síntese e reflexão | ✅ Concluída | `entregas/ep3/ep3-etapa-5/` |
 
 ## EP3 · Etapa 2 — Fundamentos e organização inicial
 
@@ -255,4 +257,12 @@ Entradas (Problema / Técnica de diagnóstico / Solução) em [`docs/ep3-etapa-4
 ### Questão: "Reflexão sobre a aprendizagem"
 Texto em [`docs/ep3-reflexao.md`](docs/ep3-reflexao.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+---
+
+# Experiência Prática IV
+
+> Cópias dos arquivos a enviar ficam em `entregas/ep4/`; o fim de cada etapa é marcado com a tag `ep4-etapa-N`.
+
+_Objetivos e etapas a registrar conforme o enunciado chegar._
