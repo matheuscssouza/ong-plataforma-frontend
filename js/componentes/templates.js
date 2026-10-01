@@ -5,10 +5,12 @@
 import { PROJETOS, CAMPANHAS } from '../dados/conteudo.js';
 import { CHAVES, lerJSON } from '../servicos/armazenamento.js';
 
-// Caminhos calculados a partir deste arquivo (import.meta.url): funcionam
-// tanto nas páginas de html/ quanto na SPA carregada pelo index.html.
-const PASTA_IMAGENS = new URL('../../imagens/', import.meta.url);
-const PASTA_HTML = new URL('../../html/', import.meta.url);
+// Caminhos calculados a partir da raiz do site, informada por cada página em
+// <html data-raiz>: funcionam nas páginas de html/, na SPA e na build de produção
+// (onde o código é empacotado e muda de pasta).
+const RAIZ_SITE = new URL(document.documentElement.dataset.raiz ?? '', location.href);
+const PASTA_IMAGENS = new URL('imagens/', RAIZ_SITE);
+const PASTA_HTML = new URL('html/', RAIZ_SITE);
 
 function clonarTemplate(raiz, id) {
   const modelo = raiz.querySelector(`#${id}`) ?? document.getElementById(id);
