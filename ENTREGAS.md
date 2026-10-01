@@ -175,8 +175,12 @@ Texto em [`docs/ep2-etapa-4-reflexao.md`](docs/ep2-etapa-4-reflexao.md).
 
 ---
 
-# Experiência Prática III
+# Experiência Prática III — JavaScript e interatividade
 
 > Cópias dos arquivos a enviar ficam em `entregas/ep3-etapa-N/`; o fim de cada etapa é marcado com a tag `ep3-etapa-N`.
 
-_Objetivos e etapas a registrar conforme o enunciado chegar._
+Foco: JavaScript para interatividade.
+
+Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúdo e estilo); controlar eventos (cliques, formulários); usar localStorage para guardar e recuperar dados; integrar funcionalidades básicas de um framework JavaScript; simular comportamentos de uma aplicação real; organizar o código de forma clara e reutilizável; testar e corrigir erros.
+
+_Etapas a registrar conforme o enunciado chegar._
