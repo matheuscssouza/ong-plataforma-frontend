@@ -181,6 +181,8 @@ Texto em [`docs/ep2-etapa-4-reflexao.md`](docs/ep2-etapa-4-reflexao.md).
 
 Foco: JavaScript para interatividade.
 
+Desafio: transformar a interface estática em uma SPA dinâmica, com navegação fluida, sistema de templates em JavaScript, validação de formulários com feedback, armazenamento em localStorage e código modularizado por área de funcionalidade.
+
 Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúdo e estilo); controlar eventos (cliques, formulários); usar localStorage para guardar e recuperar dados; integrar funcionalidades básicas de um framework JavaScript; simular comportamentos de uma aplicação real; organizar o código de forma clara e reutilizável; testar e corrigir erros.
 
 | Etapa | Nome | Status | Pasta local |
