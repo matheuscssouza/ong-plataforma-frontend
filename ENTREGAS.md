@@ -299,4 +299,9 @@ Registros (Tipo / Descrição) em [`docs/ep4-etapa-2-issues-prs.md`](docs/ep4-et
 ### Questão: "Documentação técnica e criação do README"
 Seções (Nome / Descrição e tecnologias) em [`docs/ep4-etapa-2-readme.md`](docs/ep4-etapa-2-readme.md). Mudanças no GitHub: PR #7 (testes, `npm test`) e PR #8 (README técnico).
 
-- [ ] Seções adicionadas na plataforma
+- [x] 10 seções enviadas na plataforma
+
+### Questão: "Instalação local e práticas de versionamento"
+Texto em [`docs/ep4-etapa-2-instalacao-versionamento.md`](docs/ep4-etapa-2-instalacao-versionamento.md).
+
+- [ ] Texto colado na plataforma
