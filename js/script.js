@@ -72,7 +72,58 @@ if (formulario) {
   limite.setFullYear(limite.getFullYear() - 16);
   nascimento.max = limite.toISOString().slice(0, 10);
 
+  // --- Feedback do envio ---
+  const alertaErros = document.getElementById('alerta-erros');
+  const textoErros = document.getElementById('alerta-erros-texto');
+  const botaoEnviar = formulario.querySelector('button[type="submit"]');
+  const modal = document.getElementById('modal-confirmacao');
+  let resetAposEnvio = false;
+
+  // O navegador dispara "invalid" em cada campo com erro ao tentar enviar;
+  // agrupamos a contagem num único alerta no topo do formulário.
+  // Contamos pelo name: os três rádios de "Tipo de apoio" valem um campo só.
+  const camposInvalidos = new Set();
+  formulario.addEventListener('invalid', (evento) => {
+    camposInvalidos.add(evento.target.name);
+    queueMicrotask(() => {
+      if (camposInvalidos.size === 0) {
+        return;
+      }
+      const total = camposInvalidos.size;
+      textoErros.textContent = total === 1
+        ? 'Há 1 campo para corrigir. Ele está destacado em vermelho.'
+        : `Há ${total} campos para corrigir. Eles estão destacados em vermelho.`;
+      alertaErros.hidden = false;
+      camposInvalidos.clear();
+    });
+  }, true);
+
+  formulario.addEventListener('submit', (evento) => {
+    // Sem servidor neste projeto: o envio é simulado após a validação nativa.
+    evento.preventDefault();
+    alertaErros.hidden = true;
+    botaoEnviar.disabled = true;
+    botaoEnviar.textContent = 'Enviando…';
+
+    const primeiroNome = formulario.nome.value.trim().split(' ')[0];
+
+    setTimeout(() => {
+      resetAposEnvio = true;
+      formulario.reset();
+      botaoEnviar.disabled = false;
+      botaoEnviar.textContent = 'Enviar cadastro';
+      document.getElementById('modal-confirmacao-texto').textContent =
+        `Obrigado, ${primeiroNome}! Seu cadastro foi recebido e nossa equipe entrará em contato em até 3 dias úteis.`;
+      modal.showModal();
+    }, 1200);
+  });
+
   formulario.addEventListener('reset', () => {
     cpf.setCustomValidity('');
+    alertaErros.hidden = true;
+    if (!resetAposEnvio) {
+      mostrarToast('Formulário limpo.');
+    }
+    resetAposEnvio = false;
   });
 }
