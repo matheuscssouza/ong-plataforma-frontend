@@ -206,3 +206,8 @@ Texto em [`docs/ep3-etapa-2-estrutura-diretorios.md`](docs/ep3-etapa-2-estrutura
 Texto em [`docs/ep3-etapa-2-spa.md`](docs/ep3-etapa-2-spa.md).
 
 - [x] Texto colado na plataforma
+
+### Questão: "Criação de templates dinâmicos"
+Texto em [`docs/ep3-etapa-2-templates.md`](docs/ep3-etapa-2-templates.md).
+
+- [ ] Texto colado na plataforma
