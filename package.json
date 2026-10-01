@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "start": "python3 -m http.server 8000",
     "test": "node tests/executar.mjs",
-    "test:build": "npm run build && node tests/executar.mjs dist"
+    "test:build": "npm run build && node tests/executar.mjs dist",
+    "otimizar-imagens": "node scripts/otimizar-imagens.mjs"
   },
   "engines": {
     "node": ">=22"
@@ -19,6 +20,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "html-minifier-terser": "^7.2.0",
+    "sharp": "^0.35.5",
     "vite": "^8.3.2"
   }
 }
