@@ -347,4 +347,4 @@ Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "
 ### Questão: "Desafios para a minificação não afetar a lógica"
 Texto em [`docs/ep4-etapa-4-bundler.md`](docs/ep4-etapa-4-bundler.md), seção "Desafios".
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
