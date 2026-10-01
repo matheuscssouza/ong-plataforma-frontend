@@ -117,7 +117,7 @@ Objetivos: sistema de design (variáveis, cores, tipografia, espaçamentos), lay
 | 1 | Início da experiência prática | ✅ Concluída | — |
 | 2 | Design system e estruturação responsiva | ✅ Concluída | `entregas/ep2-etapa-2/` |
 | 3 | Componentes visuais e navegação | ✅ Concluída | `entregas/ep2-etapa-3/` |
-| 4 | Síntese e reflexão | ⏳ Pendente | `entregas/ep2-etapa-4/` |
+| 4 | Síntese e reflexão | 🔄 Em andamento | `entregas/ep2-etapa-4/` |
 
 ## EP2 · Etapa 2 — Design system e estruturação responsiva
 
@@ -164,4 +164,4 @@ Capturas em `entregas/ep2-etapa-3/capturas/` (10 imagens PNG: badges, alertas, b
 
 ## EP2 · Etapa 4 — Síntese e reflexão
 
-_Revisão das implementações, autoavaliação e reflexão crítica._
+Objetivos: verificação sistemática das entregas por checklist de requisitos; autoavaliação em escala do domínio de CSS3; síntese de dificuldades, acertos, evolução e próximos passos.
