@@ -188,8 +188,8 @@ Objetivos: tornar páginas interativas com JavaScript; manipular o DOM (conteúd
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | 🔄 Em andamento | `entregas/ep3-etapa-2/` |
-| 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | ⏳ Pendente | `entregas/ep3-etapa-3/` |
+| 2 | Fundamentos e organização inicial (diretórios, SPA, templates dinâmicos) | ✅ Concluída | `entregas/ep3-etapa-2/` |
+| 3 | Interatividade e controle de eventos (eventos, consistência de formulários, localStorage) | 🔄 Em andamento | `entregas/ep3-etapa-3/` |
 | 4 | Modularização e refinamento final (refatoração modular, testes, revisão) | ⏳ Pendente | `entregas/ep3-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep3-etapa-5/` |
 
@@ -210,4 +210,8 @@ Texto em [`docs/ep3-etapa-2-spa.md`](docs/ep3-etapa-2-spa.md).
 ### Questão: "Criação de templates dinâmicos"
 Texto em [`docs/ep3-etapa-2-templates.md`](docs/ep3-etapa-2-templates.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
+
+## EP3 · Etapa 3 — Interatividade e controle de eventos
+
+Objetivos: mapear e gerenciar listeners de eventos em elementos críticos; verificação de consistência em formulários; persistência com localStorage; analisar e acoplar bibliotecas externas.
