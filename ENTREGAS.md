@@ -318,4 +318,4 @@ Registros (Elemento / Justificação) em [`docs/ep4-etapa-3-semantica-aria.md`](
 ### Questão: "Navegação por teclado e leitores de tela"
 Registros (Componente / Ajuste) em [`docs/ep4-etapa-3-teclado.md`](docs/ep4-etapa-3-teclado.md). Varredura com Tab nas 4 páginas (92 paradas, todas com foco visível após a correção do campo de data, PR #9).
 
-- [ ] Registros adicionados na plataforma
+- [x] 10 registros adicionados na plataforma
