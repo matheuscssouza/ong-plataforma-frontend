@@ -6,6 +6,10 @@
 import { carregarChartJs } from '../servicos/chartjs.js';
 
 let graficoAtual = null;
+let raizAtual = document;
+
+// O gráfico lê as cores das variáveis CSS: ao trocar o tema, é redesenhado.
+document.addEventListener('tema-alterado', () => renderizarGraficos(raizAtual));
 
 function corDoTema(variavel) {
   return getComputedStyle(document.documentElement).getPropertyValue(variavel).trim();
@@ -31,6 +35,7 @@ export async function renderizarGraficos(raiz = document) {
   if (!canvas) {
     return;
   }
+  raizAtual = raiz;
   const tabela = document.getElementById(canvas.dataset.grafico);
   const detalhes = tabela.closest('details');
 
