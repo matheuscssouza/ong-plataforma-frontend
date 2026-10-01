@@ -272,9 +272,9 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com co
 | Etapa | Nome | Status | Pasta local |
 |---|---|---|---|
 | 1 | Início da experiência prática | ✅ Concluída | — |
-| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ✅ Concluída (aguardando merge dos PRs #1, #7, #8 e #6) | `entregas/ep4/ep4-etapa-2/` |
-| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ✅ Concluída (aguardando merge dos PRs #9 e #10) | `entregas/ep4/ep4-etapa-3/` |
-| 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | 🔄 Em andamento | `entregas/ep4/ep4-etapa-4/` |
+| 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ✅ Concluída | `entregas/ep4/ep4-etapa-2/` |
+| 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ✅ Concluída | `entregas/ep4/ep4-etapa-3/` |
+| 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | ✅ Concluída | `entregas/ep4/ep4-etapa-4/` |
 | 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep4/ep4-etapa-5/` |
 
 ## EP4 · Etapa 2 — Controle de versões e documentação
@@ -373,3 +373,8 @@ Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md). Workflow no
 Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md), seção "Configuração".
 
 - [x] Texto colado na plataforma
+
+### Questão: "Versão final do código-fonte versionado"
+Link enviado: https://github.com/matheuscssouza/ong-plataforma-frontend/releases/tag/v2.1.0 (release v2.1.0 na `main`, publicada no GitHub Pages pelo GitHub Actions).
+
+- [ ] Link colado na plataforma
