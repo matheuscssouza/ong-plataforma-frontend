@@ -53,6 +53,16 @@ git merge main
 git push
 ```
 
+## Versionamento semântico
+
+As versões seguem `MAJOR.MINOR.PATCH`: **MAJOR** para mudanças incompatíveis (por exemplo, endereços que deixam de existir), **MINOR** para funcionalidades novas compatíveis e **PATCH** para correções.
+
+| Versão | Conteúdo |
+|---|---|
+| `v1.0.0` | Site institucional estável: páginas semânticas, formulário com validação e máscaras |
+| `v1.1.0` | Design system, grid de 12 colunas, menu responsivo e componentes de feedback |
+| `v2.0.0` | SPA em ES Modules, templates, localStorage e Chart.js; páginas movidas para `html/` e imagens para `imagens/` |
+
 ## Padrão de commits
 
 As mensagens seguem o [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/), em português e no imperativo:
