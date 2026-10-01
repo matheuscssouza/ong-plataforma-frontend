@@ -219,4 +219,4 @@ Objetivos: mapear e gerenciar listeners de eventos em elementos críticos; verif
 ### Questão: "Interatividade com eventos"
 Texto em [`docs/ep3-etapa-3-eventos.md`](docs/ep3-etapa-3-eventos.md).
 
-- [ ] Texto colado na plataforma
+- [x] Texto colado na plataforma
