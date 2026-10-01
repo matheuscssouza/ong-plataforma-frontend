@@ -693,9 +693,12 @@ button.botao {
   border-color: var(--cor-texto-suave);
 }
 
-.formulario input:focus-visible,
-.formulario select:focus-visible,
-.formulario textarea:focus-visible {
+/* Campos usam :focus e :focus-within (e não só :focus-visible): no <input type="date">
+   o foco passa pelas partes internas (dia, mês, ano e botão do calendário) */
+.formulario input:focus,
+.formulario input:focus-within,
+.formulario select:focus,
+.formulario textarea:focus {
   border-color: var(--cor-primaria);
   outline: 3px solid var(--cor-primaria-escura);
   outline-offset: 1px;
