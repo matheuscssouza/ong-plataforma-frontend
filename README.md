@@ -21,9 +21,9 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 | Página | Conteúdo |
 |---|---|
 | [`index.html`](index.html) | Apresentação da ONG: missão, visão e valores, números de impacto, formas de ajudar e contato |
-| [`projetos.html`](projetos.html) | Três projetos sociais com badges e ficha de informações, voluntariado e campanhas de doação |
-| [`cadastro.html`](cadastro.html) | Cadastro de voluntários e doadores com validação, máscaras, alertas e confirmação em modal |
-| [`componentes.html`](componentes.html) | Guia de componentes: badges, alertas, toasts, modal e botões, com as classes para reutilização |
+| [`projetos.html`](html/projetos.html) | Três projetos sociais com badges e ficha de informações, voluntariado e campanhas de doação |
+| [`cadastro.html`](html/cadastro.html) | Cadastro de voluntários e doadores com validação, máscaras, alertas e confirmação em modal |
+| [`componentes.html`](html/componentes.html) | Guia de componentes: badges, alertas, toasts, modal e botões, com as classes para reutilização |
 
 ## Destaques técnicos
 
@@ -71,7 +71,7 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 ![Modal de confirmação](docs/screenshots/modal.png)
 
 **Guia de componentes**
-- A página [`componentes.html`](componentes.html) documenta cada componente com suas classes. Modal e toasts podem ser acionados só com atributos (`data-abrir-modal`, `data-toast`), permitindo que o back-end gere o HTML sem escrever JavaScript.
+- A página [`componentes.html`](html/componentes.html) documenta cada componente com suas classes. Modal e toasts podem ser acionados só com atributos (`data-abrir-modal`, `data-toast`), permitindo que o back-end gere o HTML sem escrever JavaScript.
 
 ![Guia de componentes](docs/screenshots/componentes.png)
 
@@ -94,18 +94,19 @@ O terceiro setor brasileiro reúne mais de 820 mil organizações da sociedade c
 
 ```
 ong-plataforma-frontend/
-├── index.html         # Página inicial (apresentação da ONG)
-├── projetos.html      # Projetos sociais, voluntariado e doações
-├── cadastro.html      # Formulário de voluntários/doadores
-├── componentes.html   # Guia de componentes
+├── index.html           # Ponto de entrada (página inicial)
+├── html/                # Demais páginas
+│   ├── projetos.html    # Projetos sociais, voluntariado e doações
+│   ├── cadastro.html    # Formulário de voluntários/doadores
+│   └── componentes.html # Guia de componentes
 ├── css/
-│   └── style.css      # Design system, layout e componentes
+│   └── style.css        # Design system, layout e componentes
 ├── js/
-│   ├── menu.js        # Menu hambúrguer e dropdown
-│   ├── feedback.js    # Toasts e modais reutilizáveis
-│   └── script.js      # Máscaras, validações e envio do cadastro
-├── img/               # Imagens em PNG e WebP (logo também em SVG)
-└── docs/              # Respostas de cada etapa e capturas de tela
+│   ├── menu.js          # Menu hambúrguer e dropdown
+│   ├── feedback.js      # Toasts e modais reutilizáveis
+│   └── script.js        # Máscaras, validações e envio do cadastro
+├── imagens/             # Imagens em PNG e WebP (logo também em SVG)
+└── docs/                # Respostas de cada etapa e capturas de tela
 ```
 
 ## Como rodar localmente
