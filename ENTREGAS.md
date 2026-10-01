@@ -275,7 +275,7 @@ Objetivos: controle de versões com Git e GitHub; repositório organizado com co
 | 2 | Controle de versões e documentação (GitFlow, commits semânticos, README) | ✅ Concluída | `entregas/ep4/ep4-etapa-2/` |
 | 3 | Implementação de acessibilidade (WCAG 2.1 AA: teclado, leitor de tela, contraste) | ✅ Concluída | `entregas/ep4/ep4-etapa-3/` |
 | 4 | Otimização e deploy para produção (build, minificação, compressão de imagens) | ✅ Concluída | `entregas/ep4/ep4-etapa-4/` |
-| 5 | Síntese e reflexão | ⏳ Pendente | `entregas/ep4/ep4-etapa-5/` |
+| 5 | Síntese e reflexão | 🔄 Em andamento | `entregas/ep4/ep4-etapa-5/` |
 
 ## EP4 · Etapa 2 — Controle de versões e documentação
 
@@ -377,4 +377,11 @@ Texto em [`docs/ep4-etapa-4-deploy.md`](docs/ep4-etapa-4-deploy.md), seção "Co
 ### Questão: "Versão final do código-fonte versionado"
 Link enviado: https://github.com/matheuscssouza/ong-plataforma-frontend/releases/tag/v2.1.0 (release v2.1.0 na `main`, publicada no GitHub Pages pelo GitHub Actions).
 
-- [ ] Link colado na plataforma
+- [x] Link colado na plataforma
+
+## EP4 · Síntese e reflexão
+
+### Questão: "Reflexão sobre a aprendizagem"
+Texto em [`docs/ep4-reflexao.md`](docs/ep4-reflexao.md).
+
+- [ ] Texto colado na plataforma
