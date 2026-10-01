@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia de componentes visuais da plataforma: badges, alertas, toasts, modal e botões, com as classes CSS para reutilização.">
+  <title>Guia de componentes | Instituto Raízes do Amanhã</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&amp;family=Lora:ital,wght@0,400..700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/feedback.js" defer></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header class="cabecalho">
+    <a class="marca" href="index.html">
+      <picture>
+        <source srcset="img/logo.webp" type="image/webp">
+        <img src="img/logo.png" alt="" width="48" height="48">
+      </picture>
+      <span>Raízes do Amanhã</span>
+    </a>
+    <nav class="navegacao" aria-label="Navegação principal">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-botao-icone" aria-hidden="true"></span>
+        Menu
+      </button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="index.html">Início</a></li>
+        <li class="menu-item-submenu">
+          <a href="projetos.html">Projetos</a>
+          <button class="submenu-botao" type="button" aria-expanded="false" aria-controls="submenu-projetos" aria-label="Submenu de Projetos"></button>
+          <ul class="submenu" id="submenu-projetos">
+            <li><a href="projetos.html#titulo-andamento">Projetos em andamento</a></li>
+            <li><a href="projetos.html#voluntariado">Seja voluntário</a></li>
+            <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Cadastre-se</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="guia">
+    <h1>Guia de componentes</h1>
+    <p>Referência dos componentes visuais da plataforma. Cada componente usa uma classe base e uma variante; basta gerar o HTML com essas classes para manter a identidade visual em novas páginas.</p>
+
+    <section aria-labelledby="titulo-badges">
+      <h2 id="titulo-badges">Badges</h2>
+      <p>Etiquetas curtas para categorizar projetos e indicar situação. Classe base <code>badge</code>, agrupadas em <code>ul.badges</code>.</p>
+      <h3>Categorias</h3>
+      <ul class="badges" aria-label="Categorias">
+        <li class="badge badge-ambiente">Meio ambiente</li>
+        <li class="badge badge-educacao">Educação</li>
+        <li class="badge badge-tecnologia">Tecnologia</li>
+      </ul>
+      <h3>Situação</h3>
+      <ul class="badges" aria-label="Situação">
+        <li class="badge badge-aberta">Vagas abertas</li>
+        <li class="badge badge-prazo">Prazo: fev/2027</li>
+        <li class="badge">Lista de espera</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="titulo-alertas">
+      <h2 id="titulo-alertas">Alertas</h2>
+      <p>Mensagens fixas no conteúdo. Classe base <code>alerta</code> e variantes <code>alerta-info</code>, <code>alerta-sucesso</code>, <code>alerta-aviso</code> e <code>alerta-erro</code>. Alertas que surgem após uma ação recebem <code>role="alert"</code>.</p>
+      <div class="alerta alerta-info">
+        <svg class="alerta-icone" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M10 9v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="6" r="1.2" fill="#fff"/></svg>
+        <div class="alerta-conteudo">
+          <p class="alerta-titulo">Informação</p>
+          <p>Usamos seus dados apenas para contato, conforme a LGPD.</p>
+        </div>
+      </div>
+      <div class="alerta alerta-sucesso">
+        <svg class="alerta-icone" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M6 10.5l2.5 2.5L14 7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="alerta-conteudo">
+          <p class="alerta-titulo">Cadastro concluído</p>
+          <p>Recebemos suas informações e entraremos em contato em breve.</p>
+        </div>
+      </div>
+      <div class="alerta alerta-aviso">
+        <svg class="alerta-icone" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l9 16H1z" fill="currentColor"/><path d="M10 7v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.8" r="1.1" fill="#fff"/></svg>
+        <div class="alerta-conteudo">
+          <p class="alerta-titulo">Prazo se encerrando</p>
+          <p>A Campanha Material Escolar recebe doações até fevereiro de 2027.</p>
+        </div>
+      </div>
+      <div class="alerta alerta-erro">
+        <svg class="alerta-icone" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M10 5v6" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14.5" r="1.2" fill="#fff"/></svg>
+        <div class="alerta-conteudo">
+          <p class="alerta-titulo">Não foi possível enviar o cadastro</p>
+          <p>Há 2 campos para corrigir. Eles estão destacados em vermelho.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-toasts">
+      <h2 id="titulo-toasts">Toasts</h2>
+      <p>Notificações rápidas na parte inferior da tela, que somem sozinhas após 5 segundos e são anunciadas por leitores de tela. Acionadas pelo atributo <code>data-toast</code> ou pela função <code>mostrarToast()</code>.</p>
+      <div class="guia-exemplos">
+        <button type="button" class="botao" data-toast="Cadastro salvo com sucesso.">Mostrar toast de sucesso</button>
+        <button type="button" class="botao botao-secundario" data-toast="Não foi possível conectar. Tente novamente." data-toast-tipo="erro">Mostrar toast de erro</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-modal">
+      <h2 id="titulo-modal">Modal</h2>
+      <p>Janela sobreposta com o elemento nativo <code>&lt;dialog&gt;</code>, que mantém o foco dentro dele e fecha com Esc. Aberto por <code>data-abrir-modal</code>.</p>
+      <div class="guia-exemplos">
+        <button type="button" class="botao" data-abrir-modal="modal-exemplo">Abrir modal de exemplo</button>
+      </div>
+      <dialog class="modal" id="modal-exemplo" aria-labelledby="modal-exemplo-titulo">
+        <div class="modal-cabecalho">
+          <h2 id="modal-exemplo-titulo">Doe um computador</h2>
+        </div>
+        <div class="modal-corpo">
+          <ul class="badges" aria-label="Situação">
+            <li class="badge badge-aberta">Aberta</li>
+            <li class="badge badge-tecnologia">Tecnologia</li>
+          </ul>
+          <p>Computadores e notebooks usados são revisados pelos voluntários e ampliam as turmas de Inclusão Digital. Entregas na sede, de segunda a sexta.</p>
+        </div>
+        <div class="modal-rodape">
+          <button type="button" class="botao botao-secundario" data-fechar-modal>Fechar</button>
+          <a class="botao" href="cadastro.html">Quero doar</a>
+        </div>
+      </dialog>
+    </section>
+
+    <section aria-labelledby="titulo-botoes">
+      <h2 id="titulo-botoes">Botões</h2>
+      <p>Classe <code>botao</code> e variante <code>botao-secundario</code>, com estados de hover, foco, clique e desabilitado.</p>
+      <div class="guia-exemplos">
+        <button type="button" class="botao">Principal</button>
+        <button type="button" class="botao botao-secundario">Secundário</button>
+        <button type="button" class="botao" disabled>Desabilitado</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <h2>Contato</h2>
+    <address>
+      <strong>Instituto Raízes do Amanhã</strong><br>
+      Rua das Sementes, 123 – Jardim Esperança, São Paulo – SP<br>
+      <a href="mailto:contato@raizesdoamanha.org.br">contato@raizesdoamanha.org.br</a> ·
+      <a href="tel:+551100000000">(11) 0000-0000</a>
+    </address>
+    <p><small>&copy; <time datetime="2026">2026</time> Instituto Raízes do Amanhã. Organização fictícia criada para fins acadêmicos.</small><br>
+      <a href="componentes.html">Guia de componentes</a></p>
+  </footer>
+  <div class="toasts" role="status" aria-live="polite"></div>
+</body>
+</html>
