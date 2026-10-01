@@ -12,7 +12,12 @@ export function mascaraCpf(valor) {
 }
 
 export function mascaraTelefone(valor) {
-  return somenteDigitos(valor)
+  let digitos = somenteDigitos(valor);
+  // Número colado com o código do país (+55): o 55 é descartado.
+  if (digitos.length > 11 && digitos.startsWith('55')) {
+    digitos = digitos.slice(2);
+  }
+  return digitos
     .slice(0, 11)
     .replace(/^(\d{2})(\d)/, '($1) $2')
     .replace(/(\d{5})(\d{1,4})$/, '$1-$2');
